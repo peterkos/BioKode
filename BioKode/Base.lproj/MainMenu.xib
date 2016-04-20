@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="input" destination="N7X-Eh-X0d" id="22Y-7O-u4B"/>
                 <outlet property="inputStr" destination="N7X-Eh-X0d" id="1mz-1k-810"/>
+                <outlet property="mBothButton" destination="lyW-HE-1uD" id="jXS-NU-KNP"/>
                 <outlet property="mEnglishButton" destination="if7-ua-WJc" id="j3Q-QC-hv4"/>
                 <outlet property="mRNAButton" destination="vny-DX-3gs" id="fWK-d9-GjS"/>
                 <outlet property="output" destination="dL4-ga-sNz" id="12x-yY-xAK"/>
@@ -698,26 +699,6 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vny-DX-3gs">
-                        <rect key="frame" x="264" y="110" width="60" height="18"/>
-                        <buttonCell key="cell" type="radio" title="mRNA" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="FPq-lU-j7T">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="translationMode:" target="Voe-Tx-rLC" id="t12-Jh-EBA"/>
-                        </connections>
-                    </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="if7-ua-WJc">
-                        <rect key="frame" x="156" y="110" width="66" height="18"/>
-                        <buttonCell key="cell" type="radio" title="English" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lBO-zK-p0I">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="translationMode:" target="Voe-Tx-rLC" id="g8h-em-gEM"/>
-                        </connections>
-                    </button>
                     <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jt2-Sl-gRl">
                         <rect key="frame" x="134" y="180" width="213" height="5"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -740,6 +721,36 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyW-HE-1uD">
+                        <rect key="frame" x="320" y="110" width="51" height="18"/>
+                        <buttonCell key="cell" type="radio" title="Both" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="kyL-xJ-DWU">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="translationMode:" target="Voe-Tx-rLC" id="5Ao-xX-lC1"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vny-DX-3gs">
+                        <rect key="frame" x="209" y="110" width="60" height="18"/>
+                        <buttonCell key="cell" type="radio" title="mRNA" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="FPq-lU-j7T">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="translationMode:" target="Voe-Tx-rLC" id="t12-Jh-EBA"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="if7-ua-WJc">
+                        <rect key="frame" x="101" y="110" width="66" height="18"/>
+                        <buttonCell key="cell" type="radio" title="English" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lBO-zK-p0I">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="translationMode:" target="Voe-Tx-rLC" id="g8h-em-gEM"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="341" y="495"/>

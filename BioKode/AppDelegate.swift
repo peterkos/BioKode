@@ -39,15 +39,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // mRNA or English Translation Mode
     @IBOutlet weak var mRNAButton: NSButton!
     @IBOutlet weak var mEnglishButton: NSButton!
+    @IBOutlet weak var mBothButton: NSButton!
     @IBAction func translationMode(sender: NSButton) {
         if (mRNAButton.state == 1) {
             convertInput_mRNA(input: inputStr, output: outputStr);
-        } else {
+        } else if (mEnglishButton.state == 1) {
             convertInput_mEnglish(input: inputStr, output: outputStr);
+        } else {
+            let mRNAIntermediateOutput = (NSTextField)();
+            convertInput_mRNA(input: inputStr, output: mRNAIntermediateOutput);
+            convertInput_mEnglish(input: mRNAIntermediateOutput, output: outputStr);
         }
     }
     
-        
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {}
         
     
