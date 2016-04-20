@@ -15,10 +15,9 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BioKode" customModuleProvider="target">
             <connections>
                 <outlet property="input" destination="N7X-Eh-X0d" id="22Y-7O-u4B"/>
-                <outlet property="mEnglishButton" destination="if7-ua-WJc" id="gKN-cI-daa"/>
-                <outlet property="mRNAButton" destination="vny-DX-3gs" id="DOm-X2-qt8"/>
+                <outlet property="mEnglishButton" destination="if7-ua-WJc" id="j3Q-QC-hv4"/>
+                <outlet property="mRNAButton" destination="vny-DX-3gs" id="fWK-d9-GjS"/>
                 <outlet property="output" destination="dL4-ga-sNz" id="12x-yY-xAK"/>
-                <outlet property="translationMode" destination="if7-ua-WJc" id="8jD-Ez-oWy"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -735,7 +734,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="translationMode:" target="Voe-Tx-rLC" id="wR1-hB-Gn7"/>
+                            <action selector="translationMode:" target="Voe-Tx-rLC" id="t12-Jh-EBA"/>
                         </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="if7-ua-WJc">
@@ -745,7 +744,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="translationMode:" target="Voe-Tx-rLC" id="Tmn-Xu-Ulh"/>
+                            <action selector="translationMode:" target="Voe-Tx-rLC" id="g8h-em-gEM"/>
                         </connections>
                     </button>
                 </subviews>
