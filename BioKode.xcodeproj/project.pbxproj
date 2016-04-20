@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */; };
+		0ECF1CC01CC6B199009226AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CBF1CC6B199009226AE /* Assets.xcassets */; };
+		0ECF1CC31CC6B199009226AE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CC11CC6B199009226AE /* MainMenu.xib */; };
+		0ECF1CCE1CC6B199009226AE /* BioKodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CCD1CC6B199009226AE /* BioKodeTests.swift */; };
+		0ECF1CD91CC6B199009226AE /* BioKodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CD81CC6B199009226AE /* BioKodeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0ECF1CCA1CC6B199009226AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ECF1CB21CC6B199009226AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ECF1CB91CC6B199009226AE;
+			remoteInfo = BioKode;
+		};
+		0ECF1CD51CC6B199009226AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0ECF1CB21CC6B199009226AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ECF1CB91CC6B199009226AE;
+			remoteInfo = BioKode;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0ECF1CBA1CC6B199009226AE /* BioKode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioKode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0ECF1CBF1CC6B199009226AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0ECF1CC21CC6B199009226AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0ECF1CC41CC6B199009226AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ECF1CC91CC6B199009226AE /* BioKodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BioKodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ECF1CCD1CC6B199009226AE /* BioKodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioKodeTests.swift; sourceTree = "<group>"; };
+		0ECF1CCF1CC6B199009226AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ECF1CD41CC6B199009226AE /* BioKodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BioKodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ECF1CD81CC6B199009226AE /* BioKodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioKodeUITests.swift; sourceTree = "<group>"; };
+		0ECF1CDA1CC6B199009226AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0ECF1CB71CC6B199009226AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECF1CC61CC6B199009226AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECF1CD11CC6B199009226AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ECF1CB11CC6B199009226AE = {
+			isa = PBXGroup;
+			children = (
+				0ECF1CBC1CC6B199009226AE /* BioKode */,
+				0ECF1CCC1CC6B199009226AE /* BioKodeTests */,
+				0ECF1CD71CC6B199009226AE /* BioKodeUITests */,
+				0ECF1CBB1CC6B199009226AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0ECF1CBB1CC6B199009226AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF1CBA1CC6B199009226AE /* BioKode.app */,
+				0ECF1CC91CC6B199009226AE /* BioKodeTests.xctest */,
+				0ECF1CD41CC6B199009226AE /* BioKodeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0ECF1CBC1CC6B199009226AE /* BioKode */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */,
+				0ECF1CBF1CC6B199009226AE /* Assets.xcassets */,
+				0ECF1CC11CC6B199009226AE /* MainMenu.xib */,
+				0ECF1CC41CC6B199009226AE /* Info.plist */,
+			);
+			path = BioKode;
+			sourceTree = "<group>";
+		};
+		0ECF1CCC1CC6B199009226AE /* BioKodeTests */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF1CCD1CC6B199009226AE /* BioKodeTests.swift */,
+				0ECF1CCF1CC6B199009226AE /* Info.plist */,
+			);
+			path = BioKodeTests;
+			sourceTree = "<group>";
+		};
+		0ECF1CD71CC6B199009226AE /* BioKodeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0ECF1CD81CC6B199009226AE /* BioKodeUITests.swift */,
+				0ECF1CDA1CC6B199009226AE /* Info.plist */,
+			);
+			path = BioKodeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0ECF1CB91CC6B199009226AE /* BioKode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ECF1CDD1CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKode" */;
+			buildPhases = (
+				0ECF1CB61CC6B199009226AE /* Sources */,
+				0ECF1CB71CC6B199009226AE /* Frameworks */,
+				0ECF1CB81CC6B199009226AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BioKode;
+			productName = BioKode;
+			productReference = 0ECF1CBA1CC6B199009226AE /* BioKode.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0ECF1CC81CC6B199009226AE /* BioKodeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ECF1CE01CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKodeTests" */;
+			buildPhases = (
+				0ECF1CC51CC6B199009226AE /* Sources */,
+				0ECF1CC61CC6B199009226AE /* Frameworks */,
+				0ECF1CC71CC6B199009226AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ECF1CCB1CC6B199009226AE /* PBXTargetDependency */,
+			);
+			name = BioKodeTests;
+			productName = BioKodeTests;
+			productReference = 0ECF1CC91CC6B199009226AE /* BioKodeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0ECF1CD31CC6B199009226AE /* BioKodeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ECF1CE31CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKodeUITests" */;
+			buildPhases = (
+				0ECF1CD01CC6B199009226AE /* Sources */,
+				0ECF1CD11CC6B199009226AE /* Frameworks */,
+				0ECF1CD21CC6B199009226AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0ECF1CD61CC6B199009226AE /* PBXTargetDependency */,
+			);
+			name = BioKodeUITests;
+			productName = BioKodeUITests;
+			productReference = 0ECF1CD41CC6B199009226AE /* BioKodeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0ECF1CB21CC6B199009226AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Peter Kos";
+				TargetAttributes = {
+					0ECF1CB91CC6B199009226AE = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					0ECF1CC81CC6B199009226AE = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0ECF1CB91CC6B199009226AE;
+					};
+					0ECF1CD31CC6B199009226AE = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 0ECF1CB91CC6B199009226AE;
+					};
+				};
+			};
+			buildConfigurationList = 0ECF1CB51CC6B199009226AE /* Build configuration list for PBXProject "BioKode" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0ECF1CB11CC6B199009226AE;
+			productRefGroup = 0ECF1CBB1CC6B199009226AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0ECF1CB91CC6B199009226AE /* BioKode */,
+				0ECF1CC81CC6B199009226AE /* BioKodeTests */,
+				0ECF1CD31CC6B199009226AE /* BioKodeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0ECF1CB81CC6B199009226AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ECF1CC01CC6B199009226AE /* Assets.xcassets in Resources */,
+				0ECF1CC31CC6B199009226AE /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECF1CC71CC6B199009226AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECF1CD21CC6B199009226AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0ECF1CB61CC6B199009226AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECF1CC51CC6B199009226AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ECF1CCE1CC6B199009226AE /* BioKodeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ECF1CD01CC6B199009226AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ECF1CD91CC6B199009226AE /* BioKodeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0ECF1CCB1CC6B199009226AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ECF1CB91CC6B199009226AE /* BioKode */;
+			targetProxy = 0ECF1CCA1CC6B199009226AE /* PBXContainerItemProxy */;
+		};
+		0ECF1CD61CC6B199009226AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ECF1CB91CC6B199009226AE /* BioKode */;
+			targetProxy = 0ECF1CD51CC6B199009226AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0ECF1CC11CC6B199009226AE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0ECF1CC21CC6B199009226AE /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0ECF1CDB1CC6B199009226AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0ECF1CDC1CC6B199009226AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0ECF1CDE1CC6B199009226AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioKode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = pc.BioKode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0ECF1CDF1CC6B199009226AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioKode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = pc.BioKode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0ECF1CE11CC6B199009226AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioKodeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pc.BioKodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BioKode.app/Contents/MacOS/BioKode";
+			};
+			name = Debug;
+		};
+		0ECF1CE21CC6B199009226AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioKodeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pc.BioKodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BioKode.app/Contents/MacOS/BioKode";
+			};
+			name = Release;
+		};
+		0ECF1CE41CC6B199009226AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioKodeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pc.BioKodeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BioKode;
+			};
+			name = Debug;
+		};
+		0ECF1CE51CC6B199009226AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BioKodeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pc.BioKodeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BioKode;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0ECF1CB51CC6B199009226AE /* Build configuration list for PBXProject "BioKode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ECF1CDB1CC6B199009226AE /* Debug */,
+				0ECF1CDC1CC6B199009226AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ECF1CDD1CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ECF1CDE1CC6B199009226AE /* Debug */,
+				0ECF1CDF1CC6B199009226AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0ECF1CE01CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKodeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ECF1CE11CC6B199009226AE /* Debug */,
+				0ECF1CE21CC6B199009226AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0ECF1CE31CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKodeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ECF1CE41CC6B199009226AE /* Debug */,
+				0ECF1CE51CC6B199009226AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0ECF1CB21CC6B199009226AE /* Project object */;
+}
