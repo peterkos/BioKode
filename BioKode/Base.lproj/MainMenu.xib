@@ -15,9 +15,11 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BioKode" customModuleProvider="target">
             <connections>
                 <outlet property="input" destination="N7X-Eh-X0d" id="22Y-7O-u4B"/>
+                <outlet property="inputStr" destination="N7X-Eh-X0d" id="1mz-1k-810"/>
                 <outlet property="mEnglishButton" destination="if7-ua-WJc" id="j3Q-QC-hv4"/>
                 <outlet property="mRNAButton" destination="vny-DX-3gs" id="fWK-d9-GjS"/>
                 <outlet property="output" destination="dL4-ga-sNz" id="12x-yY-xAK"/>
+                <outlet property="outputStr" destination="dL4-ga-sNz" id="fYP-Nd-xyb"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -673,62 +675,31 @@
         </menu>
         <window title="BioKode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="contentRect" x="801" y="443" width="480" height="302"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <value key="minSize" type="size" width="480" height="302"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="302"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <userGuides>
-                    <userLayoutGuide location="180" affinity="minY"/>
-                    <userLayoutGuide location="187" affinity="minX"/>
-                    <userLayoutGuide location="294" affinity="minX"/>
-                </userGuides>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66y-gz-xch">
-                        <rect key="frame" x="185" y="276" width="111" height="17"/>
+                        <rect key="frame" x="185" y="240" width="111" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter DNA String:" id="Nrm-P0-0Pr">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7X-Eh-X0d">
-                        <rect key="frame" x="102" y="234" width="276" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="AGGTGCCAGCTGACG" drawsBackground="YES" id="x1S-bn-yfq">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-hm-puO">
-                        <rect key="frame" x="165" y="172" width="72" height="17"/>
+                        <rect key="frame" x="204" y="151" width="72" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Convert to:" id="DZ2-tw-VRQ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-ga-sNz">
-                        <rect key="frame" x="102" y="103" width="276" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="" drawsBackground="YES" id="722-Ga-4wJ">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5iz-lH-UbA">
-                        <rect key="frame" x="194" y="40" width="93" height="32"/>
-                        <buttonCell key="cell" type="push" title="Convert!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YqH-7P-76f">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="convertInput:" target="Voe-Tx-rLC" id="UVS-Vj-nhZ"/>
-                        </connections>
-                    </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vny-DX-3gs">
-                        <rect key="frame" x="265" y="185" width="60" height="18"/>
+                        <rect key="frame" x="264" y="110" width="60" height="18"/>
                         <buttonCell key="cell" type="radio" title="mRNA" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="FPq-lU-j7T">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -738,7 +709,7 @@
                         </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="if7-ua-WJc">
-                        <rect key="frame" x="265" y="157" width="66" height="18"/>
+                        <rect key="frame" x="156" y="110" width="66" height="18"/>
                         <buttonCell key="cell" type="radio" title="English" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lBO-zK-p0I">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -747,9 +718,31 @@
                             <action selector="translationMode:" target="Voe-Tx-rLC" id="g8h-em-gEM"/>
                         </connections>
                     </button>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jt2-Sl-gRl">
+                        <rect key="frame" x="134" y="180" width="213" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7X-Eh-X0d">
+                        <rect key="frame" x="102" y="200" width="276" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="AGGTGCCAGCTGACG" drawsBackground="YES" id="x1S-bn-yfq">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-ga-sNz">
+                        <rect key="frame" x="102" y="60" width="276" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Result will appear here" drawsBackground="YES" id="722-Ga-4wJ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="380" y="470"/>
+            <point key="canvasLocation" x="341" y="495"/>
         </window>
     </objects>
 </document>

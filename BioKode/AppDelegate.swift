@@ -33,32 +33,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     
     // Input and output text fields
-    @IBOutlet weak var input: NSTextField!
-    @IBOutlet weak var output: NSTextField!
+    @IBOutlet weak var inputStr: NSTextField!
+    @IBOutlet weak var outputStr: NSTextField!
     
     // mRNA or English Translation Mode
     @IBOutlet weak var mRNAButton: NSButton!
     @IBOutlet weak var mEnglishButton: NSButton!
-    @IBAction func translationMode(sender: NSButton) {}
-    
-    
-    var convertMethod = "";
-    
-    
-    @IBAction func convertInput(sender: AnyObject) {
+    @IBAction func translationMode(sender: NSButton) {
         if (mRNAButton.state == 1) {
-            convertInput_mRNA();
+            convertInput_mRNA(input: inputStr, output: outputStr);
         } else {
-            convertInput_mEnglish();
+            convertInput_mEnglish(input: inputStr, output: outputStr);
         }
     }
     
         
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-}
+    func applicationDidFinishLaunching(aNotification: NSNotification) {}
         
+    
+    func convertInput_mRNA(input input: NSTextField, output: NSTextField) {
         
-    func convertInput_mRNA() {
         // Resets output
         output.stringValue = "";
         
@@ -79,14 +73,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func convertInput_mEnglish() {
+    func convertInput_mEnglish(input input: NSTextField, output: NSTextField) {
         // Resets output
         output.stringValue = "";
         
         // Gets input text
         let textIn = String(input.stringValue);
         var preEnglish = [String]();
-        
         
         // Converts to codons
         for i in 0.stride(to: textIn.characters.count, by: 3) {
