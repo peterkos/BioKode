@@ -14,12 +14,10 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BioKode" customModuleProvider="target">
             <connections>
-                <outlet property="input" destination="N7X-Eh-X0d" id="22Y-7O-u4B"/>
                 <outlet property="inputStr" destination="N7X-Eh-X0d" id="1mz-1k-810"/>
                 <outlet property="mBothButton" destination="lyW-HE-1uD" id="jXS-NU-KNP"/>
                 <outlet property="mEnglishButton" destination="if7-ua-WJc" id="j3Q-QC-hv4"/>
                 <outlet property="mRNAButton" destination="vny-DX-3gs" id="fWK-d9-GjS"/>
-                <outlet property="output" destination="dL4-ga-sNz" id="12x-yY-xAK"/>
                 <outlet property="outputStr" destination="dL4-ga-sNz" id="fYP-Nd-xyb"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -542,22 +540,19 @@
                                                     <menuItem title="Paragraph" enabled="NO" id="ZvO-Gk-QUH">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                     </menuItem>
-                                                    <menuItem id="YGs-j5-SAR">
-                                                        <string key="title">	Default</string>
+                                                    <menuItem title="    Default" id="YGs-j5-SAR">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="makeBaseWritingDirectionNatural:" target="-1" id="qtV-5e-UBP"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem id="Lbh-J2-qVU">
-                                                        <string key="title">	Left to Right</string>
+                                                    <menuItem title="    Left to Right" id="Lbh-J2-qVU">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="makeBaseWritingDirectionLeftToRight:" target="-1" id="S0X-9S-QSf"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem id="jFq-tB-4Kx">
-                                                        <string key="title">	Right to Left</string>
+                                                    <menuItem title="    Right to Left" id="jFq-tB-4Kx">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="makeBaseWritingDirectionRightToLeft:" target="-1" id="5fk-qB-AqJ"/>
@@ -567,22 +562,19 @@
                                                     <menuItem title="Selection" enabled="NO" id="cqv-fj-IhA">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                     </menuItem>
-                                                    <menuItem id="Nop-cj-93Q">
-                                                        <string key="title">	Default</string>
+                                                    <menuItem title="    Default" id="Nop-cj-93Q">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="makeTextWritingDirectionNatural:" target="-1" id="lPI-Se-ZHp"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem id="BgM-ve-c93">
-                                                        <string key="title">	Left to Right</string>
+                                                    <menuItem title="    Left to Right" id="BgM-ve-c93">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="makeTextWritingDirectionLeftToRight:" target="-1" id="caW-Bv-w94"/>
                                                         </connections>
                                                     </menuItem>
-                                                    <menuItem id="RB4-Sm-HuC">
-                                                        <string key="title">	Right to Left</string>
+                                                    <menuItem title="    Right to Left" id="RB4-Sm-HuC">
                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                         <connections>
                                                             <action selector="makeTextWritingDirectionRightToLeft:" target="-1" id="EXD-6r-ZUu"/>
@@ -676,53 +668,57 @@
         </menu>
         <window title="BioKode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="801" y="443" width="480" height="302"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <value key="minSize" type="size" width="480" height="302"/>
+            <rect key="contentRect" x="801" y="443" width="480" height="254"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <value key="minSize" type="size" width="480" height="254"/>
+            <value key="maxSize" type="size" width="480" height="254"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="302"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="254"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66y-gz-xch">
-                        <rect key="frame" x="185" y="240" width="111" height="17"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="66y-gz-xch">
+                        <rect key="frame" x="185" y="217" width="111" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter DNA String:" id="Nrm-P0-0Pr">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-hm-puO">
-                        <rect key="frame" x="204" y="151" width="72" height="17"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-hm-puO">
+                        <rect key="frame" x="204" y="128" width="72" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Convert to:" id="DZ2-tw-VRQ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jt2-Sl-gRl">
-                        <rect key="frame" x="134" y="180" width="213" height="5"/>
+                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jt2-Sl-gRl">
+                        <rect key="frame" x="134" y="157" width="213" height="5"/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7X-Eh-X0d">
-                        <rect key="frame" x="102" y="200" width="276" height="22"/>
+                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="N7X-Eh-X0d">
+                        <rect key="frame" x="65" y="177" width="349" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="349" id="OtS-fv-Yi8"/>
+                        </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="AGGTGCCAGCTGACG" drawsBackground="YES" id="x1S-bn-yfq">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-ga-sNz">
-                        <rect key="frame" x="102" y="60" width="276" height="22"/>
+                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-ga-sNz">
+                        <rect key="frame" x="65" y="37" width="349" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Result will appear here" drawsBackground="YES" id="722-Ga-4wJ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyW-HE-1uD">
-                        <rect key="frame" x="320" y="110" width="51" height="18"/>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="lyW-HE-1uD">
+                        <rect key="frame" x="322" y="87" width="51" height="18"/>
                         <buttonCell key="cell" type="radio" title="Both" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="kyL-xJ-DWU">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -731,8 +727,8 @@
                             <action selector="translationMode:" target="Voe-Tx-rLC" id="5Ao-xX-lC1"/>
                         </connections>
                     </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vny-DX-3gs">
-                        <rect key="frame" x="209" y="110" width="60" height="18"/>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="vny-DX-3gs">
+                        <rect key="frame" x="211" y="87" width="60" height="18"/>
                         <buttonCell key="cell" type="radio" title="mRNA" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="FPq-lU-j7T">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -741,8 +737,8 @@
                             <action selector="translationMode:" target="Voe-Tx-rLC" id="t12-Jh-EBA"/>
                         </connections>
                     </button>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="if7-ua-WJc">
-                        <rect key="frame" x="101" y="110" width="66" height="18"/>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="if7-ua-WJc">
+                        <rect key="frame" x="103" y="87" width="66" height="18"/>
                         <buttonCell key="cell" type="radio" title="English" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lBO-zK-p0I">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -752,8 +748,28 @@
                         </connections>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="if7-ua-WJc" firstAttribute="baseline" secondItem="vny-DX-3gs" secondAttribute="baseline" id="3eW-KG-KjF"/>
+                    <constraint firstItem="66y-gz-xch" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="5uj-7y-ssp"/>
+                    <constraint firstItem="XT1-hm-puO" firstAttribute="centerX" secondItem="vny-DX-3gs" secondAttribute="centerX" id="DC6-rf-Qh9"/>
+                    <constraint firstItem="XT1-hm-puO" firstAttribute="top" secondItem="Jt2-Sl-gRl" secondAttribute="bottom" constant="14" id="GhG-35-Nn6"/>
+                    <constraint firstItem="vny-DX-3gs" firstAttribute="top" secondItem="XT1-hm-puO" secondAttribute="bottom" constant="24" id="IfT-lE-7Cc"/>
+                    <constraint firstItem="lyW-HE-1uD" firstAttribute="leading" secondItem="vny-DX-3gs" secondAttribute="trailing" constant="54" id="LX6-s5-q5H"/>
+                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="centerX" secondItem="XT1-hm-puO" secondAttribute="centerX" id="Lwj-1O-5Lg"/>
+                    <constraint firstItem="dL4-ga-sNz" firstAttribute="top" secondItem="if7-ua-WJc" secondAttribute="bottom" constant="29" id="R6b-UQ-Gko"/>
+                    <constraint firstItem="Jt2-Sl-gRl" firstAttribute="top" secondItem="N7X-Eh-X0d" secondAttribute="bottom" constant="17" id="RhZ-Bd-pe4"/>
+                    <constraint firstItem="Jt2-Sl-gRl" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="134" id="UNd-gk-9gX"/>
+                    <constraint firstItem="vny-DX-3gs" firstAttribute="leading" secondItem="if7-ua-WJc" secondAttribute="trailing" constant="45" id="Vo3-7A-TZq"/>
+                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="top" secondItem="66y-gz-xch" secondAttribute="bottom" constant="18" id="auu-wU-YF7"/>
+                    <constraint firstItem="66y-gz-xch" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="dGA-wx-IOF"/>
+                    <constraint firstItem="66y-gz-xch" firstAttribute="centerX" secondItem="Jt2-Sl-gRl" secondAttribute="centerX" id="gPe-Le-ypG"/>
+                    <constraint firstItem="vny-DX-3gs" firstAttribute="baseline" secondItem="lyW-HE-1uD" secondAttribute="baseline" id="jVb-hn-b7m"/>
+                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="leading" secondItem="dL4-ga-sNz" secondAttribute="leading" id="l4q-pG-PwV"/>
+                    <constraint firstItem="Jt2-Sl-gRl" firstAttribute="centerX" secondItem="XT1-hm-puO" secondAttribute="centerX" id="s2J-zv-fKZ"/>
+                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="trailing" secondItem="dL4-ga-sNz" secondAttribute="trailing" id="y03-nW-Qgv"/>
+                </constraints>
             </view>
-            <point key="canvasLocation" x="341" y="495"/>
+            <point key="canvasLocation" x="502" y="521"/>
         </window>
     </objects>
 </document>
