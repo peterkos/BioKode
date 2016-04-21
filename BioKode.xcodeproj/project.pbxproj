@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E1B2A5E1CC9105400F768F2 /* BioKode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BioKode.entitlements; sourceTree = "<group>"; };
 		0ECF1CBA1CC6B199009226AE /* BioKode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioKode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ECF1CBF1CC6B199009226AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		0ECF1CBC1CC6B199009226AE /* BioKode */ = {
 			isa = PBXGroup;
 			children = (
+				0E1B2A5E1CC9105400F768F2 /* BioKode.entitlements */,
 				0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */,
 				0ECF1CBF1CC6B199009226AE /* Assets.xcassets */,
 				0ECF1CC11CC6B199009226AE /* MainMenu.xib */,
@@ -187,6 +189,11 @@
 				TargetAttributes = {
 					0ECF1CB91CC6B199009226AE = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					0ECF1CC81CC6B199009226AE = {
 						CreatedOnToolsVersion = 7.3;
@@ -382,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BioKode/BioKode.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BioKode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -395,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BioKode/BioKode.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BioKode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -473,6 +482,7 @@
 				0ECF1CDF1CC6B199009226AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ECF1CE01CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKodeTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +491,7 @@
 				0ECF1CE21CC6B199009226AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ECF1CE31CC6B199009226AE /* Build configuration list for PBXNativeTarget "BioKodeUITests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +500,7 @@
 				0ECF1CE51CC6B199009226AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
