@@ -39,7 +39,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // mRNA or English Translation Mode
     @IBOutlet weak var mRNAButton: NSButton!
     @IBOutlet weak var mEnglishButton: NSButton!
-    @IBOutlet weak var mBothButton: NSButton!
     @IBAction func translationMode(sender: NSButton) {
         
         // If input isn't of a valid length (i.e., not a multiple of 3), prompt the user
@@ -57,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             
             // Reset the selected button to be unselected
-            let buttons = [mRNAButton, mEnglishButton, mBothButton]
+            let buttons = [mRNAButton, mEnglishButton]
             for button in buttons {
                 if (button.state == 1) {
                     button.state = 0
@@ -82,7 +81,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             
             // Reset the selected button to be unselected
-            let buttons = [mRNAButton, mEnglishButton, mBothButton]
+            let buttons = [mRNAButton, mEnglishButton]
             for button in buttons {
                 if (button.state == 1) {
                     button.state = 0
@@ -98,9 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if (mRNAButton.state == 1) {
             bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
         } else if (mEnglishButton.state == 1) {
-            bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
-        } else {
-            let mRNAIntermediateOutput = (NSTextField)()
+            let mRNAIntermediateOutput = NSTextField()
             bioTrans.fromDNAtomRNA(input: inputStr, output: mRNAIntermediateOutput)
             bioTrans.frommRNAtoEnglish(input: mRNAIntermediateOutput, output: outputStr)
         }
