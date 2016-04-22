@@ -42,19 +42,56 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var mBothButton: NSButton!
     @IBAction func translationMode(sender: NSButton) {
         
+        // If input isn't a valid DNA sequence (i.e., not a multiple of 3), show a dialog informing the user
+        guard checkInput(inputStr.stringValue) else {
+            let alert = NSAlert()
+            alert.messageText = "Uh oh!"
+            alert.informativeText = "Invalid sequence. Should be a multiple of 3."
+            alert.addButtonWithTitle("OK")
+            alert.addButtonWithTitle("Clear Input")
+            let alertResponse = alert.runModal()
+            
+            // Reset the input field if the "Clear Input" button is selected
+            if (alertResponse == NSAlertSecondButtonReturn) {
+                inputStr.stringValue = ""
+            }
+            
+            // Reset the selected button to be unselected
+            let buttons = [mRNAButton, mEnglishButton, mBothButton]
+            for button in buttons {
+                if (button.state == 1) {
+                    button.state = 0
+                }
+            }
+            
+            return
+        }
+        
+        // The actual selection of which conversion method to use
         let bioTrans = BioTranslate()
         
         if (mRNAButton.state == 1) {
-            bioTrans.convertInput_mRNA(input: inputStr, output: outputStr)
+            bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
         } else if (mEnglishButton.state == 1) {
-            bioTrans.convertInput_mEnglish(input: inputStr, output: outputStr)
+            bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
         } else {
             let mRNAIntermediateOutput = (NSTextField)()
-            bioTrans.convertInput_mRNA(input: inputStr, output: mRNAIntermediateOutput)
-            bioTrans.convertInput_mEnglish(input: mRNAIntermediateOutput, output: outputStr)
+            bioTrans.fromDNAtomRNA(input: inputStr, output: mRNAIntermediateOutput)
+            bioTrans.frommRNAtoEnglish(input: mRNAIntermediateOutput, output: outputStr)
         }
     }
     
+    // Checks to see if a given input is a multiple of 3 (to be a valid "codon")
+    func checkInput(input: String) -> Bool {
+        if (input.characters.count % 3 != 0) {
+            let outOfBoundsAlert = NSAlert()
+            outOfBoundsAlert.addButtonWithTitle("Oops!")
+            return false
+        } else {
+            return true
+        }
+        
+    }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {}
         

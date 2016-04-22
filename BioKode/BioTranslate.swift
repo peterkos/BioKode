@@ -11,7 +11,7 @@ import Cocoa
 class BioTranslate {
     
     // Converts from DNA into mRNA
-    func convertInput_mRNA(input input: NSTextField, output: NSTextField) {
+    func fromDNAtomRNA(input input: NSTextField, output: NSTextField) {
         
         // Resets output
         output.stringValue = ""
@@ -34,9 +34,9 @@ class BioTranslate {
     }
     
     // Converts from mRNA into English
-    func convertInput_mEnglish(input input: NSTextField, output: NSTextField) {
+    func frommRNAtoEnglish(input input: NSTextField, output: NSTextField) {
         // Resets output
-        output.stringValue = "";
+        output.stringValue = ""
         
         // Gets input text
         let textIn = String(input.stringValue)
@@ -104,12 +104,15 @@ class BioTranslate {
             // GG
             case "GGU", "GGC", "GGA", "GGG": inEnglish.append("K")
             default   : inEnglish.append("$")
+                
             }
         }
         
         // Outputs array to box
         for str in inEnglish {
-            output.stringValue += str;
+            output.stringValue += str
         }
-    } // End of func
+    }
+
+    
 }
