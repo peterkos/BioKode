@@ -97,91 +97,56 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             switch str {
                 // U *****************************
                 // UU
-                case "UUU": inEnglish.append("A");
-                case "UUC": inEnglish.append("A");
-                case "UUA": inEnglish.append("Q");
-                case "UUG": inEnglish.append("Q");
+                case "UUU", "UAC":               inEnglish.append("A");
+                case "UUA", "UUG":               inEnglish.append("Q");
                 // UC
-                case "UCU": inEnglish.append("S");
-                case "UCC": inEnglish.append("S");
-                case "UCA": inEnglish.append("S");
-                case "UCG": inEnglish.append("S");
+                case "UCU", "UCC", "UCA", "UCG": inEnglish.append("S");
                 // UA
-                case "UAU": inEnglish.append("C");
-                case "UAC": inEnglish.append("C");
-                case "UAA": inEnglish.append("G");
-                case "UAG": inEnglish.append("G");
+                case "UAU", "UAC":               inEnglish.append("C");
+                case "UAA", "UAG":               inEnglish.append("G");
+
                 // UG
-                case "UGU": inEnglish.append("H");
-                case "UGC": inEnglish.append("H");
-                case "UGA": inEnglish.append("G");
-                case "UGG": inEnglish.append("W");
+                case "UGU", "UCG":               inEnglish.append("H");
+                case "UGA":                      inEnglish.append("G");
+                case "UGG":                      inEnglish.append("W");
                     
                 // C *****************************
                 // CU
-                case "CUU": inEnglish.append("N");
-                case "CUC": inEnglish.append("N");
-                case "CUA": inEnglish.append("N");
-                case "CUG": inEnglish.append("N");
+                case "CUU", "CUC", "CUA", "CUG": inEnglish.append("N");
                 // CC
-                case "CCU": inEnglish.append("R");
-                case "CCC": inEnglish.append("R");
-                case "CCA": inEnglish.append("R");
-                case "CCG": inEnglish.append("R");
+                case "CCU", "CCC", "CCA", "CCG": inEnglish.append("R");
                 // CA
-                case "CAU": inEnglish.append("L");
-                case "CAC": inEnglish.append("L");
-                case "CAA": inEnglish.append("I");
-                case "CAG": inEnglish.append("I");
+                case "CAU", "CAC":               inEnglish.append("L");
+                case "CAA", "CAG":               inEnglish.append("I");
                 // CG
-                case "CGU": inEnglish.append("D");
-                case "CGC": inEnglish.append("D");
-                case "CGA": inEnglish.append("D");
-                case "CGG": inEnglish.append("D");
+                case "CGU", "CGC", "CGA", "CGG": inEnglish.append("D");
                     
                 // A *****************************
                 // AU
-                case "AUU": inEnglish.append("M");
-                case "AUC": inEnglish.append("M");
-                case "AUA": inEnglish.append("M");
-                case "AUG": inEnglish.append("P");
+                case "AUU", "AUC", "AUA":        inEnglish.append("M");
+                case "AUG":                      inEnglish.append("P");
                 // AC
-                case "ACU": inEnglish.append("V");
-                case "ACC": inEnglish.append("V");
-                case "ACA": inEnglish.append("T");
-                case "ACG": inEnglish.append("T");
+                case "ACU", "ACC":               inEnglish.append("V");
+                case "ACA", "ACG":               inEnglish.append("T");
                 // AA
-                case "AAU": inEnglish.append("E");
-                case "AAC": inEnglish.append("E");
-                case "AAA": inEnglish.append("O");
-                case "AAG": inEnglish.append("O");
+                case "AAU", "AAC":               inEnglish.append("E");
+                case "AAA", "AAG":               inEnglish.append("O");
                 // AG
-                case "AGU": inEnglish.append("S");
-                case "AGC": inEnglish.append("S");
-                case "AGA": inEnglish.append("D");
-                case "AGG": inEnglish.append("D");
+                case "AGU", "AGC":               inEnglish.append("S");
+                case "AGA", "AGG":               inEnglish.append("D");
                     
                 // G *****************************
                 // GU
-                case "GUU": inEnglish.append("Z");
-                case "GUC": inEnglish.append("Z");
-                case "GUA": inEnglish.append("Y");
-                case "GUG": inEnglish.append("Y");
+                case "GUU", "GUC":               inEnglish.append("Z");
+                case "GUA", "GUG":               inEnglish.append("Y");
                 // GC
-                case "GCU": inEnglish.append("U");
-                case "GCC": inEnglish.append("U");
-                case "GCA": inEnglish.append("B");
-                case "GCG": inEnglish.append("B");
+                case "GCU", "GCC":               inEnglish.append("U");
+                case "GCA", "GCG":               inEnglish.append("B");
                 // GA
-                case "GAU": inEnglish.append("F");
-                case "GAC": inEnglish.append("F");
-                case "GAA": inEnglish.append("J");
-                case "GAG": inEnglish.append("J");
+                case "GAU", "GAC":               inEnglish.append("F");
+                case "GAA", "GAG":               inEnglish.append("J");
                 // GG
-                case "GGU": inEnglish.append("K");
-                case "GGC": inEnglish.append("K");
-                case "GGA": inEnglish.append("K");
-                case "GGG": inEnglish.append("K");
+                case "GGU", "GGC", "GGA", "GGG": inEnglish.append("K");
                 default   : inEnglish.append("$");
             }
         }
