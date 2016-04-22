@@ -9,7 +9,7 @@ This is a DNA encryption solver. The goal is to take a DNA sequence, transcribe 
 
 ## Install
 
-See the [releases]() page to download.
+See the [releases](https://github.com/peterkos/BioKode/releases) page to download.
 
 ## Contribute
 
@@ -26,9 +26,6 @@ Here's an example:
 func sayHelloAndDoMath() {
     // Says hello
     print("Hello, World!");
-    
-    // Does math
-    print(10 + 12);
 }
 
 ````
@@ -47,4 +44,4 @@ Enhancements
 - [X] Simplify the wall of switch-case 
 - [ ] Autospace words (So the result isn't "POSTITNOTE")
 - [ ] Fix AutoLayout so text boxes scale with window width and stay in center
-
+- [ ] An app icon
