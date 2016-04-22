@@ -37,9 +37,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var outputStr: NSTextField!
     
     // mRNA or English Translation Mode
-    @IBOutlet weak var mRNAButton: NSButton!
-    @IBOutlet weak var mEnglishButton: NSButton!
-    @IBAction func translationMode(sender: NSButton) {
+//    @IBOutlet weak var mRNAButton: NSButton!
+//    @IBOutlet weak var mEnglishButton: NSButton!
+    @IBOutlet weak var inputSegments: NSSegmentedControl!
+    
+    @IBAction func inputPlaceholderTextGenerator(sender: AnyObject) {
+        
+        // Insert placeholder text
+        if (inputSegments.selectedSegment == 0) {
+            inputStr.placeholderString = "ACTGCGGTCGAC"
+        } else if (inputSegments.selectedSegment == 1) {
+            inputStr.placeholderString = "ACUGCGGUCGAC"
+        } else {
+            inputStr.placeholderString = "Cookie"
+        }
+        
+    }
+    
+    @IBAction func translationMode(sender: AnyObject) {
         
         // If input isn't of a valid length (i.e., not a multiple of 3), prompt the user
         guard checkInputSize(inputStr.stringValue) else {
@@ -55,13 +70,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 inputStr.stringValue = ""
             }
             
-            // Reset the selected button to be unselected
-            let buttons = [mRNAButton, mEnglishButton]
-            for button in buttons {
-                if (button.state == 1) {
-                    button.state = 0
-                }
+            for i in 0..<inputSegments.segmentCount {
+                inputSegments.setSelected(false, forSegment: i)
             }
+            
             
             return
         }
@@ -80,13 +92,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 inputStr.stringValue = ""
             }
             
-            // Reset the selected button to be unselected
-            let buttons = [mRNAButton, mEnglishButton]
-            for button in buttons {
-                if (button.state == 1) {
-                    button.state = 0
-                }
+            for i in 0..<inputSegments.segmentCount {
+                inputSegments.setSelected(false, forSegment: i)
             }
+            
             return
         }
         
@@ -94,12 +103,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // The actual selection of which conversion method to use
         let bioTrans = BioTranslate()
         
-        if (mRNAButton.state == 1) {
+        if (inputSegments.isSelectedForSegment(0)) {
             bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
-        } else if (mEnglishButton.state == 1) {
+        } else if (inputSegments.isSelectedForSegment(1)) {
             let mRNAIntermediateOutput = NSTextField()
             bioTrans.fromDNAtomRNA(input: inputStr, output: mRNAIntermediateOutput)
             bioTrans.frommRNAtoEnglish(input: mRNAIntermediateOutput, output: outputStr)
+        } else {
+            
+            
         }
     }
     

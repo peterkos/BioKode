@@ -14,10 +14,9 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BioKode" customModuleProvider="target">
             <connections>
-                <outlet property="inputStr" destination="N7X-Eh-X0d" id="1mz-1k-810"/>
-                <outlet property="mEnglishButton" destination="if7-ua-WJc" id="j3Q-QC-hv4"/>
-                <outlet property="mRNAButton" destination="vny-DX-3gs" id="fWK-d9-GjS"/>
-                <outlet property="outputStr" destination="dL4-ga-sNz" id="fYP-Nd-xyb"/>
+                <outlet property="inputSegments" destination="uOW-OA-hJk" id="2xL-wM-si2"/>
+                <outlet property="inputStr" destination="FyT-RA-JRM" id="j5u-nm-Meh"/>
+                <outlet property="outputStr" destination="7zu-5s-xbO" id="f1E-na-qWF"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -667,96 +666,77 @@
         </menu>
         <window title="BioKode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="801" y="443" width="480" height="254"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="contentRect" x="801" y="443" width="480" height="275"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1440"/>
             <value key="minSize" type="size" width="480" height="254"/>
             <value key="maxSize" type="size" width="480" height="254"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="254"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="275"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="66y-gz-xch">
-                        <rect key="frame" x="185" y="217" width="111" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter DNA String:" id="Nrm-P0-0Pr">
+                    <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOW-OA-hJk">
+                        <rect key="frame" x="151" y="196" width="178" height="24"/>
+                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="hms-8l-N4O">
                             <font key="font" metaFont="system"/>
+                            <segments>
+                                <segment label="DNA"/>
+                                <segment label="mRNA" tag="1"/>
+                                <segment label="English"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="inputPlaceholderTextGenerator:" target="Voe-Tx-rLC" id="nWW-v4-v0R"/>
+                        </connections>
+                    </segmentedControl>
+                    <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EK6-Vh-pmX">
+                        <rect key="frame" x="151" y="77" width="178" height="24"/>
+                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="ZoG-dw-7gQ">
+                            <font key="font" metaFont="system"/>
+                            <segments>
+                                <segment label="DNA"/>
+                                <segment label="mRNA" tag="1"/>
+                                <segment label="English"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="translationMode:" target="Voe-Tx-rLC" id="gtY-VI-pIi"/>
+                        </connections>
+                    </segmentedControl>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pL3-Bx-bT0">
+                        <rect key="frame" x="215" y="227" width="50" height="24"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="From" id="ASh-DV-tPM">
+                            <font key="font" size="17" name=".AppleSystemUIFont"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-hm-puO">
-                        <rect key="frame" x="204" y="128" width="72" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Convert to:" id="DZ2-tw-VRQ">
-                            <font key="font" metaFont="system"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPP-lO-l9G">
+                        <rect key="frame" x="227" y="108" width="26" height="24"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="To" id="yZW-Ni-Cf0">
+                            <font key="font" size="17" name=".AppleSystemUIFont"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Jt2-Sl-gRl">
-                        <rect key="frame" x="134" y="157" width="213" height="5"/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="N7X-Eh-X0d">
-                        <rect key="frame" x="65" y="177" width="349" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="349" id="Sww-92-nGd"/>
-                        </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="AGGTGCCAGCTGACG" drawsBackground="YES" id="x1S-bn-yfq">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FyT-RA-JRM">
+                        <rect key="frame" x="123" y="168" width="234" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="SZ1-eb-i86">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="1000" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-ga-sNz">
-                        <rect key="frame" x="65" y="37" width="349" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Result will appear here" drawsBackground="YES" id="722-Ga-4wJ">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zu-5s-xbO">
+                        <rect key="frame" x="123" y="49" width="234" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="n2d-8n-H4e">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button translatesAutoresizingMaskIntoConstraints="NO" id="vny-DX-3gs">
-                        <rect key="frame" x="265" y="92" width="60" height="18"/>
-                        <buttonCell key="cell" type="radio" title="mRNA" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="FPq-lU-j7T">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="translationMode:" target="Voe-Tx-rLC" id="t12-Jh-EBA"/>
-                        </connections>
-                    </button>
-                    <button translatesAutoresizingMaskIntoConstraints="NO" id="if7-ua-WJc">
-                        <rect key="frame" x="157" y="92" width="66" height="18"/>
-                        <buttonCell key="cell" type="radio" title="English" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lBO-zK-p0I">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="translationMode:" target="Voe-Tx-rLC" id="g8h-em-gEM"/>
-                        </connections>
-                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="if7-ua-WJc" firstAttribute="baseline" secondItem="vny-DX-3gs" secondAttribute="baseline" id="2lz-VL-qSz"/>
-                    <constraint firstItem="66y-gz-xch" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="94f-EN-rMU"/>
-                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="trailing" secondItem="dL4-ga-sNz" secondAttribute="trailing" id="9Tl-Ou-Yfd"/>
-                    <constraint firstItem="if7-ua-WJc" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="158" id="BWI-pJ-P12"/>
-                    <constraint firstItem="66y-gz-xch" firstAttribute="centerX" secondItem="Jt2-Sl-gRl" secondAttribute="centerX" id="DaL-IX-Gt1"/>
-                    <constraint firstItem="XT1-hm-puO" firstAttribute="top" secondItem="Jt2-Sl-gRl" secondAttribute="bottom" constant="14" id="IaI-mS-LTu"/>
-                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="top" secondItem="66y-gz-xch" secondAttribute="bottom" constant="18" id="J15-WQ-Bwq"/>
-                    <constraint firstItem="Jt2-Sl-gRl" firstAttribute="top" secondItem="N7X-Eh-X0d" secondAttribute="bottom" constant="17" id="PAO-Tu-Kw0"/>
-                    <constraint firstItem="66y-gz-xch" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="QUp-0X-ybD"/>
-                    <constraint firstItem="if7-ua-WJc" firstAttribute="top" secondItem="XT1-hm-puO" secondAttribute="bottom" constant="19" id="Wkg-4J-mld"/>
-                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="centerX" secondItem="XT1-hm-puO" secondAttribute="centerX" id="X6f-Dh-iJ8"/>
-                    <constraint firstItem="Jt2-Sl-gRl" firstAttribute="centerX" secondItem="XT1-hm-puO" secondAttribute="centerX" id="evE-ab-Dsr"/>
-                    <constraint firstItem="vny-DX-3gs" firstAttribute="leading" secondItem="if7-ua-WJc" secondAttribute="trailing" constant="45" id="i7l-M6-i07"/>
-                    <constraint firstItem="Jt2-Sl-gRl" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="134" id="iSi-ng-IdK"/>
-                    <constraint firstItem="N7X-Eh-X0d" firstAttribute="leading" secondItem="dL4-ga-sNz" secondAttribute="leading" id="pnI-kF-phV"/>
-                    <constraint firstItem="dL4-ga-sNz" firstAttribute="top" secondItem="if7-ua-WJc" secondAttribute="bottom" constant="34" id="xX5-jK-jGn"/>
-                </constraints>
             </view>
-            <point key="canvasLocation" x="69" y="515"/>
+            <point key="canvasLocation" x="231" y="464.5"/>
         </window>
     </objects>
 </document>
