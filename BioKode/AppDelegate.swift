@@ -42,8 +42,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var mBothButton: NSButton!
     @IBAction func translationMode(sender: NSButton) {
         
-        // If input isn't a valid DNA sequence (i.e., not a multiple of 3), show a dialog informing the user
-        guard checkInput(inputStr.stringValue) else {
+        // If input isn't of a valid length (i.e., not a multiple of 3), prompt the user
+        guard checkInputSize(inputStr.stringValue) else {
             let alert = NSAlert()
             alert.messageText = "Uh oh!"
             alert.informativeText = "Invalid sequence. Should be a multiple of 3."
@@ -67,6 +67,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
+        // If input isn't of a valid quality (i.e., contains non-DNA nucleotides), prompt the user
+        guard checkIfInputIsDNA(inputStr.stringValue) else {
+            let alert = NSAlert()
+            alert.messageText = "Uh oh!"
+            alert.informativeText = "Invalid sequence. Valid nucleotides are A, C, T, and G."
+            alert.addButtonWithTitle("OK")
+            alert.addButtonWithTitle("Clear Input")
+            let alertResponse = alert.runModal()
+        
+            // Reset the input field if the "Clear Input" button is selected
+            if (alertResponse == NSAlertSecondButtonReturn) {
+                inputStr.stringValue = ""
+            }
+            
+            // Reset the selected button to be unselected
+            let buttons = [mRNAButton, mEnglishButton, mBothButton]
+            for button in buttons {
+                if (button.state == 1) {
+                    button.state = 0
+                }
+            }
+            return
+        }
+        
+        
         // The actual selection of which conversion method to use
         let bioTrans = BioTranslate()
         
@@ -82,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     // Checks to see if a given input is a multiple of 3 (to be a valid "codon")
-    func checkInput(input: String) -> Bool {
+    func checkInputSize(input: String) -> Bool {
         if (input.characters.count % 3 != 0) {
             let outOfBoundsAlert = NSAlert()
             outOfBoundsAlert.addButtonWithTitle("Oops!")
@@ -90,6 +115,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             return true
         }
+        
+    }
+    
+    // Checks to see if given input is a DNA string
+    func checkIfInputIsDNA(input: String) -> Bool {
+        for char in input.characters {
+            if (char != "A" && char != "T" && char != "C" && char != "G") {
+                return false
+            }
+        }
+        
+        return true
         
     }
     

@@ -62,7 +62,7 @@ class BioTranslate {
             case "UAA", "UAG":               inEnglish.append("G")
                 
             // UG
-            case "UGU", "UCG":               inEnglish.append("H")
+            case "UGU", "UGC":               inEnglish.append("H")
             case "UGA":                      inEnglish.append("G")
             case "UGG":                      inEnglish.append("W")
                 
