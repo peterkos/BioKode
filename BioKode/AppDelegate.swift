@@ -73,7 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             
             switch outputSegments.selectedSegment {
-                case 0: outputStr.stringValue = inputStr.stringValue;
+                case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;
                 case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
                 case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
                 default: return
@@ -89,7 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             
             switch outputSegments.selectedSegment {
                 case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
-                case 1: outputStr.stringValue = inputStr.stringValue
+                case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
                 case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
                 default: return
             }
@@ -99,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             switch outputSegments.selectedSegment {
                 case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
                 case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
-                case 2: outputStr.stringValue = inputStr.stringValue
+                case 2: outputStr.stringValue = inputStr.stringValue.uppercaseString
                 default: return
             }
         }

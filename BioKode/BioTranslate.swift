@@ -17,7 +17,8 @@ class BioTranslate {
         output.stringValue = ""
         
         // Gets input text
-        let textIn = String(input.stringValue)
+        let textIn = input.stringValue.uppercaseString
+        print(textIn)
         
         // Converts to mRNA
         for i in textIn.characters {
@@ -51,7 +52,7 @@ class BioTranslate {
         output.stringValue = ""
         
         // Gets input text
-        let textIn = String(input.stringValue)
+        let textIn = input.stringValue.uppercaseString
         
         // Converts to mRNA
         for i in textIn.characters {
@@ -72,7 +73,7 @@ class BioTranslate {
         output.stringValue = ""
         
         // Gets input text
-        let textIn = String(input.stringValue)
+        let textIn = input.stringValue.uppercaseString
         var preEnglish = [String]()
         
         // Converts to codons
@@ -150,9 +151,10 @@ class BioTranslate {
     // English ****************
     func fromEnglishtomRNA(input input: NSTextField, output: NSTextField) {
         
+        let inputString = input.stringValue.uppercaseString
         var outputString = String()
         
-        for str in input.stringValue.characters {
+        for str in inputString.characters {
             switch str {
                 // U *****************************
             // UU

@@ -19,7 +19,7 @@ class ErrorCheck {
     // DNA valid character set
     func isValidDNA(input: String) -> Bool {
         func checkIfInputIsDNA(input: String) -> Bool {
-            for char in input.characters {
+            for char in input.uppercaseString.characters {
                 if (char != "A" && char != "T" && char != "C" && char != "G") {
                     return false
                 }
@@ -28,14 +28,13 @@ class ErrorCheck {
         }
         
         return (checkIfInputIsDNA(input) && isValidLength(input)) ? false : true
-//        return false
     }
     
     
     // mRNA valid character set
     func isValidmRNA(input: String) -> Bool {
         func checkIfInputIsmRNA(input: String) -> Bool {
-            for char in input.characters {
+            for char in input.uppercaseString.characters {
                 if (char != "A" && char != "U" && char != "C" && char != "G") {
                     return false
                 }
@@ -43,7 +42,7 @@ class ErrorCheck {
             return true
         }
         
-        return checkIfInputIsmRNA(input) && isValidLength(input) ? false : true
+        return (checkIfInputIsmRNA(input) && isValidLength(input)) ? false : true
     }
     
     // English is valid by default
