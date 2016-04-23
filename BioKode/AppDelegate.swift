@@ -36,12 +36,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var inputStr: NSTextField!
     @IBOutlet weak var outputStr: NSTextField!
     
-    // mRNA or English Translation Mode
-//    @IBOutlet weak var mRNAButton: NSButton!
-//    @IBOutlet weak var mEnglishButton: NSButton!
+    // Input and output conversion selection
     @IBOutlet weak var inputSegments: NSSegmentedControl!
+    @IBOutlet weak var outputSegments: NSSegmentedControl!
     
-    @IBAction func inputPlaceholderTextGenerator(sender: AnyObject) {
+    @IBAction func inputPlaceholderTextGenerator(sender: NSSegmentedControl) {
         
         // Insert placeholder text
         if (inputSegments.selectedSegment == 0) {
@@ -54,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
-    @IBAction func translationMode(sender: AnyObject) {
+    @IBAction func translationMode(sender: NSSegmentedControl) {
         
         // If input isn't of a valid length (i.e., not a multiple of 3), prompt the user
         guard checkInputSize(inputStr.stringValue) else {
@@ -73,7 +72,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             for i in 0..<inputSegments.segmentCount {
                 inputSegments.setSelected(false, forSegment: i)
             }
-            
             
             return
         }
@@ -100,19 +98,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         
-        // The actual selection of which conversion method to use
+        // Calls appropriate conversion method.
+        // Sets output to input if equal conversion languages are selected.
+        // 0 = DNA, 1 = mRNA, 2 = English
         let bioTrans = BioTranslate()
         
-        if (inputSegments.isSelectedForSegment(0)) {
-            bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
-        } else if (inputSegments.isSelectedForSegment(1)) {
-            let mRNAIntermediateOutput = NSTextField()
-            bioTrans.fromDNAtomRNA(input: inputStr, output: mRNAIntermediateOutput)
-            bioTrans.frommRNAtoEnglish(input: mRNAIntermediateOutput, output: outputStr)
-        } else {
+        if (inputSegments.selectedSegment == 0) {
+            switch outputSegments.selectedSegment {
+                case 0: outputStr.stringValue = inputStr.stringValue;
+                case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
+                case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
+                default: print("UH OH 0")
+            }
             
-            
+        } else if (inputSegments.selectedSegment == 1) {
+            switch outputSegments.selectedSegment {
+                case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
+                case 1: outputStr.stringValue = inputStr.stringValue
+                case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
+                default: print("UH OH 1")
+            }
+        } else if (inputSegments.selectedSegment == 2) {
+            switch outputSegments.selectedSegment {
+                case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
+                case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
+                case 2: outputStr.stringValue = inputStr.stringValue
+                default: print("UH OH 2")
+            }
         }
+        
+        print("Selected \(inputSegments.selectedSegment) as input")
+        print("Selected \(outputSegments.selectedSegment) as output")
+        print("=======================")
+        
     }
     
     // Checks to see if a given input is a multiple of 3 (to be a valid "codon")
@@ -142,11 +160,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(aNotification: NSNotification) {}
         
     
-    
-    
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
-
 
 }

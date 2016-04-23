@@ -10,7 +10,7 @@ import Cocoa
 
 class BioTranslate {
     
-    // Converts from DNA into mRNA
+    // mRNA ****************
     func fromDNAtomRNA(input input: NSTextField, output: NSTextField) {
         
         // Resets output
@@ -33,7 +33,40 @@ class BioTranslate {
         }
     }
     
-    // Converts from mRNA into English
+    func fromDNAtoEnglish(input input: NSTextField, output: NSTextField) {
+        let inputPlaceholder = NSTextField()
+        let outputPlaceholder = NSTextField()
+        
+        fromDNAtomRNA(input: input, output: inputPlaceholder)
+        frommRNAtoEnglish(input: inputPlaceholder, output: outputPlaceholder)
+        
+        output.stringValue = outputPlaceholder.stringValue
+    }
+    
+    
+    // mRNA ****************
+    func frommRNAtoDNA(input input: NSTextField, output: NSTextField) {
+        
+        // Resets output
+        output.stringValue = ""
+        
+        // Gets input text
+        let textIn = String(input.stringValue)
+        
+        // Converts to mRNA
+        for i in textIn.characters {
+            if (i == "A") {
+                output.stringValue += "T"
+            } else if (i == "G") {
+                output.stringValue += "C"
+            } else if (i == "C") {
+                output.stringValue += "G"
+            } else if (i == "U") {
+                output.stringValue += "A"
+            }
+        }
+    }
+    
     func frommRNAtoEnglish(input input: NSTextField, output: NSTextField) {
         // Resets output
         output.stringValue = ""
@@ -103,7 +136,7 @@ class BioTranslate {
             case "GAA", "GAG":               inEnglish.append("J")
             // GG
             case "GGU", "GGC", "GGA", "GGG": inEnglish.append("K")
-            default   : inEnglish.append("$")
+            default:                         inEnglish.append("$")
                 
             }
         }
@@ -113,6 +146,79 @@ class BioTranslate {
             output.stringValue += str
         }
     }
-
+    
+    // English ****************
+    func fromEnglishtomRNA(input input: NSTextField, output: NSTextField) {
+        
+        var output = String()
+        
+        for str in input.stringValue.characters {
+            switch str {
+                // U *****************************
+            // UU
+            case "A": output += "UUU" // "UAC"
+            case "Q": output += "UUA" // "UUG"
+            // UC
+            case "S": output += "UCU" // "UCC", "UCA", "UCG"
+            // UA
+            case "C": output += "UAU" // "UAC"
+            case "G": output += "UAA" // "UAG"
+            // UG
+            case "H": output += "UGU" // "UGC"
+            case "G": output += "UGA"
+            case "W": output += "UGG"
+                
+                // C *****************************
+            // CU
+            case "N": output += "CUU" // "CUC", "CUA", "CUG"
+            // CC
+            case "R": output += "CCU" // "CCC", "CCA", "CCG"
+            // CA
+            case "L": output += "CAU" // "CAC"
+            case "I": output += "CAA" // "CAG"
+            // CG
+            case "D": output += "CGU" // CGC", "CGA", "CGG"
+                
+                // A *****************************
+            // AU
+            case "M": output += "AUU" // "AUC", "AUA"
+            case "P": output += "AUG"
+            // AC
+            case "V": output += "ACU" // "ACC"
+            case "T": output += "ACA" // "ACG"
+            // AA
+            case "E": output += "AAU" // "AAC"
+            case "O": output += "AAA" // "AAG"
+            // AG
+            case "S": output += "AGU" // "AGC"
+            case "D": output += "AGA" // "AGG"
+                
+                // G *****************************
+            // GU
+            case "Z": output += "GUU" // "GUC"
+            case "Y": output += "GUA" // "GUG"
+            // GC
+            case "U": output += "GCU" // "GCC"
+            case "B": output += "GCA" // "GCG"
+            // GA
+            case "F": output += "GAU" // "GAC"
+            case "J": output += "GAA" // "GAG":
+            // GG
+            case "K": output += "GGU" // "GGC", "GGA", "GGG"
+            default: output += "$"
+            }
+        }
+        
+    }
+    
+    func fromEnglishtoDNA(input input: NSTextField, output: NSTextField) {
+        let inputPlaceholder = NSTextField()
+        let outputPlaceholder = NSTextField()
+        
+        fromEnglishtomRNA(input: input, output: inputPlaceholder)
+        frommRNAtoDNA(input: inputPlaceholder, output: outputPlaceholder)
+        
+        output.stringValue = outputPlaceholder.stringValue
+    }
     
 }

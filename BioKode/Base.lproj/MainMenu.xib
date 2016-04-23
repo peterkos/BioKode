@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="inputSegments" destination="uOW-OA-hJk" id="2xL-wM-si2"/>
                 <outlet property="inputStr" destination="FyT-RA-JRM" id="j5u-nm-Meh"/>
+                <outlet property="outputSegments" destination="EK6-Vh-pmX" id="qlD-7c-zzm"/>
                 <outlet property="outputStr" destination="7zu-5s-xbO" id="f1E-na-qWF"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
