@@ -55,8 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func translationMode(sender: NSSegmentedControl) {
         
-        print("Selected segment: \(inputSegments.selectedSegment)")
-        
         // Error checking for input
         let errorCheck = ErrorCheck()
         let errorResponse = ErrorResponse(inputTextField: inputStr, inputSegments: inputSegments)
@@ -78,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 case 0: outputStr.stringValue = inputStr.stringValue;
                 case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
                 case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
-                default: print("UH OH 0")
+                default: return
             }
             
         // mRNA
@@ -93,7 +91,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
                 case 1: outputStr.stringValue = inputStr.stringValue
                 case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
-                default: print("UH OH 1")
+                default: return
             }
             
         // English, valid by default
@@ -102,13 +100,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
                 case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
                 case 2: outputStr.stringValue = inputStr.stringValue
-                default: print("UH OH 2")
+                default: return
             }
         }
-        
-        print("Selected \(inputSegments.selectedSegment) as input")
-        print("Selected \(outputSegments.selectedSegment) as output")
-        print("=======================")
         
     }
 

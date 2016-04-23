@@ -153,7 +153,6 @@ class BioTranslate {
         var outputString = String()
         
         for str in input.stringValue.characters {
-            print(str)
             switch str {
                 // U *****************************
             // UU
