@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Error checking for input
         let errorCheck = ErrorCheck()
-        let errorResponse = ErrorResponse()
+        let errorResponse = ErrorResponse(inputTextField: inputStr, inputSegments: inputSegments)
         
         // Calls appropriate conversion method.
         // Sets output to input if equal conversion languages are selected.
@@ -111,11 +111,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print("=======================")
         
     }
-    
-
-
-    
-    // Checks to see if given input is a DNA string
 
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {}

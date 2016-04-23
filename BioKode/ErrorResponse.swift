@@ -10,6 +10,15 @@ import Cocoa
 
 class ErrorResponse {
     
+    var inputTextField : NSTextField
+    var inputSegments  : NSSegmentedControl
+    
+    init(inputTextField: NSTextField, inputSegments: NSSegmentedControl) {
+        self.inputTextField = inputTextField
+        self.inputSegments = inputSegments
+    }
+    
+    
     func invalidDNASequence() {
         let alert = NSAlert()
         alert.messageText = "Uh oh!"
@@ -19,13 +28,13 @@ class ErrorResponse {
         let alertResponse = alert.runModal()
         
         // Reset the input field if the "Clear Input" button is selected
-//        if (alertResponse == NSAlertSecondButtonReturn) {
-//            inputStr.stringValue = ""
-//        }
+        if (alertResponse == NSAlertSecondButtonReturn) {
+            inputTextField.stringValue = ""
+        }
         
-//        for i in 0..<inputSegments.segmentCount {
-//            inputSegments.setSelected(false, forSegment: i)
-//        }
+        for i in 0..<inputSegments.segmentCount {
+            inputSegments.setSelected(false, forSegment: i)
+        }
         
     }
     
@@ -38,13 +47,13 @@ class ErrorResponse {
         let alertResponse = alert.runModal()
         
         // Reset the input field if the "Clear Input" button is selected
-        //        if (alertResponse == NSAlertSecondButtonReturn) {
-        //            inputStr.stringValue = ""
-        //        }
+        if (alertResponse == NSAlertSecondButtonReturn) {
+            inputTextField.stringValue = ""
+        }
         
-        //        for i in 0..<inputSegments.segmentCount {
-        //            inputSegments.setSelected(false, forSegment: i)
-        //        }
+        for i in 0..<inputSegments.segmentCount {
+            inputSegments.setSelected(false, forSegment: i)
+        }
         
     }
     
