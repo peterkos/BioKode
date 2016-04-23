@@ -150,64 +150,68 @@ class BioTranslate {
     // English ****************
     func fromEnglishtomRNA(input input: NSTextField, output: NSTextField) {
         
-        var output = String()
+        var outputString = String()
         
         for str in input.stringValue.characters {
+            print(str)
             switch str {
                 // U *****************************
             // UU
-            case "A": output += "UUU" // "UAC"
-            case "Q": output += "UUA" // "UUG"
+            case "A": outputString += "UUU" // "UAC"
+            case "Q": outputString += "UUA" // "UUG"
             // UC
-            case "S": output += "UCU" // "UCC", "UCA", "UCG"
+            case "S": outputString += "UCU" // "UCC", "UCA", "UCG"
             // UA
-            case "C": output += "UAU" // "UAC"
-            case "G": output += "UAA" // "UAG"
+            case "C": outputString += "UAU" // "UAC"
+            case "G": outputString += "UAA" // "UAG"
             // UG
-            case "H": output += "UGU" // "UGC"
-            case "G": output += "UGA"
-            case "W": output += "UGG"
+            case "H": outputString += "UGU" // "UGC"
+            case "G": outputString += "UGA"
+            case "W": outputString += "UGG"
                 
                 // C *****************************
             // CU
-            case "N": output += "CUU" // "CUC", "CUA", "CUG"
+            case "N": outputString += "CUU" // "CUC", "CUA", "CUG"
             // CC
-            case "R": output += "CCU" // "CCC", "CCA", "CCG"
+            case "R": outputString += "CCU" // "CCC", "CCA", "CCG"
             // CA
-            case "L": output += "CAU" // "CAC"
-            case "I": output += "CAA" // "CAG"
+            case "L": outputString += "CAU" // "CAC"
+            case "I": outputString += "CAA" // "CAG"
             // CG
-            case "D": output += "CGU" // CGC", "CGA", "CGG"
+            case "D": outputString += "CGU" // CGC", "CGA", "CGG"
                 
                 // A *****************************
             // AU
-            case "M": output += "AUU" // "AUC", "AUA"
-            case "P": output += "AUG"
+            case "M": outputString += "AUU" // "AUC", "AUA"
+            case "P": outputString += "AUG"
             // AC
-            case "V": output += "ACU" // "ACC"
-            case "T": output += "ACA" // "ACG"
+            case "V": outputString += "ACU" // "ACC"
+            case "T": outputString += "ACA" // "ACG"
             // AA
-            case "E": output += "AAU" // "AAC"
-            case "O": output += "AAA" // "AAG"
+            case "E": outputString += "AAU" // "AAC"
+            case "O": outputString += "AAA" // "AAG"
             // AG
-            case "S": output += "AGU" // "AGC"
-            case "D": output += "AGA" // "AGG"
+            case "S": outputString += "AGU" // "AGC"
+            case "D": outputString += "AGA" // "AGG"
                 
                 // G *****************************
             // GU
-            case "Z": output += "GUU" // "GUC"
-            case "Y": output += "GUA" // "GUG"
+            case "Z": outputString += "GUU" // "GUC"
+            case "Y": outputString += "GUA" // "GUG"
             // GC
-            case "U": output += "GCU" // "GCC"
-            case "B": output += "GCA" // "GCG"
+            case "U": outputString += "GCU" // "GCC"
+            case "B": outputString += "GCA" // "GCG"
             // GA
-            case "F": output += "GAU" // "GAC"
-            case "J": output += "GAA" // "GAG":
+            case "F": outputString += "GAU" // "GAC"
+            case "J": outputString += "GAA" // "GAG":
             // GG
-            case "K": output += "GGU" // "GGC", "GGA", "GGG"
-            default: output += "$"
+            case "K": outputString += "GGU" // "GGC", "GGA", "GGG"
+            default : outputString += "$"
             }
         }
+        
+        // Writes output to textfield
+        output.stringValue = outputString
         
     }
     
