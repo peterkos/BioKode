@@ -13,6 +13,8 @@
 		0ECF1CC31CC6B199009226AE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CC11CC6B199009226AE /* MainMenu.xib */; };
 		0ECF1CCE1CC6B199009226AE /* BioKodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CCD1CC6B199009226AE /* BioKodeTests.swift */; };
 		0ECF1CD91CC6B199009226AE /* BioKodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CD81CC6B199009226AE /* BioKodeUITests.swift */; };
+		0EF9BBB61CCB0592003FD5B1 /* ErrorCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */; };
+		0EF9BBB81CCB0649003FD5B1 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		0ECF1CD41CC6B199009226AE /* BioKodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BioKodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECF1CD81CC6B199009226AE /* BioKodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioKodeUITests.swift; sourceTree = "<group>"; };
 		0ECF1CDA1CC6B199009226AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCheck.swift; sourceTree = "<group>"; };
+		0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,13 @@
 			isa = PBXGroup;
 			children = (
 				0E1B2A5E1CC9105400F768F2 /* BioKode.entitlements */,
-				0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */,
 				0ECF1CBF1CC6B199009226AE /* Assets.xcassets */,
 				0ECF1CC11CC6B199009226AE /* MainMenu.xib */,
 				0ECF1CC41CC6B199009226AE /* Info.plist */,
+				0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */,
 				0E3861EF1CC9A84A0019198B /* BioTranslate.swift */,
+				0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */,
+				0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */,
 			);
 			path = BioKode;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 			files = (
 				0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */,
 				0E3861F01CC9A84A0019198B /* BioTranslate.swift in Sources */,
+				0EF9BBB61CCB0592003FD5B1 /* ErrorCheck.swift in Sources */,
+				0EF9BBB81CCB0649003FD5B1 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
