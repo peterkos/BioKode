@@ -779,7 +779,7 @@
                 <customObject id="Rc3-xc-3Vs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="SqY-Uw-1fE"/>
             </objects>
-            <point key="canvasLocation" x="769" y="686"/>
+            <point key="canvasLocation" x="371" y="1034"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -789,20 +789,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="269"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="esb-lP-9fx">
-                                <rect key="frame" x="151" y="180" width="178" height="24"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="6lt-Yw-nD3">
-                                    <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="DNA" selected="YES"/>
-                                        <segment label="mRNA" tag="1"/>
-                                        <segment label="English"/>
-                                    </segments>
-                                </segmentedCell>
-                                <connections>
-                                    <action selector="inputPlaceholderTextGenerator:" target="XfG-lQ-9wD" id="4Ny-AS-Kyh"/>
-                                </connections>
-                            </segmentedControl>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bdR-xs-D11">
                                 <rect key="frame" x="151" y="61" width="178" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="RtS-61-BL4">
@@ -857,6 +843,20 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="esb-lP-9fx">
+                                <rect key="frame" x="151" y="180" width="178" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="6lt-Yw-nD3">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="DNA" selected="YES"/>
+                                        <segment label="mRNA" tag="1"/>
+                                        <segment label="English"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="inputPlaceholderTextGenerator:" target="XfG-lQ-9wD" id="4Ny-AS-Kyh"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstItem="2DW-dU-R2y" firstAttribute="centerX" secondItem="bdR-xs-D11" secondAttribute="centerX" id="0Id-hn-8qc"/>
@@ -885,7 +885,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="685.5"/>
+            <point key="canvasLocation" x="371" y="697.5"/>
         </scene>
     </scenes>
 </document>

@@ -19,10 +19,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var inputSegments: NSSegmentedControl!
     @IBOutlet weak var outputSegments: NSSegmentedControl!
     
-    // Error checking objects
-    let errorCheck = ErrorCheck()
-    let bioTrans = BioTranslate()
-    
     @IBAction func inputPlaceholderTextGenerator(sender: NSSegmentedControl) {
         
         // Insert placeholder text
@@ -52,7 +48,14 @@ class ViewController: NSViewController {
         
     }
 
-    
+	// ----------------------------------------------
+	// Custom Functions
+	// ----------------------------------------------
+	
+	// Error checking objects
+	let errorCheck = ErrorCheck()
+	let bioTrans = BioTranslate()
+	
     // Error checking & calculation functions for input
     func checkPossibleConversionAndConvertDNA() {
         guard !errorCheck.isValidDNA(inputStr.stringValue) else {
@@ -75,10 +78,11 @@ class ViewController: NSViewController {
         }
         
         switch outputSegments.selectedSegment {
-        case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
-        case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
-        case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
-        default: return
+			case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
+			case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
+			case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
+			
+			default: return
         }
     }
     
@@ -93,9 +97,16 @@ class ViewController: NSViewController {
         }
     }
 
+	// ----------------------------------------------
+	// Not-so Custom Functions
+	// ----------------------------------------------
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+		
+		inputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
+		outputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
+		
     }
 
     override var representedObject: AnyObject? {
