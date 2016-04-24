@@ -19,6 +19,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var inputSegments: NSSegmentedControl!
     @IBOutlet weak var outputSegments: NSSegmentedControl!
     
+    // Error checking objects
+    let errorCheck = ErrorCheck()
+    let bioTrans = BioTranslate()
+    
     @IBAction func inputPlaceholderTextGenerator(sender: NSSegmentedControl) {
         
         // Insert placeholder text
@@ -34,57 +38,60 @@ class ViewController: NSViewController {
     
     @IBAction func translationMode(sender: NSSegmentedControl) {
         
-        // Error checking for input
-        let errorCheck = ErrorCheck()
-        let errorResponse = ErrorResponse(inputTextField: inputStr, inputSegments: inputSegments)
-        
         // Calls appropriate conversion method.
         // Sets output to input if equal conversion languages are selected.
         // 0 = DNA, 1 = mRNA, 2 = English
-        let bioTrans = BioTranslate()
         
-        // DNA
         if (inputSegments.selectedSegment == 0) {
-            
-            guard !errorCheck.isValidDNA(inputStr.stringValue) else {
-                errorResponse.invalidDNASequence()
-                return
-            }
-            
-            switch outputSegments.selectedSegment {
-            case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;
-            case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
-            case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
-            default: return
-            }
-            
-            // mRNA
+            checkPossibleConversionAndConvertDNA()
         } else if (inputSegments.selectedSegment == 1) {
-            
-            guard !errorCheck.isValidmRNA(inputStr.stringValue) else {
-                errorResponse.invalidmRNASequence()
-                return
-            }
-            
-            switch outputSegments.selectedSegment {
-            case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
-            case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
-            case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
-            default: return
-            }
-            
-            // English, valid by default
+            checkPossibleConversionAndConvertmRNA()
         } else if (inputSegments.selectedSegment == 2) {
-            switch outputSegments.selectedSegment {
-            case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
-            case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
-            case 2: outputStr.stringValue = inputStr.stringValue.uppercaseString
-            default: return
-            }
+            checkPossibleConversionAndConvertEnglish()
         }
         
     }
 
+    
+    // Error checking & calculation functions for input
+    func checkPossibleConversionAndConvertDNA() {
+        guard !errorCheck.isValidDNA(inputStr.stringValue) else {
+            ErrorResponse(inputTextField: inputStr, inputSegments: inputSegments).invalidDNASequence()
+            return
+        }
+        
+        switch outputSegments.selectedSegment {
+        case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;
+        case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
+        case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
+        default: return
+        }
+    }
+    
+    func checkPossibleConversionAndConvertmRNA() {
+        guard !errorCheck.isValidmRNA(inputStr.stringValue) else {
+            ErrorResponse(inputTextField: inputStr, inputSegments: inputSegments).invalidmRNASequence()
+            return
+        }
+        
+        switch outputSegments.selectedSegment {
+        case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
+        case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
+        case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
+        default: return
+        }
+    }
+    
+    func checkPossibleConversionAndConvertEnglish() {
+        
+        // No guard -- English has no default constraints
+        switch outputSegments.selectedSegment {
+        case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
+        case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
+        case 2: outputStr.stringValue = inputStr.stringValue.uppercaseString
+        default: return
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
