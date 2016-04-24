@@ -67,7 +67,7 @@ class BioTranslate {
         }
     }
     
-    func frommRNAtoEnglish(input input: NSTextField, output: NSTextField) {
+	func frommRNAtoEnglish(input input: NSTextField, output: NSTextField) {
         // Resets output
         output.stringValue = ""
         
@@ -152,74 +152,49 @@ class BioTranslate {
         
         let inputString = input.stringValue.uppercaseString
         var outputString = String()
-        
-        for str in inputString.characters {
-            switch str {
-                // U *****************************
-            // UU
-            case "A": outputString += "UUU" // "UAC"
-            case "Q": outputString += "UUA" // "UUG"
-            // UC
-            case "S": outputString += "UCU" // "UCC", "UCA", "UCG"
-            // UA
-            case "C": outputString += "UAU" // "UAC"
-            case "G": outputString += "UAA" // "UAG"
-            // UG
-            case "H": outputString += "UGU" // "UGC"
-            case "G": outputString += "UGA"
-            case "W": outputString += "UGG"
-                
-                // C *****************************
-            // CU
-            case "N": outputString += "CUU" // "CUC", "CUA", "CUG"
-            // CC
-            case "R": outputString += "CCU" // "CCC", "CCA", "CCG"
-            // CA
-            case "L": outputString += "CAU" // "CAC"
-            case "I": outputString += "CAA" // "CAG"
-            // CG
-            case "D": outputString += "CGU" // CGC", "CGA", "CGG"
-                
-                // A *****************************
-            // AU
-            case "M": outputString += "AUU" // "AUC", "AUA"
-            case "P": outputString += "AUG"
-            // AC
-            case "V": outputString += "ACU" // "ACC"
-            case "T": outputString += "ACA" // "ACG"
-            // AA
-            case "E": outputString += "AAU" // "AAC"
-            case "O": outputString += "AAA" // "AAG"
-            // AG
-            case "S": outputString += "AGU" // "AGC"
-            case "D": outputString += "AGA" // "AGG"
-                
-                // G *****************************
-            // GU
-            case "Z": outputString += "GUU" // "GUC"
-            case "Y": outputString += "GUA" // "GUG"
-            // GC
-            case "U": outputString += "GCU" // "GCC"
-            case "B": outputString += "GCA" // "GCG"
-            // GA
-            case "F": outputString += "GAU" // "GAC"
-            case "J": outputString += "GAA" // "GAG":
-            // GG
-            case "K": outputString += "GGU" // "GGC", "GGA", "GGG"
-            default : outputString += "$"
-            }
-        }
-        
-        // Writes output to textfield
+		
+		// Dictionary mapping English letters to all possible mRNA codons
+		var englishTomRNA: [Character: [String]] = ["A": ["UUU", "UAC"],
+		                                         "Q": ["UUA", "UUG"],
+		                                         "S": ["UCU", "UCC", "UCA", "UCG"],
+		                                         "C": ["UAU", "UAC"],
+		                                         "G": ["UAA", "UAG", "UGA"],
+		                                         "H": ["UGU", "UGC"],
+		                                         "W": ["UGG"]]
+		
+		// If the user selects to assign polygenetic codon values randomly, do so.
+		// Otherwise, pick the first.
+		if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 0) {
+			// Random number function to make life slightly easier
+			func rand(lim: Int) -> Int {
+				return Int(arc4random_uniform(UInt32(lim)))
+			}
+			
+			// Looks in dictionary, compares every English letter to every corresponding entry
+			// If the entry exists, append a randomly selected entry of the String array in the dictionary
+			// to the output text field string.
+			for char in inputString.characters {
+				if let eng: String = englishTomRNA[char]![rand(englishTomRNA[char]!.count)] {
+					outputString += eng
+				}
+			}
+		} else {
+			// Looks in dictionary, compares every English letter to every corresponding entry
+			for char in inputString.characters {
+				if let eng: String = englishTomRNA[char]![0] {
+					outputString += eng
+				}
+			}
+		}
+		
         output.stringValue = outputString
-        
     }
     
     func fromEnglishtoDNA(input input: NSTextField, output: NSTextField) {
         let inputPlaceholder = NSTextField()
         let outputPlaceholder = NSTextField()
         
-        fromEnglishtomRNA(input: input, output: inputPlaceholder)
+		fromEnglishtomRNA(input: input, output: inputPlaceholder)
         frommRNAtoDNA(input: inputPlaceholder, output: outputPlaceholder)
         
         output.stringValue = outputPlaceholder.stringValue
