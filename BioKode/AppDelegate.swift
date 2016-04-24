@@ -13,15 +13,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationWillFinishLaunching(notification: NSNotification) {
         
-        var defaults: [String: AnyObject] = ["0": "defaultInputSelection"]
+        // Sets default default preferences
+        let defaults: [String: AnyObject] = ["defaultInputSelection": "0",
+                                            "defaultOutputSelection": "0",
+                                            "polygeneticSelection": "0"]
         NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Sets default preferences
         NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultInputSelection")
-//        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "polygeneticSelectionFirst")
-//        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "polygeneticSelectionFirst")
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultOutputSelection")
+        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "polygeneticSelection")
+        
         
         
     }    

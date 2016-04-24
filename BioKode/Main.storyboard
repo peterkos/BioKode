@@ -677,6 +677,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="425" y="469" width="480" height="262"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <value key="minSize" type="size" width="480" height="262"/>
                     </window>
                     <connections>
                         <segue destination="xAf-Y7-ucf" kind="relationship" relationship="window.shadowedContentViewController" id="T2m-W3-2XL"/>
@@ -684,7 +685,7 @@
                 </windowController>
                 <customObject id="PHp-K4-Jnd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="237"/>
+            <point key="canvasLocation" x="648" y="246"/>
         </scene>
         <!--Preference View Controller-->
         <scene sceneID="KwC-Ph-hIc">
@@ -734,6 +735,9 @@
                                         <segment label="English"/>
                                     </segments>
                                 </segmentedCell>
+                                <connections>
+                                    <action selector="defaultOutputSelectionSelected:" target="xAf-Y7-ucf" id="zPn-9j-dU8"/>
+                                </connections>
                             </segmentedControl>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goX-0b-uSg">
                                 <rect key="frame" x="85" y="69" width="137" height="17"/>
@@ -749,6 +753,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="polygeneticSelectionSelected:" target="xAf-Y7-ucf" id="h0J-Ux-WIf"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-WC-Xvc">
                                 <rect key="frame" x="248" y="47" width="72" height="18"/>
@@ -756,20 +763,23 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="polygeneticSelectionSelected:" target="xAf-Y7-ucf" id="ckz-hT-xPK"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="defaultInputSelection" destination="3z2-uk-3Zr" id="SzZ-nb-Iro"/>
                         <outlet property="defaultOutputSelection" destination="zod-Bx-vAW" id="jsA-HT-8dg"/>
-                        <outlet property="polygeneticSelectionFirst" destination="Ebz-wu-8cx" id="Jk7-cH-Hjs"/>
-                        <outlet property="polygeneticSelectionRandom" destination="gKZ-WC-Xvc" id="Emq-xZ-Hpp"/>
+                        <outlet property="polygeneticSelectionFirst" destination="Ebz-wu-8cx" id="Hd6-0t-LI8"/>
+                        <outlet property="polygeneticSelectionRandom" destination="gKZ-WC-Xvc" id="dei-wd-yDm"/>
                     </connections>
                 </viewController>
                 <customObject id="Rc3-xc-3Vs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="SqY-Uw-1fE"/>
             </objects>
-            <point key="canvasLocation" x="914" y="663"/>
+            <point key="canvasLocation" x="769" y="686"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -875,7 +885,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="692.5"/>
+            <point key="canvasLocation" x="75" y="685.5"/>
         </scene>
     </scenes>
 </document>
