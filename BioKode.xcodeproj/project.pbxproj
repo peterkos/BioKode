@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E3861F01CC9A84A0019198B /* BioTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3861EF1CC9A84A0019198B /* BioTranslate.swift */; };
+		0EC4100E1CCD3FA1001D1F20 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */; };
 		0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */; };
 		0ECF1CC01CC6B199009226AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CBF1CC6B199009226AE /* Assets.xcassets */; };
 		0ECF1CC31CC6B199009226AE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CC11CC6B199009226AE /* MainMenu.xib */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0E1B2A5E1CC9105400F768F2 /* BioKode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BioKode.entitlements; sourceTree = "<group>"; };
 		0E3861EF1CC9A84A0019198B /* BioTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioTranslate.swift; sourceTree = "<group>"; };
+		0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		0ECF1CBA1CC6B199009226AE /* BioKode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioKode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ECF1CBF1CC6B199009226AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,8 +108,9 @@
 			children = (
 				0E1B2A5E1CC9105400F768F2 /* BioKode.entitlements */,
 				0ECF1CBF1CC6B199009226AE /* Assets.xcassets */,
-				0EE6FD931CCD1AA6006A9074 /* ViewController.swift */,
 				0EE6FD941CCD1AA6006A9074 /* Main.storyboard */,
+				0EE6FD931CCD1AA6006A9074 /* ViewController.swift */,
+				0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */,
 				0ECF1CC11CC6B199009226AE /* MainMenu.xib */,
 				0ECF1CC41CC6B199009226AE /* Info.plist */,
 				0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */,
@@ -276,6 +279,7 @@
 				0EE6FD951CCD1AA6006A9074 /* ViewController.swift in Sources */,
 				0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */,
 				0E3861F01CC9A84A0019198B /* BioTranslate.swift in Sources */,
+				0EC4100E1CCD3FA1001D1F20 /* PreferenceViewController.swift in Sources */,
 				0EF9BBB61CCB0592003FD5B1 /* ErrorCheck.swift in Sources */,
 				0EF9BBB81CCB0649003FD5B1 /* ErrorResponse.swift in Sources */,
 			);

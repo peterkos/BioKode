@@ -22,7 +22,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="DQT-05-bBb" kind="show" id="sTt-tm-G0e"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -664,6 +668,108 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="sve-QV-45F">
+            <objects>
+                <windowController id="DQT-05-bBb" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="pfW-3b-ZyC">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <rect key="contentRect" x="425" y="469" width="480" height="262"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                    </window>
+                    <connections>
+                        <segue destination="xAf-Y7-ucf" kind="relationship" relationship="window.shadowedContentViewController" id="T2m-W3-2XL"/>
+                    </connections>
+                </windowController>
+                <customObject id="PHp-K4-Jnd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914" y="237"/>
+        </scene>
+        <!--Preference View Controller-->
+        <scene sceneID="KwC-Ph-hIc">
+            <objects>
+                <viewController id="xAf-Y7-ucf" customClass="PreferenceViewController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Jis-4T-fQb">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="212"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-Sl-aMd">
+                                <rect key="frame" x="65" y="145" width="157" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Default selection (input): " id="SQp-hT-vDe">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOH-fb-YlP">
+                                <rect key="frame" x="56" y="107" width="166" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Default selection (output): " id="ZQE-NF-Pvy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3z2-uk-3Zr">
+                                <rect key="frame" x="247" y="141" width="178" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="KJp-nm-yQP">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="DNA" selected="YES"/>
+                                        <segment label="mRNA" tag="1"/>
+                                        <segment label="English"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="defaultInputSelectionSelected:" target="xAf-Y7-ucf" id="fmV-Ze-10f"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zod-Bx-vAW">
+                                <rect key="frame" x="247" y="103" width="178" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="fDq-VK-m0C">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="DNA" selected="YES"/>
+                                        <segment label="mRNA" tag="1"/>
+                                        <segment label="English"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goX-0b-uSg">
+                                <rect key="frame" x="85" y="69" width="137" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Polygenetic selection:" id="NgJ-Tn-Uu6">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebz-wu-8cx">
+                                <rect key="frame" x="248" y="68" width="49" height="18"/>
+                                <buttonCell key="cell" type="radio" title="First" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mE1-Ev-Fgm">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-WC-Xvc">
+                                <rect key="frame" x="248" y="47" width="72" height="18"/>
+                                <buttonCell key="cell" type="radio" title="Random" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="50E-T8-x8d">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="defaultInputSelection" destination="3z2-uk-3Zr" id="SzZ-nb-Iro"/>
+                        <outlet property="defaultOutputSelection" destination="zod-Bx-vAW" id="jsA-HT-8dg"/>
+                        <outlet property="polygeneticSelectionFirst" destination="Ebz-wu-8cx" id="Jk7-cH-Hjs"/>
+                        <outlet property="polygeneticSelectionRandom" destination="gKZ-WC-Xvc" id="Emq-xZ-Hpp"/>
+                    </connections>
+                </viewController>
+                <customObject id="Rc3-xc-3Vs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="SqY-Uw-1fE"/>
+            </objects>
+            <point key="canvasLocation" x="914" y="663"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
