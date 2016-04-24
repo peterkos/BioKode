@@ -18,7 +18,6 @@ class BioTranslate {
         
         // Gets input text
         let textIn = input.stringValue.uppercaseString
-        print(textIn)
         
         // Converts to mRNA
         for i in textIn.characters {
