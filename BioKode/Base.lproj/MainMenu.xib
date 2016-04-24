@@ -668,7 +668,7 @@
         <window title="BioKode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="801" y="443" width="480" height="275"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <value key="minSize" type="size" width="480" height="275"/>
             <value key="maxSize" type="size" width="480" height="275"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
