@@ -154,17 +154,36 @@ class BioTranslate {
         var outputString = String()
 		
 		// Dictionary mapping English letters to all possible mRNA codons
-		var englishTomRNA: [Character: [String]] = ["A": ["UUU", "UAC"],
-		                                         "Q": ["UUA", "UUG"],
-		                                         "S": ["UCU", "UCC", "UCA", "UCG"],
-		                                         "C": ["UAU", "UAC"],
-		                                         "G": ["UAA", "UAG", "UGA"],
-		                                         "H": ["UGU", "UGC"],
-		                                         "W": ["UGG"]]
+		var englishTomRNA: [Character: [String]] =
+			["A": ["UUU", "UAC"],
+             "Q": ["UUA", "UUG"],
+		     "S": ["UCU", "UCC", "UCA", "UCG", "AGU", "ACG"],
+		     "C": ["UAU", "UAC"],
+		     "G": ["UAA", "UAG", "UGA"],
+		     "H": ["UGU", "UGC"],
+		     "N": ["CUU", "CUC", "CUA", "CUG"],
+		     "R": ["CCU", "CCC", "CCA", "CCG"],
+		     "L": ["CAU", "CAC"],
+		     "I": ["CAA", "CAG"],
+		     "D": ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
+		     "M": ["AUU", "AUC", "AUA"],
+		     "P": ["AUG"],
+		     "V": ["ACU", "ACC"],
+		     "T": ["ACA", "ACG"],
+		     "E": ["AAU", "AAC"],
+		     "O": ["AAA", "AAG"],
+		     "Z": ["GUU", "GUC"],
+		     "Y": ["GUA", "GUG"],
+		     "U": ["GCU", "GCC"],
+		     "B": ["GCA", "GCG"],
+		     "F": ["GAU", "GAC"],
+		     "J": ["GAA", "GAG"],
+		     "K": ["GGU", "GGC", "GGA", "GGG"]]
+		     
 		
 		// If the user selects to assign polygenetic codon values randomly, do so.
 		// Otherwise, pick the first.
-		if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 0) {
+		if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 1) {
 			// Random number function to make life slightly easier
 			func rand(lim: Int) -> Int {
 				return Int(arc4random_uniform(UInt32(lim)))
