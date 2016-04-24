@@ -77,7 +77,7 @@ class BioTranslate {
         
         // Converts to codons
         for i in 0.stride(to: textIn.characters.count, by: 3) {
-            preEnglish.append(textIn[i..<(i + 3)])
+            preEnglish.append(textIn.substringWithRange(textIn.startIndex.advancedBy(i)..<textIn.startIndex.advancedBy(i + 3)))
         }
         
         // Creates final array, converts to English
