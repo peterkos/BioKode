@@ -105,15 +105,15 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 		
 		// Gets previous values when view is loaded
-		defaultInputSelectionUpdate()
+		preferencesDidUpdate()
 		
 		// Notification when preference is changed
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(defaultInputSelectionUpdate), name: "defaultInputSelectionUpdate", object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(preferencesDidUpdate), name: "preferencesDidUpdate", object: nil)
 		
     }
 	
 	// Updates buttons to reflect change in NSUserDefaults without restart
-	func defaultInputSelectionUpdate() {
+	func preferencesDidUpdate() {
 		inputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
 		outputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
 	}
