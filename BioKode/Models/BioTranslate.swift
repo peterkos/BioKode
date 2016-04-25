@@ -69,7 +69,7 @@ class BioTranslate {
     
 	func frommRNAtoEnglish(input input: NSTextField, output: NSTextField) {
         // Resets output
-        output.stringValue = ""
+        var outputString = ""
         
         // Gets input text
         let textIn = input.stringValue.uppercaseString
@@ -143,8 +143,10 @@ class BioTranslate {
         
         // Outputs array to box
         for str in inEnglish {
-            output.stringValue += str
+            outputString += str
         }
+		
+		output.stringValue = outputCodon(outputString)
     }
     
     // English ****************
@@ -206,7 +208,7 @@ class BioTranslate {
 			}
 		}
 		
-        output.stringValue = outputString
+        output.stringValue = outputCodon(outputString)
     }
     
     func fromEnglishtoDNA(input input: NSTextField, output: NSTextField) {
@@ -216,7 +218,28 @@ class BioTranslate {
 		fromEnglishtomRNA(input: input, output: inputPlaceholder)
         frommRNAtoDNA(input: inputPlaceholder, output: outputPlaceholder)
         
-        output.stringValue = outputPlaceholder.stringValue
+        output.stringValue = outputCodon(outputPlaceholder.stringValue)
     }
-    
+	
+	
+	func outputCodon(input: String) -> String {
+		
+		var output = ""
+		
+		if (NSUserDefaults.standardUserDefaults().valueForKey("outputSpacingSelection") as! Int == 2) {
+			for i in 0.stride(to: input.characters.count, by: 3) {
+				output += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)) + "-")
+			}
+			
+			// Exclude trailing dash
+			output = String(output.characters.dropLast(1))
+		} else {
+			for i in 0.stride(to: input.characters.count, by: 3) {
+				output += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)))
+			}
+		}
+		
+		return output
+	}
+	
 }

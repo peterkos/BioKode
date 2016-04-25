@@ -692,27 +692,27 @@
             <objects>
                 <viewController id="xAf-Y7-ucf" customClass="PreferenceViewController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Jis-4T-fQb">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="212"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="296"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-Sl-aMd">
-                                <rect key="frame" x="65" y="145" width="157" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-Sl-aMd">
+                                <rect key="frame" x="65" y="231" width="157" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Default selection (input): " id="SQp-hT-vDe">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOH-fb-YlP">
-                                <rect key="frame" x="56" y="107" width="166" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IOH-fb-YlP">
+                                <rect key="frame" x="56" y="193" width="166" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Default selection (output): " id="ZQE-NF-Pvy">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3z2-uk-3Zr">
-                                <rect key="frame" x="247" y="141" width="178" height="24"/>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3z2-uk-3Zr">
+                                <rect key="frame" x="247" y="227" width="178" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="KJp-nm-yQP">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -725,8 +725,8 @@
                                     <action selector="defaultInputSelectionSelected:" target="xAf-Y7-ucf" id="fmV-Ze-10f"/>
                                 </connections>
                             </segmentedControl>
-                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zod-Bx-vAW">
-                                <rect key="frame" x="247" y="103" width="178" height="24"/>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zod-Bx-vAW">
+                                <rect key="frame" x="247" y="189" width="178" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="fDq-VK-m0C">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -739,16 +739,16 @@
                                     <action selector="defaultOutputSelectionSelected:" target="xAf-Y7-ucf" id="zPn-9j-dU8"/>
                                 </connections>
                             </segmentedControl>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="goX-0b-uSg">
-                                <rect key="frame" x="85" y="69" width="137" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="goX-0b-uSg">
+                                <rect key="frame" x="85" y="120" width="137" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Polygenetic selection:" id="NgJ-Tn-Uu6">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ebz-wu-8cx">
-                                <rect key="frame" x="248" y="68" width="49" height="18"/>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Ebz-wu-8cx">
+                                <rect key="frame" x="248" y="119" width="49" height="18"/>
                                 <buttonCell key="cell" type="radio" title="First" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mE1-Ev-Fgm">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -757,8 +757,8 @@
                                     <action selector="polygeneticSelectionSelected:" target="xAf-Y7-ucf" id="h0J-Ux-WIf"/>
                                 </connections>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-WC-Xvc">
-                                <rect key="frame" x="248" y="47" width="72" height="18"/>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="gKZ-WC-Xvc">
+                                <rect key="frame" x="248" y="98" width="72" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Random" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="50E-T8-x8d">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -767,11 +767,72 @@
                                     <action selector="polygeneticSelectionSelected:" target="xAf-Y7-ucf" id="ckz-hT-xPK"/>
                                 </connections>
                             </button>
+                            <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ziu-Vk-Bpx">
+                                <rect key="frame" x="58" y="160" width="365" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9o9-EP-PCP">
+                                <rect key="frame" x="123" y="67" width="101" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Output spacing:" id="jC2-Vi-lGb">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="tBG-eL-iwa">
+                                <rect key="frame" x="250" y="66" width="97" height="18"/>
+                                <buttonCell key="cell" type="radio" title="All one word" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="GdV-U2-hXp">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="outputSpacingSelectionSelected:" target="xAf-Y7-ucf" id="Rbb-UH-jWb"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="IbL-Xm-dH9">
+                                <rect key="frame" x="250" y="45" width="108" height="18"/>
+                                <buttonCell key="cell" type="radio" title="Group codons" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="qKT-Xj-Iv3">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="outputSpacingSelectionSelected:" target="xAf-Y7-ucf" id="3Uy-Br-ffp"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="tBG-eL-iwa" firstAttribute="leading" secondItem="IbL-Xm-dH9" secondAttribute="leading" id="0s4-Vu-iSY"/>
+                            <constraint firstItem="Ebz-wu-8cx" firstAttribute="leading" secondItem="gKZ-WC-Xvc" secondAttribute="leading" id="4Id-V9-q3V"/>
+                            <constraint firstItem="Ziu-Vk-Bpx" firstAttribute="centerX" secondItem="Jis-4T-fQb" secondAttribute="centerX" id="7JH-h4-IPl"/>
+                            <constraint firstItem="uh9-Sl-aMd" firstAttribute="centerY" secondItem="3z2-uk-3Zr" secondAttribute="centerY" id="A9I-OZ-Vya"/>
+                            <constraint firstItem="zod-Bx-vAW" firstAttribute="leading" secondItem="Ebz-wu-8cx" secondAttribute="leading" id="B7z-pC-3nV"/>
+                            <constraint firstItem="IbL-Xm-dH9" firstAttribute="top" secondItem="tBG-eL-iwa" secondAttribute="bottom" constant="5" id="BEw-ML-DcX"/>
+                            <constraint firstItem="IOH-fb-YlP" firstAttribute="trailing" secondItem="goX-0b-uSg" secondAttribute="trailing" id="DXr-Xf-22N"/>
+                            <constraint firstItem="goX-0b-uSg" firstAttribute="top" secondItem="Ziu-Vk-Bpx" secondAttribute="bottom" constant="25" id="GJ1-sK-n2D"/>
+                            <constraint firstItem="uh9-Sl-aMd" firstAttribute="trailing" secondItem="IOH-fb-YlP" secondAttribute="trailing" id="Id9-O5-jKa"/>
+                            <constraint firstItem="zod-Bx-vAW" firstAttribute="top" secondItem="3z2-uk-3Zr" secondAttribute="bottom" constant="17" id="JYa-mV-vSN"/>
+                            <constraint firstItem="goX-0b-uSg" firstAttribute="baseline" secondItem="Ebz-wu-8cx" secondAttribute="baseline" id="NQz-fL-Hcb"/>
+                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="top" secondItem="Jis-4T-fQb" secondAttribute="top" constant="46" id="Uap-XG-z7Q"/>
+                            <constraint firstItem="IOH-fb-YlP" firstAttribute="leading" secondItem="Ziu-Vk-Bpx" secondAttribute="leading" id="Vj0-VM-ObA"/>
+                            <constraint firstItem="IOH-fb-YlP" firstAttribute="centerY" secondItem="zod-Bx-vAW" secondAttribute="centerY" id="YIt-Pm-Y59"/>
+                            <constraint firstItem="gKZ-WC-Xvc" firstAttribute="top" secondItem="Ebz-wu-8cx" secondAttribute="bottom" constant="5" id="aD1-pO-gCY"/>
+                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="leading" secondItem="uh9-Sl-aMd" secondAttribute="trailing" constant="29" id="bK3-U4-Ikt"/>
+                            <constraint firstItem="9o9-EP-PCP" firstAttribute="baseline" secondItem="tBG-eL-iwa" secondAttribute="baseline" id="cH2-Ds-Lgx"/>
+                            <constraint firstItem="Ziu-Vk-Bpx" firstAttribute="top" secondItem="zod-Bx-vAW" secondAttribute="bottom" constant="28" id="cnA-NK-zWc"/>
+                            <constraint firstItem="tBG-eL-iwa" firstAttribute="top" secondItem="gKZ-WC-Xvc" secondAttribute="bottom" constant="16" id="hMu-JS-0nd"/>
+                            <constraint firstItem="zod-Bx-vAW" firstAttribute="trailing" secondItem="Ziu-Vk-Bpx" secondAttribute="trailing" id="iy4-5A-nXE"/>
+                            <constraint firstItem="9o9-EP-PCP" firstAttribute="leading" secondItem="Jis-4T-fQb" secondAttribute="leading" constant="125" id="kBZ-vp-9en"/>
+                            <constraint firstItem="tBG-eL-iwa" firstAttribute="leading" secondItem="9o9-EP-PCP" secondAttribute="trailing" constant="29" id="lvY-qo-Evz"/>
+                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="leading" secondItem="zod-Bx-vAW" secondAttribute="leading" id="wih-Ic-tRz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="defaultInputSelection" destination="3z2-uk-3Zr" id="SzZ-nb-Iro"/>
                         <outlet property="defaultOutputSelection" destination="zod-Bx-vAW" id="jsA-HT-8dg"/>
+                        <outlet property="outputSpacingSelectionAsAllOneWord" destination="tBG-eL-iwa" id="qx3-2b-uW8"/>
+                        <outlet property="outputSpacingSelectionAsGroupsOfThree" destination="IbL-Xm-dH9" id="yuq-xd-wdq"/>
                         <outlet property="polygeneticSelectionFirst" destination="Ebz-wu-8cx" id="Hd6-0t-LI8"/>
                         <outlet property="polygeneticSelectionRandom" destination="gKZ-WC-Xvc" id="dei-wd-yDm"/>
                     </connections>
@@ -779,7 +840,7 @@
                 <customObject id="Rc3-xc-3Vs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="SqY-Uw-1fE"/>
             </objects>
-            <point key="canvasLocation" x="371" y="1034"/>
+            <point key="canvasLocation" x="371" y="1076"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -829,11 +890,14 @@
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p7N-Sx-qY0">
                                 <rect key="frame" x="81" y="152" width="318" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="ACTGCGGTCGAC" drawsBackground="YES" id="Wjk-Pf-SUB">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="ACTGCGGTCGAC" drawsBackground="YES" id="Wjk-Pf-SUB">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="performClick:" target="bdR-xs-D11" id="cDW-ed-32E"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-Fw-RIw">
                                 <rect key="frame" x="81" y="33" width="318" height="22"/>
