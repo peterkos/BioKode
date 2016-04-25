@@ -163,6 +163,7 @@ class BioTranslate {
 		     "C": ["UAU", "UAC"],
 		     "G": ["UAA", "UAG", "UGA"],
 		     "H": ["UGU", "UGC"],
+		     "W": ["UGG"],
 		     "N": ["CUU", "CUC", "CUA", "CUG"],
 		     "R": ["CCU", "CCC", "CCA", "CCG"],
 		     "L": ["CAU", "CAC"],
@@ -181,7 +182,6 @@ class BioTranslate {
 		     "F": ["GAU", "GAC"],
 		     "J": ["GAA", "GAG"],
 		     "K": ["GGU", "GGC", "GGA", "GGG"]]
-		     
 		
 		// If the user selects to assign polygenetic codon values randomly, do so.
 		// Otherwise, pick the first.
