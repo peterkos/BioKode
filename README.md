@@ -34,14 +34,14 @@ func sayHelloAndDoMath() {
 
 Features
 - [X] DNA to mRNA || English
-- [ ] mRNA to DNA || English
-- [ ] Englisht to mRNA || DNA
+- [X] mRNA to DNA || English
+- [X] English to mRNA || DNA
 - [ ] Show biologically equivalent proteins
 
 
 Enhancements
+- [ ] Autospace words (So the result isn't "POSTITNOTE") (Preference-based)
 - [X] Add error-checking (exception handling)
 - [X] Simplify the wall of switch-case 
-- [ ] Autospace words (So the result isn't "POSTITNOTE")
-- [ ] Fix AutoLayout so text boxes scale with window width and stay in center
-- [ ] An app icon
+- [X] Fix AutoLayout so text boxes scale with window width and stay in center
+- [X] An app icon
