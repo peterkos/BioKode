@@ -183,7 +183,7 @@ class BioTranslate {
 		
 		// If the user selects to assign polygenetic codon values randomly, do so.
 		// Otherwise, pick the first.
-		if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 1) {
+		if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 2) {
 			// Random number function to make life slightly easier
 			func rand(lim: Int) -> Int {
 				return Int(arc4random_uniform(UInt32(lim)))

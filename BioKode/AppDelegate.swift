@@ -1,4 +1,4 @@
-//
+///
 //  AppDelegate.swift
 //  BioKode
 //
@@ -10,28 +10,24 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
-    func applicationWillFinishLaunching(notification: NSNotification) {
-        
-        // Sets default default preferences
-        let defaults: [String: AnyObject] = ["defaultInputSelection": "0",
-                                            "defaultOutputSelection": "0",
-                                            "polygeneticSelection": "0"]
-        NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
-    }
-    
+	
+	override init() {
+		// Sets default default preferences
+		let defaults: [String: AnyObject] = ["defaultInputSelection": "0",
+		                                     "defaultOutputSelection": "0",
+		                                     "polygeneticSelection": "1"]
+		NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
+		NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultInputSelection")
+		NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultOutputSelection")
+		NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "polygeneticSelection")
+		
+	}
+	
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Sets default preferences
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultInputSelection")
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultOutputSelection")
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "polygeneticSelection")
-        
-        
         
     }    
     
     func applicationWillTerminate(aNotification: NSNotification) {
-        
         
     }
 

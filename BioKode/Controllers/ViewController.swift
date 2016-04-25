@@ -104,10 +104,20 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		inputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
-		outputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
+		// Gets previous values when view is loaded
+		defaultInputSelectionUpdate()
+		
+		// Notification when preference is changed
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(defaultInputSelectionUpdate), name: "defaultInputSelectionUpdate", object: nil)
 		
     }
+	
+	// Updates buttons to reflect change in NSUserDefaults without restart
+	func defaultInputSelectionUpdate() {
+		inputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
+		outputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
+	}
+	
 
     override var representedObject: AnyObject? {
         didSet {

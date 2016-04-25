@@ -716,7 +716,7 @@
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="KJp-nm-yQP">
                                     <font key="font" metaFont="system"/>
                                     <segments>
-                                        <segment label="DNA" selected="YES"/>
+                                        <segment label="DNA"/>
                                         <segment label="mRNA" tag="1"/>
                                         <segment label="English"/>
                                     </segments>
@@ -730,7 +730,7 @@
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="fDq-VK-m0C">
                                     <font key="font" metaFont="system"/>
                                     <segments>
-                                        <segment label="DNA" selected="YES"/>
+                                        <segment label="DNA"/>
                                         <segment label="mRNA" tag="1"/>
                                         <segment label="English"/>
                                     </segments>

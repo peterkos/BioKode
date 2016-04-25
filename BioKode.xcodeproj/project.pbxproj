@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E3861F01CC9A84A0019198B /* BioTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3861EF1CC9A84A0019198B /* BioTranslate.swift */; };
+		0E85BA101CCD917B008B7AEA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CC11CC6B199009226AE /* MainMenu.xib */; };
 		0EC4100E1CCD3FA1001D1F20 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */; };
 		0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */; };
 		0ECF1CC01CC6B199009226AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CBF1CC6B199009226AE /* Assets.xcassets */; };
-		0ECF1CC31CC6B199009226AE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CC11CC6B199009226AE /* MainMenu.xib */; };
 		0ECF1CCE1CC6B199009226AE /* BioKodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CCD1CC6B199009226AE /* BioKodeTests.swift */; };
 		0ECF1CD91CC6B199009226AE /* BioKodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CD81CC6B199009226AE /* BioKodeUITests.swift */; };
 		0EE6FD951CCD1AA6006A9074 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6FD931CCD1AA6006A9074 /* ViewController.swift */; };
@@ -83,6 +83,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E85BA0D1CCD9068008B7AEA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0EE6FD931CCD1AA6006A9074 /* ViewController.swift */,
+				0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0E85BA0E1CCD906F008B7AEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EE6FD941CCD1AA6006A9074 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0E85BA0F1CCD9077008B7AEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E3861EF1CC9A84A0019198B /* BioTranslate.swift */,
+				0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */,
+				0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0ECF1CB11CC6B199009226AE = {
 			isa = PBXGroup;
 			children = (
@@ -106,17 +133,14 @@
 		0ECF1CBC1CC6B199009226AE /* BioKode */ = {
 			isa = PBXGroup;
 			children = (
+				0ECF1CC11CC6B199009226AE /* MainMenu.xib */,
+				0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */,
+				0E85BA0F1CCD9077008B7AEA /* Models */,
+				0E85BA0E1CCD906F008B7AEA /* Views */,
+				0E85BA0D1CCD9068008B7AEA /* Controllers */,
 				0E1B2A5E1CC9105400F768F2 /* BioKode.entitlements */,
 				0ECF1CBF1CC6B199009226AE /* Assets.xcassets */,
-				0EE6FD941CCD1AA6006A9074 /* Main.storyboard */,
-				0EE6FD931CCD1AA6006A9074 /* ViewController.swift */,
-				0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */,
-				0ECF1CC11CC6B199009226AE /* MainMenu.xib */,
 				0ECF1CC41CC6B199009226AE /* Info.plist */,
-				0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */,
-				0E3861EF1CC9A84A0019198B /* BioTranslate.swift */,
-				0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */,
-				0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */,
 			);
 			path = BioKode;
 			sourceTree = "<group>";
@@ -251,7 +275,7 @@
 			files = (
 				0EE6FD961CCD1AA6006A9074 /* Main.storyboard in Resources */,
 				0ECF1CC01CC6B199009226AE /* Assets.xcassets in Resources */,
-				0ECF1CC31CC6B199009226AE /* MainMenu.xib in Resources */,
+				0E85BA101CCD917B008B7AEA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
