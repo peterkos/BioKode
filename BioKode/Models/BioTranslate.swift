@@ -9,7 +9,35 @@
 import Cocoa
 
 class BioTranslate {
-    
+	
+	let englishTomRNADictionary: [Character: [String]] =
+		["A": ["UUU", "UAC"],
+		 "Q": ["UUA", "UUG"],
+		 "S": ["UCU", "UCC", "UCA", "UCG", "AGU", "ACG"],
+		 "C": ["UAU", "UAC"],
+		 "G": ["UAA", "UAG", "UGA"],
+		 "H": ["UGU", "UGC"],
+		 "W": ["UGG"],
+		 "N": ["CUU", "CUC", "CUA", "CUG"],
+		 "R": ["CCU", "CCC", "CCA", "CCG"],
+		 "L": ["CAU", "CAC"],
+		 "I": ["CAA", "CAG"],
+		 "D": ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
+		 "M": ["AUU", "AUC", "AUA"],
+		 "P": ["AUG"],
+		 "V": ["ACU", "ACC"],
+		 "T": ["ACA", "ACG"],
+		 "E": ["AAU", "AAC"],
+		 "O": ["AAA", "AAG"],
+		 "Z": ["GUU", "GUC"],
+		 "Y": ["GUA", "GUG"],
+		 "U": ["GCU", "GCC"],
+		 "B": ["GCA", "GCG"],
+		 "F": ["GAU", "GAC"],
+		 "J": ["GAA", "GAG"],
+		 "K": ["GGU", "GGC", "GGA", "GGG"]]
+	
+	
     // mRNA ****************
     func fromDNAtomRNA(input input: NSTextField, output: NSTextField) {
         
@@ -48,144 +76,56 @@ class BioTranslate {
     func frommRNAtoDNA(input input: NSTextField, output: NSTextField) {
         
         // Resets output
-        output.stringValue = ""
-        
-        // Gets input text
-        let textIn = input.stringValue.uppercaseString
+        var outputString = ""
+        let inputString = input.stringValue.uppercaseString
         
         // Converts to mRNA
-        for i in textIn.characters {
+        for i in inputString.characters {
             if (i == "A") {
-                output.stringValue += "T"
+                outputString += "T"
             } else if (i == "G") {
-                output.stringValue += "C"
+                outputString += "C"
             } else if (i == "C") {
-                output.stringValue += "G"
+                outputString += "G"
             } else if (i == "U") {
-                output.stringValue += "A"
+                outputString += "A"
             }
         }
+		
+		output.stringValue = outputString
     }
     
 	func frommRNAtoEnglish(input input: NSTextField, output: NSTextField) {
-        // Resets output
-        var outputString = ""
         
         // Gets input text
-        let textIn = input.stringValue.uppercaseString
+		var outputString = ""
+		let inputString = input.stringValue.uppercaseString
         var preEnglish = [String]()
         
-        // Converts to codons
-        for i in 0.stride(to: textIn.characters.count, by: 3) {
-            preEnglish.append(textIn.substringWithRange(textIn.startIndex.advancedBy(i)..<textIn.startIndex.advancedBy(i + 3)))
-        }
-        
-        // Creates final array, converts to English
-        var inEnglish = [String]()
-        for str in preEnglish {
-            switch str {
-                // U *****************************
-            // UU
-            case "UUU", "UAC":               inEnglish.append("A")
-            case "UUA", "UUG":               inEnglish.append("Q")
-            // UC
-            case "UCU", "UCC", "UCA", "UCG": inEnglish.append("S")
-            // UA
-            case "UAU", "UAC":               inEnglish.append("C")
-            case "UAA", "UAG":               inEnglish.append("G")
-                
-            // UG
-            case "UGU", "UGC":               inEnglish.append("H")
-            case "UGA":                      inEnglish.append("G")
-            case "UGG":                      inEnglish.append("W")
-                
-                // C *****************************
-            // CU
-            case "CUU", "CUC", "CUA", "CUG": inEnglish.append("N")
-            // CC
-            case "CCU", "CCC", "CCA", "CCG": inEnglish.append("R")
-            // CA
-            case "CAU", "CAC":               inEnglish.append("L")
-            case "CAA", "CAG":               inEnglish.append("I")
-            // CG
-            case "CGU", "CGC", "CGA", "CGG": inEnglish.append("D")
-                
-                // A *****************************
-            // AU
-            case "AUU", "AUC", "AUA":        inEnglish.append("M")
-            case "AUG":                      inEnglish.append("P")
-            // AC
-            case "ACU", "ACC":               inEnglish.append("V")
-            case "ACA", "ACG":               inEnglish.append("T")
-            // AA
-            case "AAU", "AAC":               inEnglish.append("E")
-            case "AAA", "AAG":               inEnglish.append("O")
-            // AG
-            case "AGU", "AGC":               inEnglish.append("S")
-            case "AGA", "AGG":               inEnglish.append("D")
-                
-                // G *****************************
-            // GU
-            case "GUU", "GUC":               inEnglish.append("Z")
-            case "GUA", "GUG":               inEnglish.append("Y")
-            // GC
-            case "GCU", "GCC":               inEnglish.append("U")
-            case "GCA", "GCG":               inEnglish.append("B")
-            // GA
-            case "GAU", "GAC":               inEnglish.append("F")
-            case "GAA", "GAG":               inEnglish.append("J")
-            // GG
-            case "GGU", "GGC", "GGA", "GGG": inEnglish.append("K")
-            default:                         inEnglish.append("$")
-                
-            }
-        }
-        
-        // Outputs array to box
-        for str in inEnglish {
-            outputString += str
+        // Converts to codons (groups of 3)
+        for i in 0.stride(to: inputString.characters.count, by: 3) {
+            preEnglish.append(inputString.substringWithRange(inputString.startIndex.advancedBy(i)..<inputString.startIndex.advancedBy(i + 3)))
         }
 		
-		output.stringValue = outputCodon(outputString)
+        // Preconditoin: codon is a valid RNA sequence
+		// Credit: http://stackoverflow.com/a/36854223/1431900
+		// Reverse-map the codon (as a value) from the englishTomRNADictionary to the key (corresponding English letter), and append the key to the outputString
+		for codon in preEnglish {
+			let english = englishTomRNADictionary.filter { $0.1.contains(codon) }.first!.0
+			outputString.append(english)
+		}
+		
+		
+		output.stringValue = outputString
     }
-    
+	
+	
     // English ****************
     func fromEnglishtomRNA(input input: NSTextField, output: NSTextField) {
         
         let inputString = input.stringValue.uppercaseString
         var outputString = String()
 		
-		// Dictionary mapping English letters to all possible mRNA codons
-		var englishTomRNA: [Character: [String]] =
-			["A": ["UUU", "UAC"],
-             "Q": ["UUA", "UUG"],
-		     "S": ["UCU", "UCC", "UCA", "UCG", "AGU", "ACG"],
-		     "C": ["UAU", "UAC"],
-		     "G": ["UAA", "UAG", "UGA"],
-		     "H": ["UGU", "UGC"],
-		     "W": ["UGG"],
-		     "N": ["CUU", "CUC", "CUA", "CUG"],
-		     "R": ["CCU", "CCC", "CCA", "CCG"],
-		     "L": ["CAU", "CAC"],
-		     "I": ["CAA", "CAG"],
-		     "D": ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
-		     "M": ["AUU", "AUC", "AUA"],
-		     "P": ["AUG"],
-		     "V": ["ACU", "ACC"],
-		     "T": ["ACA", "ACG"],
-		     "E": ["AAU", "AAC"],
-		     "O": ["AAA", "AAG"],
-		     "Z": ["GUU", "GUC"],
-		     "Y": ["GUA", "GUG"],
-		     "U": ["GCU", "GCC"],
-		     "B": ["GCA", "GCG"],
-		     "F": ["GAU", "GAC"],
-		     "J": ["GAA", "GAG"],
-		     "K": ["GGU", "GGC", "GGA", "GGG"]]
-		
-		// If the user selects to assign polygenetic codon values randomly, do so.
-		// Otherwise, pick the first.
-		if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 2) {
 			// Random number function to make life slightly easier
 			func rand(lim: Int) -> Int {
 				return Int(arc4random_uniform(UInt32(lim)))
@@ -204,7 +144,6 @@ class BioTranslate {
 					}
 				}
 			}
-		}
 		
         output.stringValue = outputCodon(outputString)
     }
