@@ -191,19 +191,17 @@ class BioTranslate {
 				return Int(arc4random_uniform(UInt32(lim)))
 			}
 			
-			// Looks in dictionary, compares every English letter to every corresponding entry
-			// If the entry exists, append a randomly selected entry of the String array in the dictionary
-			// to the output text field string.
-			for char in inputString.characters {
-				if let eng: String = englishTomRNA[char]![rand(englishTomRNA[char]!.count)] {
-					outputString += eng
-				}
-			}
-		} else {
-			// Looks in dictionary, compares every English letter to every corresponding entry
-			for char in inputString.characters {
-				if let eng: String = englishTomRNA[char]![0] {
-					outputString += eng
+			// Looks in dictionary, compares every English letter to every corresponding entry.
+			for char: Character in inputString.characters {
+				if let codonArr = englishTomRNADictionary[char] {
+		
+					// If the user selects to assign polygenetic codon values randomly, do so.
+					// Otherwise, pick the first.
+					if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 2) {
+						outputString += codonArr[rand(codonArr.count)]
+					} else {
+						outputString += codonArr[0]
+					}
 				}
 			}
 		}
