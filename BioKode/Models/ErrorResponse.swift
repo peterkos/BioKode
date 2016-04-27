@@ -63,6 +63,25 @@ class ErrorResponse {
 		}
 		
     }
-    
-    
+	
+	func invalidEmptyInput() {
+		let alert = NSAlert()
+		alert.messageText = "Convert whitespace? That's a new one."
+		alert.informativeText = "Input string cannot be empty."
+		alert.addButtonWithTitle("OK")
+		alert.addButtonWithTitle("Clear Input")
+		alert.addButtonWithTitle("Clear Input & Output")
+		let alertResponse = alert.runModal()
+		
+		// Reset the input field if the "Clear Input" button is selected
+		if (alertResponse == NSAlertSecondButtonReturn) {
+			inputTextField.stringValue = ""
+		} else if (alertResponse == NSAlertThirdButtonReturn) {
+			inputTextField.stringValue = ""
+			outputTextField.stringValue = ""
+			outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+		}
+	}
+	
+	
 }

@@ -25,6 +25,7 @@ class ViewController: NSViewController {
 		inputStr.stringValue = ""
 		outputStr.stringValue = ""
 	}
+	
     @IBAction func inputIsSelected(sender: NSSegmentedControl) {
         
         // Replaces placeholder text
@@ -37,13 +38,7 @@ class ViewController: NSViewController {
         }
 		
 		// 0 = DNA, 1 = mRNA, 2 = English
-		if (inputSegments.selectedSegment == 0) {
-			checkPossibleConversionAndConvertDNA()
-		} else if (inputSegments.selectedSegment == 1) {
-			checkPossibleConversionAndConvertmRNA()
-		} else if (inputSegments.selectedSegment == 2) {
-			checkPossibleConversionAndConvertEnglish()
-		}
+		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
 		
     }
 	
@@ -70,13 +65,21 @@ class ViewController: NSViewController {
 	
     // Error checking & calculation functions for input
     func checkPossibleConversionAndConvertDNA() {
+		
+		let errorResponse = ErrorResponse(inputTextField: inputStr,
+		                                       outputTextField: outputStr,
+		                                       inputSegments: inputSegments,
+		                                       outputSegments: outputSegments)
+		
         guard !errorCheck.isValidDNA(inputStr.stringValue) else {
-            ErrorResponse(inputTextField: inputStr,
-                          outputTextField: outputStr,
-                          inputSegments: inputSegments,
-                          outputSegments: outputSegments).invalidDNASequence()
+            errorResponse.invalidDNASequence()
             return
         }
+		
+		guard !errorCheck.stringIsNotEmpty(inputStr.stringValue) else {
+			errorResponse.invalidEmptyInput()
+			return
+		}
         
         switch outputSegments.selectedSegment {
         case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;

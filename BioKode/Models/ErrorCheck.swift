@@ -46,6 +46,9 @@ class ErrorCheck {
     }
     
     // English is valid by default
-    
+	
+	func stringIsNotEmpty(input: String) -> Bool {
+		return input.characters.count == 0 ? true : false
+	}
     
 }
