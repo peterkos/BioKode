@@ -861,7 +861,7 @@
                                     </segments>
                                 </segmentedCell>
                                 <connections>
-                                    <action selector="translationMode:" target="XfG-lQ-9wD" id="CbM-kq-SJ9"/>
+                                    <action selector="outputIsSelected:" target="XfG-lQ-9wD" id="WMa-Ci-tB1"/>
                                 </connections>
                             </segmentedControl>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PnE-xO-tpE">
@@ -918,7 +918,7 @@
                                     </segments>
                                 </segmentedCell>
                                 <connections>
-                                    <action selector="inputPlaceholderTextGenerator:" target="XfG-lQ-9wD" id="4Ny-AS-Kyh"/>
+                                    <action selector="inputIsSelected:" target="XfG-lQ-9wD" id="gTd-Wa-GsM"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>

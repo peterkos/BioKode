@@ -19,7 +19,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var inputSegments: NSSegmentedControl!
     @IBOutlet weak var outputSegments: NSSegmentedControl!
     
-    @IBAction func inputPlaceholderTextGenerator(sender: NSSegmentedControl) {
+    @IBAction func inputIsSelected(sender: NSSegmentedControl) {
         
         // Insert placeholder text
         if (inputSegments.selectedSegment == 0) {
@@ -32,12 +32,11 @@ class ViewController: NSViewController {
         
     }
     
-    @IBAction func translationMode(sender: NSSegmentedControl) {
-        
-        // Calls appropriate conversion method.
-        // Sets output to input if equal conversion languages are selected.
+    @IBAction func outputIsSelected(sender: NSSegmentedControl) {
+		
         // 0 = DNA, 1 = mRNA, 2 = English
-        
+		// If the output is selected and no input is selected,
+		// prompt the user.
         if (inputSegments.selectedSegment == 0) {
             checkPossibleConversionAndConvertDNA()
         } else if (inputSegments.selectedSegment == 1) {
@@ -59,7 +58,9 @@ class ViewController: NSViewController {
     // Error checking & calculation functions for input
     func checkPossibleConversionAndConvertDNA() {
         guard !errorCheck.isValidDNA(inputStr.stringValue) else {
-            ErrorResponse(inputTextField: inputStr, inputSegments: inputSegments).invalidDNASequence()
+            ErrorResponse(inputTextField: inputStr,
+                          inputSegments: inputSegments,
+                          outputSegments: outputSegments).invalidDNASequence()
             return
         }
         
@@ -73,7 +74,9 @@ class ViewController: NSViewController {
     
     func checkPossibleConversionAndConvertmRNA() {
         guard !errorCheck.isValidmRNA(inputStr.stringValue) else {
-            ErrorResponse(inputTextField: inputStr, inputSegments: inputSegments).invalidmRNASequence()
+            ErrorResponse(inputTextField: inputStr,
+                          inputSegments: inputSegments,
+                          outputSegments: outputSegments).invalidmRNASequence()
             return
         }
         
@@ -103,9 +106,6 @@ class ViewController: NSViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		// Gets previous values when view is loaded
-		preferencesDidUpdate()
 		
 		// Notification when preference is changed
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(preferencesDidUpdate), name: "preferencesDidUpdate", object: nil)

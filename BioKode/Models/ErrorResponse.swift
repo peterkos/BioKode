@@ -12,10 +12,12 @@ class ErrorResponse {
     
     var inputTextField : NSTextField
     var inputSegments  : NSSegmentedControl
+	var outputSegments : NSSegmentedControl
     
-    init(inputTextField: NSTextField, inputSegments: NSSegmentedControl) {
+	init(inputTextField: NSTextField, inputSegments: NSSegmentedControl, outputSegments: NSSegmentedControl) {
         self.inputTextField = inputTextField
         self.inputSegments = inputSegments
+		self.outputSegments = outputSegments
     }
     
     
@@ -31,10 +33,8 @@ class ErrorResponse {
         if (alertResponse == NSAlertSecondButtonReturn) {
             inputTextField.stringValue = ""
         }
-        
-        for i in 0..<inputSegments.segmentCount {
-            inputSegments.setSelected(false, forSegment: i)
-        }
+		
+		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
         
     }
     
@@ -50,11 +50,9 @@ class ErrorResponse {
         if (alertResponse == NSAlertSecondButtonReturn) {
             inputTextField.stringValue = ""
         }
-        
-        for i in 0..<inputSegments.segmentCount {
-            inputSegments.setSelected(false, forSegment: i)
-        }
-        
+		
+		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+		
     }
     
     
