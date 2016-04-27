@@ -59,6 +59,7 @@ class ViewController: NSViewController {
     func checkPossibleConversionAndConvertDNA() {
         guard !errorCheck.isValidDNA(inputStr.stringValue) else {
             ErrorResponse(inputTextField: inputStr,
+                          outputTextField: outputStr,
                           inputSegments: inputSegments,
                           outputSegments: outputSegments).invalidDNASequence()
             return
@@ -75,6 +76,7 @@ class ViewController: NSViewController {
     func checkPossibleConversionAndConvertmRNA() {
         guard !errorCheck.isValidmRNA(inputStr.stringValue) else {
             ErrorResponse(inputTextField: inputStr,
+                          outputTextField: outputStr,
                           inputSegments: inputSegments,
                           outputSegments: outputSegments).invalidmRNASequence()
             return
