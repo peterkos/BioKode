@@ -18,10 +18,16 @@ class ViewController: NSViewController {
     // Input and output conversion selection
     @IBOutlet weak var inputSegments: NSSegmentedControl!
     @IBOutlet weak var outputSegments: NSSegmentedControl!
-    
+	
+	@IBAction func resetButton(sender: AnyObject) {
+		inputSegments.setSelected(false, forSegment: inputSegments.selectedSegment)
+		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+		inputStr.stringValue = ""
+		outputStr.stringValue = ""
+	}
     @IBAction func inputIsSelected(sender: NSSegmentedControl) {
         
-        // Insert placeholder text
+        // Replaces placeholder text
         if (inputSegments.selectedSegment == 0) {
             inputStr.placeholderString = "ACTGCGGTCGAC"
         } else if (inputSegments.selectedSegment == 1) {
@@ -29,14 +35,21 @@ class ViewController: NSViewController {
         } else {
             inputStr.placeholderString = "Cookie"
         }
-        
+		
+		// 0 = DNA, 1 = mRNA, 2 = English
+		if (inputSegments.selectedSegment == 0) {
+			checkPossibleConversionAndConvertDNA()
+		} else if (inputSegments.selectedSegment == 1) {
+			checkPossibleConversionAndConvertmRNA()
+		} else if (inputSegments.selectedSegment == 2) {
+			checkPossibleConversionAndConvertEnglish()
+		}
+		
     }
-    
+	
     @IBAction func outputIsSelected(sender: NSSegmentedControl) {
 		
         // 0 = DNA, 1 = mRNA, 2 = English
-		// If the output is selected and no input is selected,
-		// prompt the user.
         if (inputSegments.selectedSegment == 0) {
             checkPossibleConversionAndConvertDNA()
         } else if (inputSegments.selectedSegment == 1) {
