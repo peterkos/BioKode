@@ -9,7 +9,12 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    
+	
+	// Error checking & conversion objects to be used later
+	let errorCheck = ErrorCheck()
+	let alert = NSAlert()
+	let bioTrans = BioTranslate()
+	
     
     // Input and output text fields
     @IBOutlet weak var inputStr: NSTextField!
@@ -37,12 +42,16 @@ class ViewController: NSViewController {
             inputStr.placeholderString = "Cookie"
         }
 		
-		// 0 = DNA, 1 = mRNA, 2 = English
 		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
 		
     }
 	
     @IBAction func outputIsSelected(sender: NSSegmentedControl) {
+		
+		guard !errorCheck.stringIsNotEmpty(inputStr.stringValue) else {
+			invalidEmptyInput()
+			return
+		}
 		
         // 0 = DNA, 1 = mRNA, 2 = English
         if (inputSegments.selectedSegment == 0) {
@@ -59,42 +68,27 @@ class ViewController: NSViewController {
 	// Custom Functions
 	// ----------------------------------------------
 	
-	// Error checking objects
-	let errorCheck = ErrorCheck()
-	let bioTrans = BioTranslate()
 	
-    // Error checking & calculation functions for input
+	// Error checking & calculation functions for input
     func checkPossibleConversionAndConvertDNA() {
 		
-		let errorResponse = ErrorResponse(inputTextField: inputStr,
-		                                       outputTextField: outputStr,
-		                                       inputSegments: inputSegments,
-		                                       outputSegments: outputSegments)
-		
         guard !errorCheck.isValidDNA(inputStr.stringValue) else {
-            errorResponse.invalidDNASequence()
+             invalidDNASequence()
             return
         }
-		
-		guard !errorCheck.stringIsNotEmpty(inputStr.stringValue) else {
-			errorResponse.invalidEmptyInput()
-			return
-		}
         
         switch outputSegments.selectedSegment {
-        case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;
-        case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
-        case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
-        default: return
+			case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;
+			case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
+			case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
+			default: return
         }
     }
     
     func checkPossibleConversionAndConvertmRNA() {
+
         guard !errorCheck.isValidmRNA(inputStr.stringValue) else {
-            ErrorResponse(inputTextField: inputStr,
-                          outputTextField: outputStr,
-                          inputSegments: inputSegments,
-                          outputSegments: outputSegments).invalidmRNASequence()
+			invalidmRNASequence()
             return
         }
         
@@ -102,7 +96,6 @@ class ViewController: NSViewController {
 			case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
 			case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
 			case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
-			
 			default: return
         }
     }
@@ -111,12 +104,52 @@ class ViewController: NSViewController {
         
         // No guard -- English has no default constraints
         switch outputSegments.selectedSegment {
-        case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
-        case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
-        case 2: outputStr.stringValue = inputStr.stringValue.uppercaseString
-        default: return
+			case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
+			case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
+			case 2: outputStr.stringValue = inputStr.stringValue.uppercaseString
+			default: return
         }
     }
+	
+	
+	// ----------------------------------------------
+	// Error delegate functions
+	// ----------------------------------------------	
+	func alertButtonsAndActions() {
+		alert.addButtonWithTitle("OK")
+		alert.addButtonWithTitle("Clear Input")
+		alert.addButtonWithTitle("Clear Input & Output")
+		let alertResponse = alert.runModal()
+		
+		// SecondButton = clear in, ThirdButton = clear in & out
+		// Output segments are cleared either way to allow user to re-apply conversion.
+		if (alertResponse == NSAlertSecondButtonReturn) {
+			inputStr.stringValue = ""
+			outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+		} else if (alertResponse == NSAlertThirdButtonReturn) {
+			inputStr.stringValue = ""
+			outputStr.stringValue = ""
+			outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+		}
+	}
+	
+	func invalidDNASequence() {
+		alert.messageText = "Uh oh!"
+		alert.informativeText = "Invalid sequence. Must contain A, C, T, or G, and the total length must be a multiple of 3."
+		alertButtonsAndActions()
+	}
+	
+	func invalidmRNASequence() {
+		alert.messageText = "Uh oh!"
+		alert.informativeText = "Invalid sequence. Must contain A, C, U, or G, and the total length must be a multiple of 3."
+		alertButtonsAndActions()
+	}
+	
+	func invalidEmptyInput() {
+		alert.messageText = "Convert whitespace? That's a new one."
+		alert.informativeText = "Input string cannot be empty."
+		alertButtonsAndActions()
+	}
 
 	// ----------------------------------------------
 	// Not-so Custom Functions
@@ -139,7 +172,7 @@ class ViewController: NSViewController {
 
     override var representedObject: AnyObject? {
         didSet {
-        // Update the view, if already loaded.
+			// Update the view, if already loaded.
         }
     }
 

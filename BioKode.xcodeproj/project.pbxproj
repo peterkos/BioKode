@@ -17,7 +17,6 @@
 		0EE6FD951CCD1AA6006A9074 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6FD931CCD1AA6006A9074 /* ViewController.swift */; };
 		0EE6FD961CCD1AA6006A9074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE6FD941CCD1AA6006A9074 /* Main.storyboard */; };
 		0EF9BBB61CCB0592003FD5B1 /* ErrorCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */; };
-		0EF9BBB81CCB0649003FD5B1 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +54,6 @@
 		0EE6FD931CCD1AA6006A9074 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0EE6FD941CCD1AA6006A9074 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCheck.swift; sourceTree = "<group>"; };
-		0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,6 @@
 			children = (
 				0E3861EF1CC9A84A0019198B /* BioTranslate.swift */,
 				0EF9BBB51CCB0592003FD5B1 /* ErrorCheck.swift */,
-				0EF9BBB71CCB0649003FD5B1 /* ErrorResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,7 +302,6 @@
 				0E3861F01CC9A84A0019198B /* BioTranslate.swift in Sources */,
 				0EC4100E1CCD3FA1001D1F20 /* PreferenceViewController.swift in Sources */,
 				0EF9BBB61CCB0592003FD5B1 /* ErrorCheck.swift in Sources */,
-				0EF9BBB81CCB0649003FD5B1 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
