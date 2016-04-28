@@ -672,7 +672,7 @@
         <!--Window Controller-->
         <scene sceneID="sve-QV-45F">
             <objects>
-                <windowController id="DQT-05-bBb" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="DQT-05-bBb" sceneMemberID="viewController">
                     <window key="window" title="BioKode Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="pfW-3b-ZyC">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="425" y="469" width="480" height="262"/>
