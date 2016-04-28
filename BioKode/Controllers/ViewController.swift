@@ -12,7 +12,7 @@ class ViewController: NSViewController {
 	
 	// Error checking & conversion objects to be used later
 	let errorCheck = ErrorCheck()
-	let alert = NSAlert()
+	var alert = NSAlert()
 	let bioTrans = BioTranslate()
 	
     
@@ -131,6 +131,9 @@ class ViewController: NSViewController {
 			outputStr.stringValue = ""
 			outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
 		}
+		
+		// Resets alert so buttons aren't duplicated
+		alert = NSAlert()
 	}
 	
 	func invalidDNASequence() {
