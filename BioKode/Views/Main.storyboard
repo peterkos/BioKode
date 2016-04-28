@@ -692,7 +692,7 @@
             <objects>
                 <viewController id="xAf-Y7-ucf" customClass="PreferenceViewController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Jis-4T-fQb">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="296"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="297"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uh9-Sl-aMd">
@@ -803,29 +803,29 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="tBG-eL-iwa" firstAttribute="leading" secondItem="IbL-Xm-dH9" secondAttribute="leading" id="0s4-Vu-iSY"/>
-                            <constraint firstItem="Ebz-wu-8cx" firstAttribute="leading" secondItem="gKZ-WC-Xvc" secondAttribute="leading" id="4Id-V9-q3V"/>
-                            <constraint firstItem="Ziu-Vk-Bpx" firstAttribute="centerX" secondItem="Jis-4T-fQb" secondAttribute="centerX" id="7JH-h4-IPl"/>
-                            <constraint firstItem="uh9-Sl-aMd" firstAttribute="centerY" secondItem="3z2-uk-3Zr" secondAttribute="centerY" id="A9I-OZ-Vya"/>
-                            <constraint firstItem="zod-Bx-vAW" firstAttribute="leading" secondItem="Ebz-wu-8cx" secondAttribute="leading" id="B7z-pC-3nV"/>
-                            <constraint firstItem="IbL-Xm-dH9" firstAttribute="top" secondItem="tBG-eL-iwa" secondAttribute="bottom" constant="5" id="BEw-ML-DcX"/>
-                            <constraint firstItem="IOH-fb-YlP" firstAttribute="trailing" secondItem="goX-0b-uSg" secondAttribute="trailing" id="DXr-Xf-22N"/>
-                            <constraint firstItem="goX-0b-uSg" firstAttribute="top" secondItem="Ziu-Vk-Bpx" secondAttribute="bottom" constant="25" id="GJ1-sK-n2D"/>
-                            <constraint firstItem="uh9-Sl-aMd" firstAttribute="trailing" secondItem="IOH-fb-YlP" secondAttribute="trailing" id="Id9-O5-jKa"/>
-                            <constraint firstItem="zod-Bx-vAW" firstAttribute="top" secondItem="3z2-uk-3Zr" secondAttribute="bottom" constant="17" id="JYa-mV-vSN"/>
-                            <constraint firstItem="goX-0b-uSg" firstAttribute="baseline" secondItem="Ebz-wu-8cx" secondAttribute="baseline" id="NQz-fL-Hcb"/>
-                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="top" secondItem="Jis-4T-fQb" secondAttribute="top" constant="46" id="Uap-XG-z7Q"/>
-                            <constraint firstItem="IOH-fb-YlP" firstAttribute="leading" secondItem="Ziu-Vk-Bpx" secondAttribute="leading" id="Vj0-VM-ObA"/>
-                            <constraint firstItem="IOH-fb-YlP" firstAttribute="centerY" secondItem="zod-Bx-vAW" secondAttribute="centerY" id="YIt-Pm-Y59"/>
-                            <constraint firstItem="gKZ-WC-Xvc" firstAttribute="top" secondItem="Ebz-wu-8cx" secondAttribute="bottom" constant="5" id="aD1-pO-gCY"/>
-                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="leading" secondItem="uh9-Sl-aMd" secondAttribute="trailing" constant="29" id="bK3-U4-Ikt"/>
-                            <constraint firstItem="9o9-EP-PCP" firstAttribute="baseline" secondItem="tBG-eL-iwa" secondAttribute="baseline" id="cH2-Ds-Lgx"/>
-                            <constraint firstItem="Ziu-Vk-Bpx" firstAttribute="top" secondItem="zod-Bx-vAW" secondAttribute="bottom" constant="28" id="cnA-NK-zWc"/>
-                            <constraint firstItem="tBG-eL-iwa" firstAttribute="top" secondItem="gKZ-WC-Xvc" secondAttribute="bottom" constant="16" id="hMu-JS-0nd"/>
-                            <constraint firstItem="zod-Bx-vAW" firstAttribute="trailing" secondItem="Ziu-Vk-Bpx" secondAttribute="trailing" id="iy4-5A-nXE"/>
-                            <constraint firstItem="9o9-EP-PCP" firstAttribute="leading" secondItem="Jis-4T-fQb" secondAttribute="leading" constant="125" id="kBZ-vp-9en"/>
-                            <constraint firstItem="tBG-eL-iwa" firstAttribute="leading" secondItem="9o9-EP-PCP" secondAttribute="trailing" constant="29" id="lvY-qo-Evz"/>
-                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="leading" secondItem="zod-Bx-vAW" secondAttribute="leading" id="wih-Ic-tRz"/>
+                            <constraint firstItem="uh9-Sl-aMd" firstAttribute="trailing" secondItem="IOH-fb-YlP" secondAttribute="trailing" id="39W-jM-ub6"/>
+                            <constraint firstItem="IOH-fb-YlP" firstAttribute="trailing" secondItem="goX-0b-uSg" secondAttribute="trailing" id="3Ea-Hg-FBK"/>
+                            <constraint firstItem="zod-Bx-vAW" firstAttribute="trailing" secondItem="Ziu-Vk-Bpx" secondAttribute="trailing" id="4U2-VP-XGi"/>
+                            <constraint firstItem="zod-Bx-vAW" firstAttribute="leading" secondItem="Ebz-wu-8cx" secondAttribute="leading" id="7at-B5-Rjs"/>
+                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="leading" secondItem="zod-Bx-vAW" secondAttribute="leading" id="9xA-Ve-kAI"/>
+                            <constraint firstItem="9o9-EP-PCP" firstAttribute="leading" secondItem="Jis-4T-fQb" secondAttribute="leading" constant="125" id="ECy-Ya-pZB"/>
+                            <constraint firstItem="tBG-eL-iwa" firstAttribute="leading" secondItem="IbL-Xm-dH9" secondAttribute="leading" id="Ftu-WS-BA9"/>
+                            <constraint firstItem="IOH-fb-YlP" firstAttribute="centerY" secondItem="zod-Bx-vAW" secondAttribute="centerY" id="GHg-md-BAv"/>
+                            <constraint firstItem="tBG-eL-iwa" firstAttribute="top" secondItem="gKZ-WC-Xvc" secondAttribute="bottom" constant="16" id="Glf-Rp-NSZ"/>
+                            <constraint firstItem="zod-Bx-vAW" firstAttribute="top" secondItem="3z2-uk-3Zr" secondAttribute="bottom" constant="17" id="KnW-SF-KsE"/>
+                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="leading" secondItem="uh9-Sl-aMd" secondAttribute="trailing" constant="29" id="LT8-W8-ZnO"/>
+                            <constraint firstItem="uh9-Sl-aMd" firstAttribute="centerY" secondItem="3z2-uk-3Zr" secondAttribute="centerY" id="MIb-B7-3Ot"/>
+                            <constraint firstItem="tBG-eL-iwa" firstAttribute="leading" secondItem="9o9-EP-PCP" secondAttribute="trailing" constant="29" id="OTd-EZ-QRB"/>
+                            <constraint firstItem="goX-0b-uSg" firstAttribute="baseline" secondItem="Ebz-wu-8cx" secondAttribute="baseline" id="Q0U-oP-NBS"/>
+                            <constraint firstItem="3z2-uk-3Zr" firstAttribute="top" secondItem="Jis-4T-fQb" secondAttribute="top" constant="47" id="WAC-gE-zmw"/>
+                            <constraint firstItem="IbL-Xm-dH9" firstAttribute="top" secondItem="tBG-eL-iwa" secondAttribute="bottom" constant="5" id="XOv-Rg-mc3"/>
+                            <constraint firstItem="Ziu-Vk-Bpx" firstAttribute="top" secondItem="zod-Bx-vAW" secondAttribute="bottom" constant="28" id="XX0-ek-cgI"/>
+                            <constraint firstItem="IOH-fb-YlP" firstAttribute="leading" secondItem="Ziu-Vk-Bpx" secondAttribute="leading" id="Z9w-dl-Dh9"/>
+                            <constraint firstItem="goX-0b-uSg" firstAttribute="top" secondItem="Ziu-Vk-Bpx" secondAttribute="bottom" constant="25" id="ccv-4j-sIJ"/>
+                            <constraint firstItem="9o9-EP-PCP" firstAttribute="baseline" secondItem="tBG-eL-iwa" secondAttribute="baseline" id="mzG-0X-zyi"/>
+                            <constraint firstItem="Ziu-Vk-Bpx" firstAttribute="centerX" secondItem="Jis-4T-fQb" secondAttribute="centerX" id="p92-ot-Shl"/>
+                            <constraint firstItem="gKZ-WC-Xvc" firstAttribute="top" secondItem="Ebz-wu-8cx" secondAttribute="bottom" constant="5" id="vf2-H2-YwY"/>
+                            <constraint firstItem="Ebz-wu-8cx" firstAttribute="leading" secondItem="gKZ-WC-Xvc" secondAttribute="leading" id="xMI-GS-qGA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -840,14 +840,14 @@
                 <customObject id="Rc3-xc-3Vs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="SqY-Uw-1fE"/>
             </objects>
-            <point key="canvasLocation" x="371" y="1174"/>
+            <point key="canvasLocation" x="371" y="1173.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="302"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="288"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bdR-xs-D11">
@@ -942,6 +942,7 @@
                             <constraint firstItem="2DW-dU-R2y" firstAttribute="centerX" secondItem="bdR-xs-D11" secondAttribute="centerX" id="MgV-dN-ygC"/>
                             <constraint firstItem="PnE-xO-tpE" firstAttribute="centerX" secondItem="esb-lP-9fx" secondAttribute="centerX" id="Ngm-qK-h75"/>
                             <constraint firstItem="Y0d-iu-fwM" firstAttribute="top" secondItem="JhJ-Fw-RIw" secondAttribute="bottom" constant="25" id="Osh-gr-SFV"/>
+                            <constraint firstItem="PnE-xO-tpE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Qdi-Jr-nB1"/>
                             <constraint firstItem="p7N-Sx-qY0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="81" id="TFn-H5-rfV"/>
                             <constraint firstItem="p7N-Sx-qY0" firstAttribute="leading" secondItem="JhJ-Fw-RIw" secondAttribute="leading" id="Zhy-Ao-ttE"/>
                             <constraint firstItem="PnE-xO-tpE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="aR6-08-GiC"/>
@@ -960,7 +961,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="371" y="724"/>
+            <point key="canvasLocation" x="371" y="731"/>
         </scene>
     </scenes>
 </document>
