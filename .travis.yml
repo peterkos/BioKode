@@ -2,3 +2,6 @@ language: objective-c
 osx_image: xcode7.3
 xcode_project: BioKode.xcodeproj
 xcode_scheme: BioKode
+
+script:
+  - set -o pipefail && xcodebuild -project BioKode.xcodeproj -scheme Biokode test | xcpretty
