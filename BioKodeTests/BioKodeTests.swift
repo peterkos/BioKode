@@ -86,14 +86,14 @@ class BioKodeTests: XCTestCase {
 		NSUserDefaults.standardUserDefaults().setValue(polyGen, forKey: "polygeneticSelection")
 	}
 	
-	func testEnglishtomDNA() {
+	func testEnglishtoDNA() {
 		let givenInput     = "GROUPSELFIEWITHATEACHER"
-		let expectedOutput = ("ATTGGGTTTCGATACTCGTTGGTGCTGGTTTTGACCGTTTGTACAAAATGCTTAAAAATGACGTTAGGG").stringByReplacingOccurrencesOfString(" ", withString: "")
+		let expectedOutput = ("ATT GGA TTT CGA TAC AGA TTA GTA CTA GTT TTA ACC GTT TGT ACA AAA TGT TTA AAA ATA ACA TTA GGA").stringByReplacingOccurrencesOfString(" ", withString: "")
 		let actualOutput   = bioTrans.fromEnglishtoDNA(givenInput)
 		let polyGen = NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection")
 		
 		// Explicitly sets polygenetic selection to false
-		NSUserDefaults.standardUserDefaults().setValue(1, forKey: "polygeneticSelection")
+		NSUserDefaults.standardUserDefaults().setValue(0, forKey: "polygeneticSelection")
 		print(expectedOutput)
 		print(actualOutput)
 		XCTAssertEqual(expectedOutput, actualOutput)
