@@ -13,7 +13,7 @@ class BioTranslate {
 	let englishTomRNADictionary: [Character: [String]] =
 		["A": ["UUU", "UAC"],
 		 "Q": ["UUA", "UUG"],
-		 "S": ["UCU", "UCC", "UCA", "UCG", "AGU", "ACG"],
+		 "S": ["UCU", "UCC", "UCA", "UCG", "AGU", "AGC"],
 		 "C": ["UAU", "UAC"],
 		 "G": ["UAA", "UAG", "UGA"],
 		 "H": ["UGU", "UGC"],
@@ -22,8 +22,9 @@ class BioTranslate {
 		 "R": ["CCU", "CCC", "CCA", "CCG"],
 		 "L": ["CAU", "CAC"],
 		 "I": ["CAA", "CAG"],
-		 "D": ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"],
-		 "M": ["AUU", "AUC", "AUA"],
+		 "D": ["AGA", "AGG", "CGU", "CGC", "CGA", "CGG"],
+		 "M": ["AUU", "AUC"],
+		 "X": ["AUA"],
 		 "P": ["AUG"],
 		 "V": ["ACU", "ACC"],
 		 "T": ["ACA", "ACG"],
@@ -112,6 +113,7 @@ class BioTranslate {
 		// Credit: http://stackoverflow.com/a/36854223/1431900
 		// Reverse-map the codon (as a value) from the englishTomRNADictionary to the key (corresponding English letter), and append the key to the outputString
 		for codon in preEnglish {
+			print(codon)
 			let english = englishTomRNADictionary.filter { $0.1.contains(codon) }.first!.0
 			outputString.append(english)
 		}
