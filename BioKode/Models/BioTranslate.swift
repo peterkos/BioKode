@@ -39,45 +39,46 @@ class BioTranslate {
 	
 	
     // mRNA ****************
-    func fromDNAtomRNA(input input: NSTextField, output: NSTextField) {
+    func fromDNAtomRNA(input: String) -> String {
         
         // Resets output
-        output.stringValue = ""
+        var outputString = ""
         
         // Gets input text
-        let textIn = input.stringValue.uppercaseString
+        let textIn = input.uppercaseString
         
         // Converts to mRNA
         for i in textIn.characters {
-            if (i == "T") {
-                output.stringValue += "A"
+            if (i == "T") { outputString += "A"
             } else if (i == "C") {
-                output.stringValue += "G"
+                outputString += "G"
             } else if (i == "G") {
-                output.stringValue += "C"
+                outputString += "C"
             } else if (i == "A") {
-                output.stringValue += "U"
+                outputString += "U"
             }
         }
+		
+		return outputString
     }
     
-    func fromDNAtoEnglish(input input: NSTextField, output: NSTextField) {
-        let inputPlaceholder = NSTextField()
-        let outputPlaceholder = NSTextField()
+	func fromDNAtoEnglish(input: String) -> String {
+		let inputPlaceholderString: String
+		let outputPlaceholderString: String
+			
+        inputPlaceholderString = fromDNAtomRNA(input)
+		outputPlaceholderString = frommRNAtoEnglish(inputPlaceholderString)
         
-        fromDNAtomRNA(input: input, output: inputPlaceholder)
-        frommRNAtoEnglish(input: inputPlaceholder, output: outputPlaceholder)
-        
-        output.stringValue = outputPlaceholder.stringValue
+        return outputPlaceholderString
     }
     
     
     // mRNA ****************
-    func frommRNAtoDNA(input input: NSTextField, output: NSTextField) {
+    func frommRNAtoDNA(input: String) -> String {
         
         // Resets output
         var outputString = ""
-        let inputString = input.stringValue.uppercaseString
+        let inputString = input.uppercaseString
         
         // Converts to mRNA
         for i in inputString.characters {
@@ -92,14 +93,14 @@ class BioTranslate {
             }
         }
 		
-		output.stringValue = outputString
+		return outputString
     }
     
-	func frommRNAtoEnglish(input input: NSTextField, output: NSTextField) {
+	func frommRNAtoEnglish(input: String) -> String {
         
         // Gets input text
 		var outputString = ""
-		let inputString = input.stringValue.uppercaseString
+		let inputString = input.uppercaseString
         var preEnglish = [String]()
         
         // Converts to codons (groups of 3)
@@ -115,16 +116,16 @@ class BioTranslate {
 			outputString.append(english)
 		}
 		
-		
-		output.stringValue = outputString
+		return outputString
     }
 	
 	
     // English ****************
-    func fromEnglishtomRNA(input input: NSTextField, output: NSTextField) {
+	func fromEnglishtomRNA(input: String) -> String {
         
-        let inputString = input.stringValue.uppercaseString
-        var outputString = String()
+		var outputString = String()
+		let inputString = input.uppercaseString
+		
 		
 			// Random number function to make life slightly easier
 			func rand(lim: Int) -> Int {
@@ -145,38 +146,38 @@ class BioTranslate {
 				}
 			}
 		
-        output.stringValue = outputCodon(outputString)
+         return outputCodon(outputString)
     }
     
-    func fromEnglishtoDNA(input input: NSTextField, output: NSTextField) {
-        let inputPlaceholder = NSTextField()
-        let outputPlaceholder = NSTextField()
-        
-		fromEnglishtomRNA(input: input, output: inputPlaceholder)
-        frommRNAtoDNA(input: inputPlaceholder, output: outputPlaceholder)
-        
-        output.stringValue = outputCodon(outputPlaceholder.stringValue)
+    func fromEnglishtoDNA(input: String) -> String {
+		let inputPlaceholderString: String
+		let outputPlaceholderString: String
+		
+		inputPlaceholderString = fromEnglishtomRNA(input)
+		outputPlaceholderString = frommRNAtoDNA(inputPlaceholderString)
+		
+        return outputCodon(outputPlaceholderString)
     }
 	
 	
 	func outputCodon(input: String) -> String {
 		
-		var output = ""
+		var outputString = ""
 		
 		if (NSUserDefaults.standardUserDefaults().valueForKey("outputSpacingSelection") as! Int == 2) {
 			for i in 0.stride(to: input.characters.count, by: 3) {
-				output += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)) + "-")
+				outputString += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)) + "-")
 			}
 			
 			// Exclude trailing dash
-			output = String(output.characters.dropLast(1))
+			outputString = String(outputString.characters.dropLast(1))
 		} else {
 			for i in 0.stride(to: input.characters.count, by: 3) {
-				output += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)))
+				outputString += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)))
 			}
 		}
 		
-		return output
+		return outputString
 	}
 	
 }
