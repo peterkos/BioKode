@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode7.3
+xcode_project: BioKode.xcodeproj
+xcode_scheme: BioKode
+
+script:
+  - xcodebuild -project BioKode.xcodeproj -scheme BioKode -sdk macosx10.11

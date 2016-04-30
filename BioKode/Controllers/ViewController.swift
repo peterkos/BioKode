@@ -79,8 +79,8 @@ class ViewController: NSViewController {
         
         switch outputSegments.selectedSegment {
 			case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;
-			case 1: bioTrans.fromDNAtomRNA(input: inputStr, output: outputStr)
-			case 2: bioTrans.fromDNAtoEnglish(input: inputStr, output: outputStr)
+			case 1: outputStr.stringValue = bioTrans.fromDNAtomRNA(inputStr.stringValue)
+			case 2: outputStr.stringValue = bioTrans.fromDNAtoEnglish(inputStr.stringValue)
 			default: return
         }
     }
@@ -93,9 +93,9 @@ class ViewController: NSViewController {
         }
         
         switch outputSegments.selectedSegment {
-			case 0: bioTrans.frommRNAtoDNA(input: inputStr, output: outputStr)
+			case 0: outputStr.stringValue = bioTrans.frommRNAtoDNA(inputStr.stringValue)
 			case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
-			case 2: bioTrans.frommRNAtoEnglish(input: inputStr, output: outputStr)
+			case 2: bioTrans.frommRNAtoEnglish(inputStr.stringValue)
 			default: return
         }
     }
@@ -104,8 +104,8 @@ class ViewController: NSViewController {
         
         // No guard -- English has no default constraints
         switch outputSegments.selectedSegment {
-			case 0: bioTrans.fromEnglishtoDNA(input: inputStr, output: outputStr)
-			case 1: bioTrans.fromEnglishtomRNA(input: inputStr, output: outputStr)
+			case 0: outputStr.stringValue = bioTrans.fromEnglishtoDNA(inputStr.stringValue)
+			case 1: outputStr.stringValue = bioTrans.fromEnglishtomRNA(inputStr.stringValue)
 			case 2: outputStr.stringValue = inputStr.stringValue.uppercaseString
 			default: return
         }

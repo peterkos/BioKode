@@ -1,11 +1,12 @@
 # BioKode
 
 
+[![Build Status](https://travis-ci.org/peterkos/BioKode.svg?branch=v1.3)](https://travis-ci.org/peterkos/BioKode)
 
 This is a DNA encryption solver. The goal is to take a DNA sequence, transcribe it in terms of mRNA, and then translate it into words (a.k.a. codons) with the graph below.
 
 
-<img src="graph_reference.png?raw=true" width="500px", height="500px" />
+<img src="graph_reference.png?raw=true" width="500px"/>
 
 ## Install
 
