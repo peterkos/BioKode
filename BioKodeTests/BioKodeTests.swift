@@ -10,7 +10,9 @@ import XCTest
 @testable import BioKode
 
 class BioKodeTests: XCTestCase {
-    
+	
+	let bioTrans = BioTranslate()
+	
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,11 +22,20 @@ class BioKodeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+	
+	func testDNAtomRNA() {
+		let givenInput     = ["AAC", "AGC", "TGA", "TGC", "TCG", "CGT", "GCC", "CGA", "GCT", "GAC"]
+		let expectedOutput = ["UUG", "UCG", "ACU", "ACG", "AGC", "GCA", "CGG", "GCU", "CGA", "CUG"]
+		var actualOutput   = [String]()
+		
+		// Calculate sequences
+		for sequence in givenInput {
+			actualOutput.append(bioTrans.fromDNAtomRNA(sequence))
+		}
+		
+		// Verify sequences
+		XCTAssertEqual(expectedOutput, actualOutput)
+	}
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
