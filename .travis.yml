@@ -5,3 +5,5 @@ xcode_scheme: BioKode
 
 script:
   - xcodebuild -project BioKode.xcodeproj -scheme BioKode -sdk macosx10.11
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J "BioKode"
