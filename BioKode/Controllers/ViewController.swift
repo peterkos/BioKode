@@ -32,7 +32,7 @@ class ViewController: NSViewController {
 	}
 	
     @IBAction func inputIsSelected(sender: NSSegmentedControl) {
-        
+		
         // Replaces placeholder text
         if (inputSegments.selectedSegment == 0) {
             inputStr.placeholderString = "ACTGCGGTCGAC"
