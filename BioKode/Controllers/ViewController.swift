@@ -14,8 +14,7 @@ class ViewController: NSViewController {
 	let errorCheck = ErrorCheck()
 	var alert = NSAlert()
 	let bioTrans = BioTranslate()
-	
-    
+	  
     // Input and output text fields
     @IBOutlet weak var inputStr: NSTextField!
     @IBOutlet weak var outputStr: NSTextField!

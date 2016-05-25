@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="ozF-PS-zqQ">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
@@ -651,23 +651,123 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
+        <!--Short conversion-->
+        <scene sceneID="rnA-yy-nr0">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="BioKode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <rect key="contentRect" x="196" y="379" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="480" height="270"/>
-                    </window>
-                    <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
-                    </connections>
-                </windowController>
-                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController title="Short conversion" storyboardIdentifier="shortConversion" id="GD2-GL-Ye6" sceneMemberID="viewController">
+                    <view key="view" id="SvM-pq-1fp">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lpr-Zy-epy">
+                                <rect key="frame" x="212" y="131" width="26" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="hSK-fv-xf5"/>
+                                    <constraint firstAttribute="width" constant="22" id="hah-Bs-lVH"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="To" id="tYo-aX-9Dx">
+                                    <font key="font" size="17" name=".AppleSystemUIFont"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uVs-cw-w3I">
+                                <rect key="frame" x="66" y="191" width="318" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="ACTGCGGTCGAC" drawsBackground="YES" id="v8P-6z-1fN">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="performClick:" target="0hE-TK-xG9" id="q0F-Vy-dF0"/>
+                                </connections>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qlV-y7-J4n">
+                                <rect key="frame" x="66" y="72" width="318" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="qDq-Go-CFE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pti-7L-be8">
+                                <rect key="frame" x="136" y="219" width="178" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="8kg-gb-0lp">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="DNA" selected="YES"/>
+                                        <segment label="mRNA" tag="1"/>
+                                        <segment label="English"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L6L-rx-2MG">
+                                <rect key="frame" x="200" y="250" width="50" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="MPb-hB-gO3"/>
+                                    <constraint firstAttribute="width" constant="46" id="TvP-1j-KzW"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="From" id="AFa-wo-hf7">
+                                    <font key="font" size="17" name=".AppleSystemUIFont"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZT5-0L-9GH">
+                                <rect key="frame" x="188" y="19" width="75" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hoo-Bf-0KT">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0hE-TK-xG9">
+                                <rect key="frame" x="136" y="100" width="178" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="7sh-IF-O2d">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="DNA"/>
+                                        <segment label="mRNA" tag="1"/>
+                                        <segment label="English"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="L6L-rx-2MG" firstAttribute="centerX" secondItem="pti-7L-be8" secondAttribute="centerX" id="41q-tL-iWb"/>
+                            <constraint firstItem="uVs-cw-w3I" firstAttribute="leading" secondItem="qlV-y7-J4n" secondAttribute="leading" id="EZK-jI-S8p"/>
+                            <constraint firstItem="uVs-cw-w3I" firstAttribute="trailing" secondItem="qlV-y7-J4n" secondAttribute="trailing" id="HQd-sQ-5ZH"/>
+                            <constraint firstItem="uVs-cw-w3I" firstAttribute="top" secondItem="pti-7L-be8" secondAttribute="bottom" constant="8" symbolic="YES" id="JA4-y1-PGg"/>
+                            <constraint firstItem="pti-7L-be8" firstAttribute="leading" secondItem="0hE-TK-xG9" secondAttribute="leading" id="Nlg-1w-geS"/>
+                            <constraint firstItem="L6L-rx-2MG" firstAttribute="top" secondItem="SvM-pq-1fp" secondAttribute="top" constant="26" id="Os0-0z-iK9"/>
+                            <constraint firstItem="0hE-TK-xG9" firstAttribute="top" secondItem="Lpr-Zy-epy" secondAttribute="bottom" constant="8" symbolic="YES" id="Qya-7t-gQ4"/>
+                            <constraint firstItem="uVs-cw-w3I" firstAttribute="leading" secondItem="SvM-pq-1fp" secondAttribute="leading" constant="66" id="RSG-K9-Np3"/>
+                            <constraint firstItem="qlV-y7-J4n" firstAttribute="centerX" secondItem="ZT5-0L-9GH" secondAttribute="centerX" id="UFq-t0-iA1"/>
+                            <constraint firstItem="Lpr-Zy-epy" firstAttribute="top" secondItem="uVs-cw-w3I" secondAttribute="bottom" constant="36" id="Z0B-od-osj"/>
+                            <constraint firstItem="L6L-rx-2MG" firstAttribute="centerX" secondItem="SvM-pq-1fp" secondAttribute="centerX" id="Z20-UM-mVE"/>
+                            <constraint firstItem="pti-7L-be8" firstAttribute="centerX" secondItem="uVs-cw-w3I" secondAttribute="centerX" id="bJM-87-pwd"/>
+                            <constraint firstItem="qlV-y7-J4n" firstAttribute="top" secondItem="0hE-TK-xG9" secondAttribute="bottom" constant="8" symbolic="YES" id="dMg-NB-iam"/>
+                            <constraint firstItem="ZT5-0L-9GH" firstAttribute="top" secondItem="qlV-y7-J4n" secondAttribute="bottom" constant="25" id="dlD-cW-bvs"/>
+                            <constraint firstItem="Lpr-Zy-epy" firstAttribute="centerX" secondItem="0hE-TK-xG9" secondAttribute="centerX" id="naf-v5-e1z"/>
+                            <constraint firstItem="pti-7L-be8" firstAttribute="top" secondItem="L6L-rx-2MG" secondAttribute="bottom" constant="8" symbolic="YES" id="x1U-iV-TTB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="llx-Rn-Dof" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-363" y="929"/>
+        </scene>
+        <!--Long conversion-->
+        <scene sceneID="wBx-ZZ-pI3">
+            <objects>
+                <viewController title="Long conversion" id="r9g-7s-Z4n" sceneMemberID="viewController">
+                    <view key="view" id="w7k-yn-YEH">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="ROo-QE-Vdg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="929"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="sve-QV-45F">
@@ -842,151 +942,72 @@
             </objects>
             <point key="canvasLocation" x="648" y="702.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Window Controller-->
+        <scene sceneID="5MW-ln-wNV">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="340"/>
+                <windowController id="ozF-PS-zqQ" customClass="MainWindowController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="BioKode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="HhC-mC-OkH">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
+                        <rect key="contentRect" x="196" y="379" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
+                        <toolbar key="toolbar" implicitIdentifier="0E78DC5D-16BA-4190-8A35-49B7900C8168" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="regular" id="pj4-55-Ekt">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="EVN-cg-vnB"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Zoe-VA-YL1"/>
+                                <toolbarItem implicitItemIdentifier="4846AF56-B672-425F-8FE8-2185BA18DAC1" label="View Segment Selector" paletteLabel="View Segment Selector" id="c27-4N-HGv">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="67" height="24"/>
+                                    <size key="maxSize" width="149" height="26"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="JWl-gS-WK9">
+                                        <rect key="frame" x="0.0" y="14" width="129" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="tAW-ee-bUt">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment label="Short" width="63" selected="YES"/>
+                                                <segment label="Long" width="63" tag="1"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="toolbarItemIsSelected:" target="ozF-PS-zqQ" id="OJg-ed-8xd"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="Zoe-VA-YL1"/>
+                                <toolbarItem reference="c27-4N-HGv"/>
+                                <toolbarItem reference="Zoe-VA-YL1"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                    </window>
+                    <connections>
+                        <outlet property="toolbarNavigation" destination="pj4-55-Ekt" id="apM-Ye-f1Q"/>
+                        <outlet property="viewSegmentSelector" destination="JWl-gS-WK9" id="t8g-Ez-gZP"/>
+                        <segue destination="Uxw-hf-xDO" kind="relationship" relationship="window.shadowedContentViewController" id="b07-9B-LAq"/>
+                    </connections>
+                </windowController>
+                <customObject id="xGi-zb-3DZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iQ1-A6-8f8">
+            <objects>
+                <viewController id="Uxw-hf-xDO" sceneMemberID="viewController">
+                    <view key="view" id="AiK-As-H62">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="34"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <tabView translatesAutoresizingMaskIntoConstraints="NO" id="7XY-5u-TEC">
-                                <rect key="frame" x="13" y="1" width="454" height="333"/>
-                                <font key="font" metaFont="system"/>
-                                <tabViewItems>
-                                    <tabViewItem label="Short" identifier="1" id="EeK-UB-9AO">
-                                        <view key="view" id="eDE-v5-FDo">
-                                            <rect key="frame" x="10" y="33" width="434" height="287"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2DW-dU-R2y">
-                                                    <rect key="frame" x="204" y="131" width="26" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="22" id="A6U-Kl-xUV"/>
-                                                        <constraint firstAttribute="height" constant="24" id="UvW-eA-73a"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="To" id="Tte-o4-25a">
-                                                        <font key="font" size="17" name=".AppleSystemUIFont"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="p7N-Sx-qY0">
-                                                    <rect key="frame" x="58" y="191" width="318" height="22"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="ACTGCGGTCGAC" drawsBackground="YES" id="Wjk-Pf-SUB">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <connections>
-                                                        <action selector="performClick:" target="bdR-xs-D11" id="cDW-ed-32E"/>
-                                                    </connections>
-                                                </textField>
-                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-Fw-RIw">
-                                                    <rect key="frame" x="58" y="72" width="318" height="22"/>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="C5I-gt-JiV">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="esb-lP-9fx">
-                                                    <rect key="frame" x="128" y="219" width="178" height="24"/>
-                                                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="6lt-Yw-nD3">
-                                                        <font key="font" metaFont="system"/>
-                                                        <segments>
-                                                            <segment label="DNA" selected="YES"/>
-                                                            <segment label="mRNA" tag="1"/>
-                                                            <segment label="English"/>
-                                                        </segments>
-                                                    </segmentedCell>
-                                                    <connections>
-                                                        <action selector="inputIsSelected:" target="XfG-lQ-9wD" id="3Db-e3-Mbd"/>
-                                                    </connections>
-                                                </segmentedControl>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PnE-xO-tpE">
-                                                    <rect key="frame" x="192" y="250" width="50" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="46" id="SB6-Xp-foT"/>
-                                                        <constraint firstAttribute="height" constant="24" id="Tj5-Wl-Cl1"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="From" id="EMs-8c-VVg">
-                                                        <font key="font" size="17" name=".AppleSystemUIFont"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y0d-iu-fwM">
-                                                    <rect key="frame" x="180" y="19" width="75" height="32"/>
-                                                    <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rnT-5u-Ie8">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="resetButton:" target="XfG-lQ-9wD" id="wLu-VI-tWc"/>
-                                                    </connections>
-                                                </button>
-                                                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bdR-xs-D11">
-                                                    <rect key="frame" x="128" y="100" width="178" height="24"/>
-                                                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="RtS-61-BL4">
-                                                        <font key="font" metaFont="system"/>
-                                                        <segments>
-                                                            <segment label="DNA"/>
-                                                            <segment label="mRNA" tag="1"/>
-                                                            <segment label="English"/>
-                                                        </segments>
-                                                    </segmentedCell>
-                                                    <connections>
-                                                        <action selector="outputIsSelected:" target="XfG-lQ-9wD" id="Ok2-7Q-Lqk"/>
-                                                    </connections>
-                                                </segmentedControl>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="PnE-xO-tpE" firstAttribute="centerX" secondItem="esb-lP-9fx" secondAttribute="centerX" id="0vR-5F-jiO"/>
-                                                <constraint firstItem="p7N-Sx-qY0" firstAttribute="trailing" secondItem="JhJ-Fw-RIw" secondAttribute="trailing" id="2GM-t2-liU"/>
-                                                <constraint firstItem="JhJ-Fw-RIw" firstAttribute="centerX" secondItem="Y0d-iu-fwM" secondAttribute="centerX" id="6DV-oJ-bnd"/>
-                                                <constraint firstItem="p7N-Sx-qY0" firstAttribute="leading" secondItem="JhJ-Fw-RIw" secondAttribute="leading" id="CKB-gf-ogL"/>
-                                                <constraint firstItem="p7N-Sx-qY0" firstAttribute="leading" secondItem="eDE-v5-FDo" secondAttribute="leading" constant="58" id="Hsc-Ky-EJX"/>
-                                                <constraint firstItem="Y0d-iu-fwM" firstAttribute="top" secondItem="JhJ-Fw-RIw" secondAttribute="bottom" constant="25" id="JEY-Gl-JsR"/>
-                                                <constraint firstItem="JhJ-Fw-RIw" firstAttribute="top" secondItem="bdR-xs-D11" secondAttribute="bottom" constant="8" symbolic="YES" id="K3M-G7-cKe"/>
-                                                <constraint firstItem="p7N-Sx-qY0" firstAttribute="top" secondItem="esb-lP-9fx" secondAttribute="bottom" constant="8" symbolic="YES" id="WDT-Pd-IR2"/>
-                                                <constraint firstItem="2DW-dU-R2y" firstAttribute="centerX" secondItem="bdR-xs-D11" secondAttribute="centerX" id="Ygr-Sr-0j6"/>
-                                                <constraint firstItem="PnE-xO-tpE" firstAttribute="centerX" secondItem="eDE-v5-FDo" secondAttribute="centerX" id="ZUQ-aN-cc3"/>
-                                                <constraint firstItem="esb-lP-9fx" firstAttribute="centerX" secondItem="p7N-Sx-qY0" secondAttribute="centerX" id="jko-CK-bL9"/>
-                                                <constraint firstItem="2DW-dU-R2y" firstAttribute="top" secondItem="p7N-Sx-qY0" secondAttribute="bottom" constant="36" id="kae-zS-eNx"/>
-                                                <constraint firstItem="PnE-xO-tpE" firstAttribute="top" secondItem="eDE-v5-FDo" secondAttribute="top" constant="13" id="lLK-ty-uIo"/>
-                                                <constraint firstItem="bdR-xs-D11" firstAttribute="top" secondItem="2DW-dU-R2y" secondAttribute="bottom" constant="8" symbolic="YES" id="ncq-fM-FHw"/>
-                                                <constraint firstItem="esb-lP-9fx" firstAttribute="leading" secondItem="bdR-xs-D11" secondAttribute="leading" id="xKt-sK-2wj"/>
-                                                <constraint firstItem="esb-lP-9fx" firstAttribute="top" secondItem="PnE-xO-tpE" secondAttribute="bottom" constant="8" symbolic="YES" id="y01-eq-v1O"/>
-                                            </constraints>
-                                        </view>
-                                    </tabViewItem>
-                                    <tabViewItem label="Long" identifier="2" id="x7X-hs-ucN">
-                                        <view key="view" id="dhZ-88-fRc">
-                                            <rect key="frame" x="10" y="33" width="434" height="287"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </view>
-                                    </tabViewItem>
-                                </tabViewItems>
-                            </tabView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="7XY-5u-TEC" secondAttribute="trailing" constant="20" symbolic="YES" id="5sg-Nf-NZ6"/>
-                            <constraint firstItem="7XY-5u-TEC" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="EpZ-Gc-XMN"/>
-                            <constraint firstItem="7XY-5u-TEC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="MG9-nw-shx"/>
-                            <constraint firstItem="7XY-5u-TEC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" symbolic="YES" id="ctj-IM-hIp"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="inputSegments" destination="esb-lP-9fx" id="9Of-Mh-27R"/>
-                        <outlet property="inputStr" destination="p7N-Sx-qY0" id="WWC-uZ-5YI"/>
-                        <outlet property="outputSegments" destination="bdR-xs-D11" id="lFM-6K-Xiu"/>
-                        <outlet property="outputStr" destination="JhJ-Fw-RIw" id="w0m-RK-Wb3"/>
+                        <segue destination="GD2-GL-Ye6" kind="show" identifier="switchToShortView" id="8AH-cT-b6O"/>
+                        <segue destination="r9g-7s-Z4n" kind="show" identifier="switchToLongView" id="n1G-LW-jyQ"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="ucN-TQ-cNM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="724"/>
+            <point key="canvasLocation" x="-81" y="590"/>
         </scene>
     </scenes>
 </document>

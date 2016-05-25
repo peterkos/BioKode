@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E3861F01CC9A84A0019198B /* BioTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3861EF1CC9A84A0019198B /* BioTranslate.swift */; };
+		0E5C518E1CF4FC47007F6FD7 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5C518D1CF4FC47007F6FD7 /* MainWindowController.swift */; };
 		0E85BA101CCD917B008B7AEA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF1CC11CC6B199009226AE /* MainMenu.xib */; };
 		0EC4100E1CCD3FA1001D1F20 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */; };
 		0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0E1B2A5E1CC9105400F768F2 /* BioKode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BioKode.entitlements; sourceTree = "<group>"; };
 		0E3861EF1CC9A84A0019198B /* BioTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioTranslate.swift; sourceTree = "<group>"; };
+		0E5C518D1CF4FC47007F6FD7 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceViewController.swift; sourceTree = "<group>"; };
 		0ECF1CBA1CC6B199009226AE /* BioKode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BioKode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECF1CBD1CC6B199009226AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				0EE6FD931CCD1AA6006A9074 /* ViewController.swift */,
 				0EC4100D1CCD3FA1001D1F20 /* PreferenceViewController.swift */,
+				0E5C518D1CF4FC47007F6FD7 /* MainWindowController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				0EE6FD951CCD1AA6006A9074 /* ViewController.swift in Sources */,
 				0ECF1CBE1CC6B199009226AE /* AppDelegate.swift in Sources */,
+				0E5C518E1CF4FC47007F6FD7 /* MainWindowController.swift in Sources */,
 				0E3861F01CC9A84A0019198B /* BioTranslate.swift in Sources */,
 				0EC4100E1CCD3FA1001D1F20 /* PreferenceViewController.swift in Sources */,
 				0EF9BBB61CCB0592003FD5B1 /* ErrorCheck.swift in Sources */,
