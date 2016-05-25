@@ -14,16 +14,8 @@ class MainWindowController: NSWindowController {
 	
 	// Dealing with toolbar input
 	@IBAction func toolbarItemIsSelected(sender: NSSegmentedControl) {
-		if sender.selectedSegment == 0 {
-			print("0 selected")
-            self.contentViewController!.performSegueWithIdentifier("switchToShortView", sender: self)
-		} else {
-			print("1 selected")
-            self.contentViewController!.performSegueWithIdentifier("switchToLongView", sender: self)
-		}
+        (self.contentViewController! as! NSTabViewController).selectedTabViewItemIndex = sender.selectedSegment
 	}
-	
-
 	
 	override func windowDidLoad() {
 		self.window!.titleVisibility = .Hidden
