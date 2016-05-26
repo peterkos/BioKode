@@ -654,25 +654,29 @@
         <!--Tab View Controller-->
         <scene sceneID="0ym-Jj-4VS">
             <objects>
-                <tabViewController id="lKs-1H-0Av" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="unspecified" id="lKs-1H-0Av" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem id="CgE-RR-68B"/>
-                        <tabViewItem id="UsT-DP-nwQ"/>
+                        <tabViewItem id="b9n-Cm-bZ5"/>
+                        <tabViewItem id="HUD-aZ-4SK"/>
                     </tabViewItems>
+                    <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="XnX-AU-0ym">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="482" height="139"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <font key="font" metaFont="message"/>
                         <tabViewItems/>
+                        <connections>
+                            <outlet property="delegate" destination="lKs-1H-0Av" id="Yd2-XZ-A1e"/>
+                        </connections>
                     </tabView>
                     <connections>
-                        <segue destination="GD2-GL-Ye6" kind="relationship" relationship="tabItems" id="YpI-Ad-tYt"/>
-                        <segue destination="r9g-7s-Z4n" kind="relationship" relationship="tabItems" id="FrK-hU-u0o"/>
+                        <segue destination="GD2-GL-Ye6" kind="relationship" relationship="tabItems" id="L5n-ec-9xC"/>
+                        <segue destination="r9g-7s-Z4n" kind="relationship" relationship="tabItems" id="Ecj-S0-LOo"/>
                     </connections>
                 </tabViewController>
                 <customObject id="6hb-Jm-wK1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="683"/>
+            <point key="canvasLocation" x="74" y="698"/>
         </scene>
         <!--Short conversion-->
         <scene sceneID="rnA-yy-nr0">
@@ -770,6 +774,7 @@
                             <constraint firstItem="pti-7L-be8" firstAttribute="centerX" secondItem="uVs-cw-w3I" secondAttribute="centerX" id="bJM-87-pwd"/>
                             <constraint firstItem="qlV-y7-J4n" firstAttribute="top" secondItem="0hE-TK-xG9" secondAttribute="bottom" constant="8" symbolic="YES" id="dMg-NB-iam"/>
                             <constraint firstItem="ZT5-0L-9GH" firstAttribute="top" secondItem="qlV-y7-J4n" secondAttribute="bottom" constant="25" id="dlD-cW-bvs"/>
+                            <constraint firstAttribute="bottom" secondItem="ZT5-0L-9GH" secondAttribute="bottom" constant="26" id="iD3-dF-ujq"/>
                             <constraint firstItem="Lpr-Zy-epy" firstAttribute="centerX" secondItem="0hE-TK-xG9" secondAttribute="centerX" id="naf-v5-e1z"/>
                             <constraint firstItem="pti-7L-be8" firstAttribute="top" secondItem="L6L-rx-2MG" secondAttribute="bottom" constant="8" symbolic="YES" id="x1U-iV-TTB"/>
                         </constraints>
@@ -777,7 +782,7 @@
                 </viewController>
                 <customObject id="llx-Rn-Dof" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-375" y="1082"/>
+            <point key="canvasLocation" x="-176" y="1147"/>
         </scene>
         <!--Long conversion-->
         <scene sceneID="wBx-ZZ-pI3">
@@ -790,7 +795,7 @@
                 </viewController>
                 <customObject id="ROo-QE-Vdg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="1082"/>
+            <point key="canvasLocation" x="324" y="1147"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="sve-QV-45F">
@@ -808,7 +813,7 @@
                 </windowController>
                 <customObject id="PHp-K4-Jnd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="246"/>
+            <point key="canvasLocation" x="1014" y="336"/>
         </scene>
         <!--Preference View Controller-->
         <scene sceneID="KwC-Ph-hIc">
@@ -963,14 +968,14 @@
                 <customObject id="Rc3-xc-3Vs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="SqY-Uw-1fE"/>
             </objects>
-            <point key="canvasLocation" x="648" y="702.5"/>
+            <point key="canvasLocation" x="1014" y="728.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="5MW-ln-wNV">
             <objects>
                 <windowController id="ozF-PS-zqQ" customClass="MainWindowController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="BioKode" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="HhC-mC-OkH">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <rect key="contentRect" x="196" y="379" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                         <value key="minSize" type="size" width="480" height="270"/>
@@ -993,7 +998,7 @@
                                             </segments>
                                         </segmentedCell>
                                         <connections>
-                                            <action selector="toolbarItemIsSelected:" target="ozF-PS-zqQ" id="OJg-ed-8xd"/>
+                                            <action selector="toolbarItemIsSelected:" target="ozF-PS-zqQ" id="yuW-yX-Yld"/>
                                         </connections>
                                     </segmentedControl>
                                 </toolbarItem>
@@ -1007,13 +1012,12 @@
                     </window>
                     <connections>
                         <outlet property="toolbarNavigation" destination="pj4-55-Ekt" id="apM-Ye-f1Q"/>
-                        <outlet property="viewSegmentSelector" destination="JWl-gS-WK9" id="t8g-Ez-gZP"/>
-                        <segue destination="lKs-1H-0Av" kind="relationship" relationship="window.shadowedContentViewController" id="B5n-zL-MEu"/>
+                        <segue destination="lKs-1H-0Av" kind="relationship" relationship="window.shadowedContentViewController" id="V8K-VS-oiL"/>
                     </connections>
                 </windowController>
                 <customObject id="xGi-zb-3DZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="74" y="289"/>
         </scene>
     </scenes>
 </document>
