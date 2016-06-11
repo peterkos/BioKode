@@ -681,7 +681,7 @@
         <!--Short conversion-->
         <scene sceneID="rnA-yy-nr0">
             <objects>
-                <viewController title="Short conversion" storyboardIdentifier="shortConversion" id="GD2-GL-Ye6" sceneMemberID="viewController">
+                <viewController title="Short conversion" storyboardIdentifier="shortConversion" id="GD2-GL-Ye6" customClass="ShortViewController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="SvM-pq-1fp">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -779,6 +779,13 @@
                             <constraint firstItem="pti-7L-be8" firstAttribute="top" secondItem="L6L-rx-2MG" secondAttribute="bottom" constant="8" symbolic="YES" id="x1U-iV-TTB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="shortInput" destination="uVs-cw-w3I" id="87Q-H7-MDD"/>
+                        <outlet property="shortInputSelection" destination="pti-7L-be8" id="3Xm-LS-i5h"/>
+                        <outlet property="shortOutput" destination="qlV-y7-J4n" id="GES-Qb-oRe"/>
+                        <outlet property="shortOutputSelection" destination="0hE-TK-xG9" id="blm-Qz-YSa"/>
+                        <outlet property="shortReset" destination="ZT5-0L-9GH" id="ueR-4a-7Q9"/>
+                    </connections>
                 </viewController>
                 <customObject id="llx-Rn-Dof" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -787,7 +794,7 @@
         <!--Long conversion-->
         <scene sceneID="wBx-ZZ-pI3">
             <objects>
-                <viewController title="Long conversion" id="r9g-7s-Z4n" sceneMemberID="viewController">
+                <viewController title="Long conversion" id="r9g-7s-Z4n" customClass="LongViewController" customModule="BioKode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="w7k-yn-YEH">
                         <rect key="frame" x="0.0" y="0.0" width="707" height="524"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -802,10 +809,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="151"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="151" height="151"/>
+                                            <size key="minSize" width="555" height="151"/>
                                             <size key="maxSize" width="560" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="151" height="151"/>
+                                            <size key="minSize" width="555" height="151"/>
                                             <size key="maxSize" width="560" height="10000000"/>
                                         </textView>
                                     </subviews>
@@ -826,6 +833,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="convert:" target="r9g-7s-Z4n" id="Dt4-Ds-ilf"/>
+                                </connections>
                             </button>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZT-KY-bi8">
                                 <rect key="frame" x="20" y="61" width="557" height="153"/>
@@ -945,6 +955,17 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5k-H4-cwp">
+                                <rect key="frame" x="216" y="248" width="178" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="jZu-HF-qTU">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="DNA"/>
+                                        <segment label="mRNA" tag="1"/>
+                                        <segment label="English"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstItem="y3M-xf-i3z" firstAttribute="top" secondItem="BZT-KY-bi8" secondAttribute="bottom" constant="20" symbolic="YES" id="2ql-84-86H"/>
@@ -987,7 +1008,7 @@
                 </viewController>
                 <customObject id="ROo-QE-Vdg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="452.5" y="1227"/>
+            <point key="canvasLocation" x="451.5" y="1259"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="sve-QV-45F">
