@@ -42,7 +42,9 @@ class ShortViewController: NSViewController {
             shortInput.placeholderString = "Cookie"
         }
         
-        shortOutputSelection.setSelected(false, forSegment: shortOutputSelection.selectedSegment)
+        if shortOutputSelection.selectedSegment != -1 {
+            shortOutputSelection.setSelected(false, forSegment: shortOutputSelection.selectedSegment)
+        }
         
     }
     

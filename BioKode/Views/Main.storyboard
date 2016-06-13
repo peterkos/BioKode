@@ -728,6 +728,9 @@
                                         <segment label="English"/>
                                     </segments>
                                 </segmentedCell>
+                                <connections>
+                                    <action selector="inputIsSelected:" target="GD2-GL-Ye6" id="bx1-tL-4qP"/>
+                                </connections>
                             </segmentedControl>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L6L-rx-2MG">
                                 <rect key="frame" x="200" y="250" width="50" height="24"/>
@@ -747,6 +750,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="shortResetSelected:" target="GD2-GL-Ye6" id="Rye-bs-G0Z"/>
+                                </connections>
                             </button>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0hE-TK-xG9">
                                 <rect key="frame" x="136" y="100" width="178" height="24"/>
@@ -758,6 +764,9 @@
                                         <segment label="English"/>
                                     </segments>
                                 </segmentedCell>
+                                <connections>
+                                    <action selector="outputIsSelected:" target="GD2-GL-Ye6" id="ZbK-6O-MQm"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <constraints>
