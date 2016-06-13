@@ -16,49 +16,46 @@ class LongViewController: NSViewController {
     let bioTrans = BioTranslate()
     
     // IB Ivars
-    @IBOutlet weak var longInputSelection: NSSegmentedControl!
-    @IBOutlet weak var longInput: NSTextView!
+    @IBOutlet weak var longInputSelection: NSPopUpButton!
+    @IBOutlet var longInput: NSTextView!
+
     
-    @IBOutlet weak var longOutputSelection: NSSegmentedControl!
-    @IBOutlet weak var longOutput: NSTextView!
+    @IBOutlet weak var longOutputSelection: NSPopUpButton!
+    @IBOutlet var longOutput: NSTextView!
+
     
     @IBOutlet weak var longReset: NSButton!
+    @IBOutlet weak var longConvert: NSButton!
     
-    @IBAction func longResetSelected(sender: NSButton) {
-        longInputSelection.setSelected(false, forSegment: longInputSelection.selectedSegment)
-        longOutputSelection.setSelected(false, forSegment: longOutputSelection.selectedSegment)
-//        longInput.setSelectedRange(NSRange().toRange())
-        longOutput.textStorage?.setAttributedString(NSAttributedString(string: ""))
-    }
-    
-    @IBAction func inputIsSelected(sender: NSSegmentedControl) {
+    @IBAction func inputIsSelected(sender: NSPopUpButton) {
         
         // Replaces placeholder text
-        if (longInputSelection.selectedSegment == 0) {
+        if (longInputSelection.indexOfSelectedItem == 0) {
 //            longInput = "ACTGCGGTCGAC"
-        } else if (longInputSelection.selectedSegment == 1) {
+            print("DNA input selected")
+        } else if (longInputSelection.indexOfSelectedItem == 1) {
 //            longInput.placeholderString = "ACUGCGGUCGAC"
+            print("RNA input selected")
         } else {
 //            longInput.placeholderString = "Cookie"
+            print("English input selected")
         }
-        
-        longOutputSelection.setSelected(false, forSegment: longOutputSelection.selectedSegment)
         
     }
     
-    @IBAction func outputIsSelected(sender: NSSegmentedControl) {
+    @IBAction func outputIsSelected(sender: NSPopUpButton) {
         
-        guard !errorCheck.stringIsNotEmpty(String(longInput.textStorage?.characters)) else {
+        guard !errorCheck.stringIsNotEmpty(stringValue) else {
             invalidEmptyInput()
             return
         }
         
         // 0 = DNA, 1 = mRNA, 2 = English
-        if (longInputSelection.selectedSegment == 0) {
+        if (longInputSelection.indexOfSelectedItem == 0) {
             checkPossibleConversionAndConvertDNA()
-        } else if (longInputSelection.selectedSegment == 1) {
+        } else if (longInputSelection.indexOfSelectedItem == 1) {
             checkPossibleConversionAndConvertmRNA()
-        } else if (longInputSelection.selectedSegment == 2) {
+        } else if (longInputSelection.indexOfSelectedItem == 2) {
             checkPossibleConversionAndConvertEnglish()
         }
     }
@@ -79,7 +76,7 @@ class LongViewController: NSViewController {
             return
         }
         
-        switch longOutputSelection.selectedSegment {
+        switch longOutputSelection.indexOfSelectedItem {
         case 0: longInput.changeCaseOfLetter(self);
         case 1: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromDNAtomRNA(stringValue)))
         case 2: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromDNAtoEnglish(stringValue)))
@@ -94,7 +91,7 @@ class LongViewController: NSViewController {
             return
         }
         
-        switch longOutputSelection.selectedSegment {
+        switch longOutputSelection.indexOfSelectedItem {
         case 0: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.frommRNAtoDNA(stringValue)))
         case 1: longInput.changeCaseOfLetter(self)
         case 0: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.frommRNAtoEnglish(stringValue)))
@@ -105,7 +102,7 @@ class LongViewController: NSViewController {
     func checkPossibleConversionAndConvertEnglish() {
         
         // No guard -- English has no default constraints
-        switch longOutputSelection.selectedSegment {
+        switch longOutputSelection.indexOfSelectedItem {
         case 0: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromEnglishtoDNA(stringValue)))
         case 1: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromEnglishtomRNA(stringValue)))
         case 2: longInput.changeCaseOfLetter(self)
@@ -164,7 +161,13 @@ class LongViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stringValue = (longInput.textStorage! as NSAttributedString).string
+//        stringValue = (longInput.textStorage! as NSAttributedString).string
+        if let string = longInput.textStorage {
+            stringValue = string.string
+        } else {
+            stringValue = ""
+        }
+        
         
         // Notification when preference is changed
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(preferencesDidUpdate), name: "preferencesDidUpdate", object: nil)
@@ -173,8 +176,8 @@ class LongViewController: NSViewController {
     
     // Updates buttons to reflect change in NSUserDefaults without restart
     func preferencesDidUpdate() {
-        longInputSelection.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
-        longOutputSelection.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
+        longInputSelection.selectItemAtIndex(NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int)
+        longOutputSelection.selectItemAtIndex(NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int)
     }
     
     
