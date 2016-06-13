@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -809,58 +810,86 @@
                                     <action selector="convert:" target="r9g-7s-Z4n" id="PnA-b4-FsN"/>
                                 </connections>
                             </button>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S6G-Na-TiU">
-                                <rect key="frame" x="596" y="421" width="76" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="DNA" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gsC-lJ-AWw" id="ntq-iL-uQ6">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="rTk-09-dbm">
-                                        <items>
-                                            <menuItem title="DNA" state="on" id="gsC-lJ-AWw"/>
-                                            <menuItem title="RNA" id="Yhe-AA-OSD"/>
-                                            <menuItem title="English" id="ZDb-c2-aRI"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bY8-8r-Yqn">
-                                <rect key="frame" x="596" y="190" width="76" height="26"/>
-                                <popUpButtonCell key="cell" type="push" title="DNA" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ZLW-yN-YAH" id="RKq-CP-JpL">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="86Y-K8-xW4">
-                                        <items>
-                                            <menuItem title="DNA" state="on" id="ZLW-yN-YAH"/>
-                                            <menuItem title="RNA" id="0OO-a7-3gz"/>
-                                            <menuItem title="English" id="Tmf-gi-nJa"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="TRv-hl-ndn">
-                                <rect key="frame" x="597" y="166" width="75" height="18"/>
-                                <buttonCell key="cell" type="radio" title="Grouped" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="dqa-yD-BQk">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="RYZ-RK-fXZ">
-                                <rect key="frame" x="597" y="144" width="66" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="8Pa-Cc-O72"/>
-                                </constraints>
-                                <buttonCell key="cell" type="radio" title="Unified" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ffa-1s-9eV">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="y1B-Yf-H6j">
-                                <rect key="frame" x="596" y="115" width="93" height="18"/>
-                                <buttonCell key="cell" type="check" title="Polygenetic" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dv3-dA-dIK">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5r4-fx-LMs">
+                                <rect key="frame" x="598" y="423" width="76" height="21"/>
+                                <subviews>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S6G-Na-TiU">
+                                        <rect key="frame" x="-2" y="-3" width="81" height="26"/>
+                                        <popUpButtonCell key="cell" type="push" title="DNA" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="gsC-lJ-AWw" id="ntq-iL-uQ6">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="rTk-09-dbm">
+                                                <items>
+                                                    <menuItem title="DNA" state="on" id="gsC-lJ-AWw"/>
+                                                    <menuItem title="RNA" id="Yhe-AA-OSD"/>
+                                                    <menuItem title="English" id="ZDb-c2-aRI"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-zm-dMV">
+                                <rect key="frame" x="598" y="122" width="89" height="91"/>
+                                <subviews>
+                                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bY8-8r-Yqn">
+                                        <rect key="frame" x="-2" y="67" width="81" height="26"/>
+                                        <popUpButtonCell key="cell" type="push" title="DNA" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ZLW-yN-YAH" id="RKq-CP-JpL">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu"/>
+                                            <menu key="menu" id="86Y-K8-xW4">
+                                                <items>
+                                                    <menuItem title="DNA" state="on" id="ZLW-yN-YAH"/>
+                                                    <menuItem title="RNA" id="0OO-a7-3gz"/>
+                                                    <menuItem title="English" id="Tmf-gi-nJa"/>
+                                                </items>
+                                            </menu>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="TRv-hl-ndn">
+                                        <rect key="frame" x="-1" y="45" width="75" height="18"/>
+                                        <buttonCell key="cell" type="radio" title="Grouped" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="dqa-yD-BQk">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="RYZ-RK-fXZ">
+                                        <rect key="frame" x="-1" y="21" width="66" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="63" id="f2G-jo-P0i"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="radio" title="Unified" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ffa-1s-9eV">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="y1B-Yf-H6j">
+                                        <rect key="frame" x="-2" y="-2" width="93" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Polygenetic" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dv3-dA-dIK">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XhQ-kZ-lgb">
                                 <rect key="frame" x="18" y="453" width="65" height="33"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Input" id="kqm-1W-Qba">
@@ -872,7 +901,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zd7-bd-yy3">
                                 <rect key="frame" x="82" y="453" width="49" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="ggE-cp-0td"/>
+                                    <constraint firstAttribute="width" constant="45" id="GKG-Os-AWk"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="text" id="rVX-IA-LF4">
                                     <font key="font" size="27" name=".AppleSystemUIFontUltraLight"/>
@@ -883,7 +912,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Nn-6Y-O1g">
                                 <rect key="frame" x="104" y="221" width="49" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="MsA-iZ-Jbp"/>
+                                    <constraint firstAttribute="width" constant="45" id="bC8-AX-qKI"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="text" id="4Li-2f-fHK">
                                     <font key="font" size="27" name=".AppleSystemUIFontUltraLight"/>
@@ -899,17 +928,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E5k-H4-cwp">
-                                <rect key="frame" x="216" y="248" width="178" height="24"/>
-                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="jZu-HF-qTU">
-                                    <font key="font" metaFont="system"/>
-                                    <segments>
-                                        <segment label="DNA"/>
-                                        <segment label="mRNA" tag="1"/>
-                                        <segment label="English"/>
-                                    </segments>
-                                </segmentedCell>
-                            </segmentedControl>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1J-Vf-ItN">
                                 <rect key="frame" x="20" y="279" width="570" height="166"/>
                                 <clipView key="contentView" id="qdW-SS-egk">
@@ -929,6 +947,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="570" id="oci-Rs-IjM"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="36t-RY-v7J">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -957,6 +978,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="570" id="zlt-zW-3xh"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="k3k-vC-jSj">
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -968,39 +992,32 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="F1J-Vf-ItN" firstAttribute="leading" secondItem="y3b-FY-aGw" secondAttribute="leading" id="0po-zC-J4d"/>
-                            <constraint firstAttribute="trailing" secondItem="TRv-hl-ndn" secondAttribute="trailing" constant="37" id="1iL-ao-JEi"/>
-                            <constraint firstItem="S6G-Na-TiU" firstAttribute="trailing" secondItem="bY8-8r-Yqn" secondAttribute="trailing" id="2k2-TQ-yyG"/>
-                            <constraint firstItem="bY8-8r-Yqn" firstAttribute="leading" secondItem="etp-H4-TVV" secondAttribute="trailing" constant="8" symbolic="YES" id="3Ol-ty-qLq"/>
-                            <constraint firstItem="RYZ-RK-fXZ" firstAttribute="top" secondItem="TRv-hl-ndn" secondAttribute="bottom" constant="6" symbolic="YES" id="3so-2Z-y5U"/>
-                            <constraint firstItem="E5k-H4-cwp" firstAttribute="top" secondItem="F1J-Vf-ItN" secondAttribute="bottom" constant="8" symbolic="YES" id="5kw-sL-EVj"/>
-                            <constraint firstItem="F1J-Vf-ItN" firstAttribute="centerX" secondItem="E5k-H4-cwp" secondAttribute="centerX" id="68S-hX-xBg"/>
-                            <constraint firstItem="etp-H4-TVV" firstAttribute="top" secondItem="bY8-8r-Yqn" secondAttribute="top" id="6Yz-Tw-9nd"/>
-                            <constraint firstItem="bY8-8r-Yqn" firstAttribute="leading" secondItem="TRv-hl-ndn" secondAttribute="leading" id="6pq-gx-ZJc"/>
-                            <constraint firstItem="F1J-Vf-ItN" firstAttribute="top" secondItem="XhQ-kZ-lgb" secondAttribute="bottom" constant="8" symbolic="YES" id="CAF-P8-dOk"/>
-                            <constraint firstItem="y3b-FY-aGw" firstAttribute="leading" secondItem="etp-H4-TVV" secondAttribute="leading" id="CY3-yf-yTK"/>
-                            <constraint firstItem="RYZ-RK-fXZ" firstAttribute="leading" secondItem="y1B-Yf-H6j" secondAttribute="leading" id="CvK-lR-KxG"/>
-                            <constraint firstItem="y3b-FY-aGw" firstAttribute="top" secondItem="F1J-Vf-ItN" secondAttribute="bottom" constant="25" id="GIN-iE-Vlz"/>
-                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="leading" secondItem="F1J-Vf-ItN" secondAttribute="leading" id="H9E-ib-bd6"/>
-                            <constraint firstItem="F1J-Vf-ItN" firstAttribute="top" secondItem="S6G-Na-TiU" secondAttribute="top" id="JJc-VR-qEv"/>
-                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="top" secondItem="w7k-yn-YEH" secondAttribute="top" constant="38" id="Nl9-96-3vP"/>
-                            <constraint firstItem="4Nn-6Y-O1g" firstAttribute="leading" secondItem="y3b-FY-aGw" secondAttribute="trailing" constant="2" id="Nzb-rO-6r4"/>
-                            <constraint firstItem="etp-H4-TVV" firstAttribute="top" secondItem="y3b-FY-aGw" secondAttribute="bottom" constant="7" id="P4N-5c-gfL"/>
-                            <constraint firstItem="S6G-Na-TiU" firstAttribute="leading" secondItem="F1J-Vf-ItN" secondAttribute="trailing" constant="8" symbolic="YES" id="RDm-y3-4oQ"/>
-                            <constraint firstItem="y1B-Yf-H6j" firstAttribute="top" secondItem="RYZ-RK-fXZ" secondAttribute="bottom" constant="14" id="X0V-IA-HgC"/>
-                            <constraint firstAttribute="trailing" secondItem="RYZ-RK-fXZ" secondAttribute="trailing" constant="46" id="XeX-ff-qTE"/>
-                            <constraint firstItem="E5k-H4-cwp" firstAttribute="trailing" secondItem="y3M-xf-i3z" secondAttribute="trailing" id="bpA-1w-abz"/>
-                            <constraint firstItem="y3b-FY-aGw" firstAttribute="baseline" secondItem="4Nn-6Y-O1g" secondAttribute="baseline" id="eJq-Cl-2yg"/>
-                            <constraint firstItem="TRv-hl-ndn" firstAttribute="top" secondItem="bY8-8r-Yqn" secondAttribute="bottom" constant="10" id="irz-sB-sJc"/>
-                            <constraint firstItem="S6G-Na-TiU" firstAttribute="leading" secondItem="bY8-8r-Yqn" secondAttribute="leading" id="kIN-E2-UV2"/>
-                            <constraint firstAttribute="bottom" secondItem="y3M-xf-i3z" secondAttribute="bottom" constant="20" symbolic="YES" id="kcO-7b-rcu"/>
-                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="baseline" secondItem="zd7-bd-yy3" secondAttribute="baseline" id="nPP-WT-XSN"/>
-                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="leading" secondItem="w7k-yn-YEH" secondAttribute="leading" constant="20" symbolic="YES" id="pcu-m6-Vjf"/>
-                            <constraint firstItem="y3M-xf-i3z" firstAttribute="top" secondItem="etp-H4-TVV" secondAttribute="bottom" constant="7" id="q2l-pw-yXU"/>
-                            <constraint firstItem="zd7-bd-yy3" firstAttribute="leading" secondItem="XhQ-kZ-lgb" secondAttribute="trailing" constant="3" id="qME-tp-eyK"/>
-                            <constraint firstItem="bY8-8r-Yqn" firstAttribute="centerX" secondItem="TRv-hl-ndn" secondAttribute="centerX" id="qNb-Q3-zlP"/>
-                            <constraint firstItem="E5k-H4-cwp" firstAttribute="top" secondItem="w7k-yn-YEH" secondAttribute="top" constant="253" id="t0s-vX-Yh8"/>
-                            <constraint firstItem="TRv-hl-ndn" firstAttribute="leading" secondItem="RYZ-RK-fXZ" secondAttribute="leading" id="uaP-j3-UMb"/>
+                            <constraint firstAttribute="bottom" secondItem="y3M-xf-i3z" secondAttribute="bottom" constant="20" symbolic="YES" id="0qq-y6-esQ"/>
+                            <constraint firstItem="etp-H4-TVV" firstAttribute="top" secondItem="w7k-yn-YEH" secondAttribute="top" constant="310" id="66A-IB-9Kx"/>
+                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="top" secondItem="w7k-yn-YEH" secondAttribute="top" constant="38" id="7go-rg-YOl"/>
+                            <constraint firstItem="y3M-xf-i3z" firstAttribute="centerX" secondItem="w7k-yn-YEH" secondAttribute="centerX" id="7hF-y5-W71"/>
+                            <constraint firstAttribute="trailing" secondItem="etp-H4-TVV" secondAttribute="trailing" constant="117" id="9Hc-2g-Kzb"/>
+                            <constraint firstAttribute="trailing" secondItem="xpX-zm-dMV" secondAttribute="trailing" constant="20" id="AN5-G5-gbF"/>
+                            <constraint firstItem="y3M-xf-i3z" firstAttribute="top" secondItem="etp-H4-TVV" secondAttribute="bottom" constant="7" id="Ael-Ui-TeQ"/>
+                            <constraint firstItem="y3b-FY-aGw" firstAttribute="baseline" secondItem="4Nn-6Y-O1g" secondAttribute="baseline" id="DzM-pS-qNV"/>
+                            <constraint firstItem="F1J-Vf-ItN" firstAttribute="leading" secondItem="y3b-FY-aGw" secondAttribute="leading" id="GjB-Fi-8ba"/>
+                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="leading" secondItem="F1J-Vf-ItN" secondAttribute="leading" id="Hve-pl-bXo"/>
+                            <constraint firstItem="F1J-Vf-ItN" firstAttribute="leading" secondItem="w7k-yn-YEH" secondAttribute="leading" constant="20" id="MBW-C9-Aqq"/>
+                            <constraint firstItem="y3b-FY-aGw" firstAttribute="leading" secondItem="etp-H4-TVV" secondAttribute="leading" id="OOd-LB-6WL"/>
+                            <constraint firstItem="S6G-Na-TiU" firstAttribute="top" secondItem="0mf-8a-GHR" secondAttribute="top" id="SRM-Qu-fmf"/>
+                            <constraint firstItem="bY8-8r-Yqn" firstAttribute="top" secondItem="UVF-K0-aYw" secondAttribute="top" id="T4c-fx-vww"/>
+                            <constraint firstItem="etp-H4-TVV" firstAttribute="top" secondItem="y3b-FY-aGw" secondAttribute="bottom" constant="7" id="Vdx-9O-5XP"/>
+                            <constraint firstAttribute="bottom" secondItem="xpX-zm-dMV" secondAttribute="bottom" constant="122" id="YMt-MJ-kIE"/>
+                            <constraint firstItem="etp-H4-TVV" firstAttribute="leading" secondItem="w7k-yn-YEH" secondAttribute="leading" constant="20" id="cHP-M9-Ff3"/>
+                            <constraint firstItem="4Nn-6Y-O1g" firstAttribute="leading" secondItem="y3b-FY-aGw" secondAttribute="trailing" constant="2" id="dIK-7P-jJZ"/>
+                            <constraint firstItem="zd7-bd-yy3" firstAttribute="leading" secondItem="XhQ-kZ-lgb" secondAttribute="trailing" constant="3" id="oUW-wz-3W8"/>
+                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="leading" secondItem="w7k-yn-YEH" secondAttribute="leading" constant="20" symbolic="YES" id="pa6-xo-MRf"/>
+                            <constraint firstItem="F1J-Vf-ItN" firstAttribute="top" secondItem="XhQ-kZ-lgb" secondAttribute="bottom" constant="8" symbolic="YES" id="qKc-OF-kha"/>
+                            <constraint firstItem="y3b-FY-aGw" firstAttribute="top" secondItem="F1J-Vf-ItN" secondAttribute="bottom" constant="25" id="tSd-Tt-UtB"/>
+                            <constraint firstAttribute="trailing" secondItem="5r4-fx-LMs" secondAttribute="trailing" constant="33" id="vr3-Qt-IP7"/>
+                            <constraint firstAttribute="trailing" secondItem="F1J-Vf-ItN" secondAttribute="trailing" constant="117" id="xMU-TH-zP3"/>
+                            <constraint firstItem="XhQ-kZ-lgb" firstAttribute="baseline" secondItem="zd7-bd-yy3" secondAttribute="baseline" id="xX2-6e-rYi"/>
+                            <constraint firstAttribute="bottom" secondItem="etp-H4-TVV" secondAttribute="bottom" constant="48" id="zJH-3L-vhQ"/>
                         </constraints>
                     </view>
                     <connections>
