@@ -16,14 +16,21 @@ class LongViewController: NSViewController {
     let bioTrans = BioTranslate()
     
     // IB Ivars
+    
+    // Input
     @IBOutlet weak var longInputSelection: NSPopUpButton!
     @IBOutlet var longInput: NSTextView!
-
     
+    // Output
     @IBOutlet weak var longOutputSelection: NSPopUpButton!
+    @IBOutlet weak var settingOutputGrouped: NSButton!
+    @IBOutlet weak var settingOutputUnified: NSButton!
+    @IBOutlet weak var settingOutputPolygenetic: NSButton!
+    
     @IBOutlet var longOutput: NSTextView!
 
     @IBOutlet weak var longConvert: NSButton!
+
     
     @IBAction func convert(sender: NSButton) {
         
@@ -42,6 +49,20 @@ class LongViewController: NSViewController {
         } else if (longInputSelection.indexOfSelectedItem == 2) {
             checkPossibleConversionAndConvertEnglish()
         }
+    }
+    
+    @IBAction func outputSettingChanged(sender: NSButton) {
+        
+        let prefs = NSUserDefaults.standardUserDefaults()
+        
+        switch sender.identifier! {
+            case "outputSpacingSelectionUnified": prefs.setInteger(1, forKey: "outputSpacingSelection")
+            case "outputSpacingSelectionGrouped": prefs.setInteger(2, forKey: "outputSpacingSelection")
+            case "polygeneticSelection": prefs.setInteger(sender.state + 1, forKey: "polygeneticSelection")
+            default: return
+        }
+        
+        convert(longConvert)
     }
     
     // ----------------------------------------------

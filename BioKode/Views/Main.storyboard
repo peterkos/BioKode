@@ -852,14 +852,17 @@
                                             </menu>
                                         </popUpButtonCell>
                                     </popUpButton>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="TRv-hl-ndn">
+                                    <button identifier="outputSpacingSelectionGrouped" translatesAutoresizingMaskIntoConstraints="NO" id="TRv-hl-ndn">
                                         <rect key="frame" x="-1" y="45" width="75" height="18"/>
-                                        <buttonCell key="cell" type="radio" title="Grouped" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="dqa-yD-BQk">
+                                        <buttonCell key="cell" type="radio" title="Grouped" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="dqa-yD-BQk">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="outputSettingChanged:" target="r9g-7s-Z4n" id="Nfc-Yl-55v"/>
+                                        </connections>
                                     </button>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="RYZ-RK-fXZ">
+                                    <button identifier="outputSpacingSelectionUnified" translatesAutoresizingMaskIntoConstraints="NO" id="RYZ-RK-fXZ">
                                         <rect key="frame" x="-1" y="21" width="66" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="63" id="f2G-jo-P0i"/>
@@ -868,13 +871,19 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="outputSettingChanged:" target="r9g-7s-Z4n" id="O8x-ls-7mR"/>
+                                        </connections>
                                     </button>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="y1B-Yf-H6j">
+                                    <button identifier="polygeneticSelection" translatesAutoresizingMaskIntoConstraints="NO" id="y1B-Yf-H6j">
                                         <rect key="frame" x="-2" y="-2" width="93" height="18"/>
                                         <buttonCell key="cell" type="check" title="Polygenetic" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dv3-dA-dIK">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="outputSettingChanged:" target="r9g-7s-Z4n" id="6mJ-M7-5mT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <visibilityPriorities>
@@ -1026,6 +1035,9 @@
                         <outlet property="longInputSelection" destination="S6G-Na-TiU" id="EEY-PP-Jzx"/>
                         <outlet property="longOutput" destination="UVF-K0-aYw" id="mew-cq-bMx"/>
                         <outlet property="longOutputSelection" destination="bY8-8r-Yqn" id="FGH-80-hWA"/>
+                        <outlet property="settingOutputGrouped" destination="TRv-hl-ndn" id="JSn-I2-LMq"/>
+                        <outlet property="settingOutputPolygenetic" destination="y1B-Yf-H6j" id="ahM-k3-4D4"/>
+                        <outlet property="settingOutputUnified" destination="RYZ-RK-fXZ" id="sDa-pc-d4b"/>
                     </connections>
                 </viewController>
                 <customObject id="ROo-QE-Vdg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1145,8 +1157,8 @@
                                 </textFieldCell>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="tBG-eL-iwa">
-                                <rect key="frame" x="250" y="66" width="97" height="18"/>
-                                <buttonCell key="cell" type="radio" title="All one word" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="GdV-U2-hXp">
+                                <rect key="frame" x="250" y="66" width="66" height="18"/>
+                                <buttonCell key="cell" type="radio" title="Unified" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="GdV-U2-hXp">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -1155,8 +1167,8 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="IbL-Xm-dH9">
-                                <rect key="frame" x="250" y="45" width="108" height="18"/>
-                                <buttonCell key="cell" type="radio" title="Group codons" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="qKT-Xj-Iv3">
+                                <rect key="frame" x="250" y="45" width="75" height="18"/>
+                                <buttonCell key="cell" type="radio" title="Grouped" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="qKT-Xj-Iv3">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
