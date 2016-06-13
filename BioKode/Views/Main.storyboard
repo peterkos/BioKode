@@ -806,7 +806,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="convert:" target="r9g-7s-Z4n" id="Dt4-Ds-ilf"/>
+                                    <action selector="convert:" target="r9g-7s-Z4n" id="PnA-b4-FsN"/>
                                 </connections>
                             </button>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S6G-Na-TiU">
@@ -822,9 +822,6 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
-                                <connections>
-                                    <action selector="inputIsSelected:" target="r9g-7s-Z4n" id="SZe-dY-Tz8"/>
-                                </connections>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bY8-8r-Yqn">
                                 <rect key="frame" x="596" y="190" width="76" height="26"/>
@@ -839,9 +836,6 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
-                                <connections>
-                                    <action selector="outputIsSelected:" target="r9g-7s-Z4n" id="HvC-9I-TTb"/>
-                                </connections>
                             </popUpButton>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="TRv-hl-ndn">
                                 <rect key="frame" x="597" y="166" width="75" height="18"/>

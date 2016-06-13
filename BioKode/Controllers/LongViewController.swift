@@ -23,27 +23,11 @@ class LongViewController: NSViewController {
     @IBOutlet weak var longOutputSelection: NSPopUpButton!
     @IBOutlet var longOutput: NSTextView!
 
-    
-    @IBOutlet weak var longReset: NSButton!
     @IBOutlet weak var longConvert: NSButton!
     
-    @IBAction func inputIsSelected(sender: NSPopUpButton) {
+    @IBAction func convert(sender: NSButton) {
         
-        // Replaces placeholder text
-        if (longInputSelection.indexOfSelectedItem == 0) {
-//            longInput = "ACTGCGGTCGAC"
-            print("DNA input selected")
-        } else if (longInputSelection.indexOfSelectedItem == 1) {
-//            longInput.placeholderString = "ACUGCGGUCGAC"
-            print("RNA input selected")
-        } else {
-//            longInput.placeholderString = "Cookie"
-            print("English input selected")
-        }
-        
-    }
-    
-    @IBAction func outputIsSelected(sender: NSPopUpButton) {
+        stringValue = longInput.textStorage!.string
         
         guard !errorCheck.stringIsNotEmpty(stringValue) else {
             invalidEmptyInput()
@@ -70,17 +54,16 @@ class LongViewController: NSViewController {
     // Error checking & calculation functions for input
     func checkPossibleConversionAndConvertDNA() {
         
-        
         guard !errorCheck.isValidDNA(stringValue) else {
             invalidDNASequence()
             return
         }
         
         switch longOutputSelection.indexOfSelectedItem {
-        case 0: longInput.changeCaseOfLetter(self);
-        case 1: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromDNAtomRNA(stringValue)))
-        case 2: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromDNAtoEnglish(stringValue)))
-        default: return
+            case 0: longOutput.textStorage?.setAttributedString(NSAttributedString(string: stringValue))
+            case 1: longOutput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromDNAtomRNA(stringValue)))
+            case 2: longOutput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromDNAtoEnglish(stringValue)))
+            default: return
         }
     }
     
@@ -92,10 +75,10 @@ class LongViewController: NSViewController {
         }
         
         switch longOutputSelection.indexOfSelectedItem {
-        case 0: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.frommRNAtoDNA(stringValue)))
-        case 1: longInput.changeCaseOfLetter(self)
-        case 0: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.frommRNAtoEnglish(stringValue)))
-        default: return
+            case 0: longOutput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.frommRNAtoDNA(stringValue)))
+            case 1: longOutput.textStorage?.setAttributedString(NSAttributedString(string: stringValue))
+            case 2: longOutput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.frommRNAtoEnglish(stringValue)))
+            default: return
         }
     }
     
@@ -103,10 +86,10 @@ class LongViewController: NSViewController {
         
         // No guard -- English has no default constraints
         switch longOutputSelection.indexOfSelectedItem {
-        case 0: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromEnglishtoDNA(stringValue)))
-        case 1: longInput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromEnglishtomRNA(stringValue)))
-        case 2: longInput.changeCaseOfLetter(self)
-        default: return
+            case 0: longOutput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromEnglishtoDNA(stringValue)))
+            case 1: longOutput.textStorage?.setAttributedString(NSAttributedString(string: bioTrans.fromEnglishtomRNA(stringValue)))
+            case 2: longOutput.textStorage?.setAttributedString(NSAttributedString(string: stringValue))
+            default: return
         }
     }
     
@@ -161,17 +144,8 @@ class LongViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        stringValue = (longInput.textStorage! as NSAttributedString).string
-        if let string = longInput.textStorage {
-            stringValue = string.string
-        } else {
-            stringValue = ""
-        }
-        
-        
         // Notification when preference is changed
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(preferencesDidUpdate), name: "preferencesDidUpdate", object: nil)
-        
     }
     
     // Updates buttons to reflect change in NSUserDefaults without restart
