@@ -114,7 +114,6 @@ class BioTranslate {
 		// Credit: http://stackoverflow.com/a/36854223/1431900
 		// Reverse-map the codon (as a value) from the englishTomRNADictionary to the key (corresponding English letter), and append the key to the outputString
 		for codon in preEnglish {
-			print(codon)
 			let english = englishTomRNADictionary.filter { $0.1.contains(codon) }.first!.0
 			outputString.append(english)
 		}
@@ -122,7 +121,7 @@ class BioTranslate {
 		return outputString
     }
 	
-	
+
 	// MARK: - English -> mRNA, DNA
 	func fromEnglishtomRNA(input: String) -> String {
         
