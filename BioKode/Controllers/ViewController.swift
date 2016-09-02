@@ -25,10 +25,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var outputSegments: NSSegmentedControl!
 	
 	@IBAction func resetButton(sender: AnyObject) {
+	
 		inputSegments.setSelected(false, forSegment: inputSegments.selectedSegment)
 		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+	
 		inputStr.stringValue = ""
 		outputStr.stringValue = ""
+		
 	}
 	
     @IBAction func inputIsSelected(sender: NSSegmentedControl) {
@@ -42,7 +45,11 @@ class ViewController: NSViewController {
             inputStr.placeholderString = "Cookie"
         }
 		
-		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+		
+		// If an output cell is selected, deselect it.
+		if (outputSegments.selectedSegment != -1) {
+			outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
+		}
 		
     }
 	
@@ -161,18 +168,12 @@ class ViewController: NSViewController {
 		
     }
 	
+	
 	// Updates buttons to reflect change in NSUserDefaults without restart
 	func preferencesDidUpdate() {
 		inputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
 		outputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
 	}
-	
-
-    override var representedObject: AnyObject? {
-        didSet {
-			// Update the view, if already loaded.
-        }
-    }
 
 
 }
