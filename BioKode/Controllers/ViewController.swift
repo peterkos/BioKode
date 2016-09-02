@@ -128,12 +128,13 @@ class ViewController: NSViewController {
 		// Output segments are cleared either way to allow user to re-apply conversion.
 		if (alertResponse == NSAlertSecondButtonReturn) {
 			inputStr.stringValue = ""
-			outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
 		} else if (alertResponse == NSAlertThirdButtonReturn) {
 			inputStr.stringValue = ""
 			outputStr.stringValue = ""
-			outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
 		}
+		
+		// Clears output segments
+		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
 		
 		// Resets alert so buttons aren't duplicated
 		alert = NSAlert()
