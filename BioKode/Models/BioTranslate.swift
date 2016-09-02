@@ -39,7 +39,7 @@ class BioTranslate {
 		 "K": ["GGU", "GGC", "GGA", "GGG"]]
 	
 	
-    // mRNA ****************
+    // MARK: - DNA -> mRNA
     func fromDNAtomRNA(input: String) -> String {
         
         // Resets output
@@ -50,7 +50,8 @@ class BioTranslate {
         
         // Converts to mRNA
         for i in textIn.characters {
-            if (i == "T") { outputString += "A"
+            if (i == "T") {
+				outputString += "A"
             } else if (i == "C") {
                 outputString += "G"
             } else if (i == "G") {
@@ -74,7 +75,7 @@ class BioTranslate {
     }
     
     
-    // mRNA ****************
+    // MARK: RNA -> DNA, English
     func frommRNAtoDNA(input: String) -> String {
         
         // Resets output
@@ -122,7 +123,7 @@ class BioTranslate {
     }
 	
 	
-    // English ****************
+	// MARK: - English -> mRNA, DNA
 	func fromEnglishtomRNA(input: String) -> String {
         
 		var outputString = String()

@@ -64,12 +64,9 @@ class ViewController: NSViewController {
         
     }
 
-	// ----------------------------------------------
-	// Custom Functions
-	// ----------------------------------------------
 	
+	// MARK: - Error checking & calculation functions for input
 	
-	// Error checking & calculation functions for input
     func checkPossibleConversionAndConvertDNA() {
 		
         guard !errorCheck.isValidDNA(inputStr.stringValue) else {
@@ -112,9 +109,8 @@ class ViewController: NSViewController {
     }
 	
 	
-	// ----------------------------------------------
-	// Error delegate functions
-	// ----------------------------------------------	
+	// MARK: Error delegate functions
+	
 	func alertButtonsAndActions() {
 		alert.addButtonWithTitle("OK")
 		alert.addButtonWithTitle("Clear Input")
@@ -154,9 +150,8 @@ class ViewController: NSViewController {
 		alertButtonsAndActions()
 	}
 
-	// ----------------------------------------------
-	// Not-so Custom Functions
-	// ----------------------------------------------
+	
+	// MARK: - ViewDidLoad & Others
 	
     override func viewDidLoad() {
         super.viewDidLoad()
