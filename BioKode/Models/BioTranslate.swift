@@ -107,7 +107,9 @@ class BioTranslate {
         
         // Converts to codons (groups of 3)
         for i in stride(from: 0, to: inputString.characters.count, by: 3) {
-            preEnglish.append(inputString.substring(with: inputString.characters.index(inputString.startIndex, offsetBy: i)..<inputString.characters.index(inputString.startIndex, offsetBy: i + 3)))
+			let startIndex = inputString.characters.index(inputString.startIndex, offsetBy: i)
+			let endIndex   = inputString.characters.index(inputString.startIndex, offsetBy: i + 3)
+            preEnglish.append(inputString.substring(with: startIndex ..< endIndex))
         }
 		
         // Preconditoin: codon is a valid RNA sequence
@@ -168,11 +170,14 @@ class BioTranslate {
 		
 		if (UserDefaults.standard.value(forKey: "outputSpacingSelection") as! Int == 2) {
 			for i in stride(from: 0, to: input.characters.count, by: 3) {
-				outputString += (input.substring(with: input.characters.index(input.startIndex, offsetBy: i)..<input.characters.index(input.startIndex, offsetBy: i + 3)) + "-")
+				let startIndex = input.characters.index(input.startIndex, offsetBy: i)
+				let endIndex   = input.characters.index(input.startIndex, offsetBy: i + 3)
+				outputString += (input.substring(with: startIndex ..< endIndex) + "-")
 			}
 			
 			// Exclude trailing dash
 			outputString = String(outputString.characters.dropLast(1))
+
 		} else {
 			for i in stride(from: 0, to: input.characters.count, by: 3) {
 				outputString += (input.substring(with: input.characters.index(input.startIndex, offsetBy: i)..<input.characters.index(input.startIndex, offsetBy: i + 3)))
