@@ -15,7 +15,6 @@ class ViewController: NSViewController {
 	var alert = NSAlert()
 	let bioTrans = BioTranslate()
 	
-    
     // Input and output text fields
     @IBOutlet weak var inputStr: NSTextField!
     @IBOutlet weak var outputStr: NSTextField!
@@ -24,7 +23,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var inputSegments: NSSegmentedControl!
     @IBOutlet weak var outputSegments: NSSegmentedControl!
 	
-	@IBAction func resetButton(sender: AnyObject) {
+	@IBAction func resetButton(_ sender: AnyObject) {
 	
 		inputSegments.setSelected(false, forSegment: inputSegments.selectedSegment)
 		outputSegments.setSelected(false, forSegment: outputSegments.selectedSegment)
@@ -34,7 +33,7 @@ class ViewController: NSViewController {
 		
 	}
 	
-    @IBAction func inputIsSelected(sender: NSSegmentedControl) {
+    @IBAction func inputIsSelected(_ sender: NSSegmentedControl) {
         
         // Replaces placeholder text
         if (inputSegments.selectedSegment == 0) {
@@ -53,7 +52,7 @@ class ViewController: NSViewController {
 		
     }
 	
-    @IBAction func outputIsSelected(sender: NSSegmentedControl) {
+    @IBAction func outputIsSelected(_ sender: NSSegmentedControl) {
 		
 		guard !errorCheck.stringIsNotEmpty(inputStr.stringValue) else {
 			invalidEmptyInput()
@@ -82,7 +81,7 @@ class ViewController: NSViewController {
         }
         
         switch outputSegments.selectedSegment {
-			case 0: outputStr.stringValue = inputStr.stringValue.uppercaseString;
+			case 0: outputStr.stringValue = inputStr.stringValue.uppercased();
 			case 1: outputStr.stringValue = bioTrans.fromDNAtomRNA(inputStr.stringValue)
 			case 2: outputStr.stringValue = bioTrans.fromDNAtoEnglish(inputStr.stringValue)
 			default: return
@@ -98,19 +97,19 @@ class ViewController: NSViewController {
         
         switch outputSegments.selectedSegment {
 			case 0: outputStr.stringValue = bioTrans.frommRNAtoDNA(inputStr.stringValue)
-			case 1: outputStr.stringValue = inputStr.stringValue.uppercaseString
-			case 2: bioTrans.frommRNAtoEnglish(inputStr.stringValue)
+			case 1: outputStr.stringValue = inputStr.stringValue.uppercased()
+			case 2: _ = bioTrans.frommRNAtoEnglish(inputStr.stringValue)
 			default: return
         }
     }
-    
+
     func checkPossibleConversionAndConvertEnglish() {
         
         // No guard -- English has no default constraints
         switch outputSegments.selectedSegment {
 			case 0: outputStr.stringValue = bioTrans.fromEnglishtoDNA(inputStr.stringValue)
 			case 1: outputStr.stringValue = bioTrans.fromEnglishtomRNA(inputStr.stringValue)
-			case 2: outputStr.stringValue = inputStr.stringValue.uppercaseString
+			case 2: outputStr.stringValue = inputStr.stringValue.uppercased()
 			default: return
         }
     }
@@ -119,9 +118,9 @@ class ViewController: NSViewController {
 	// MARK: Error delegate functions
 	
 	func alertButtonsAndActions() {
-		alert.addButtonWithTitle("OK")
-		alert.addButtonWithTitle("Clear Input")
-		alert.addButtonWithTitle("Clear Input & Output")
+		alert.addButton(withTitle: "OK")
+		alert.addButton(withTitle: "Clear Input")
+		alert.addButton(withTitle: "Clear Input & Output")
 		let alertResponse = alert.runModal()
 		
 		// SecondButton = clear in, ThirdButton = clear in & out
@@ -165,15 +164,15 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 		
 		// Notification when preference is changed
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(preferencesDidUpdate), name: "preferencesDidUpdate", object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(preferencesDidUpdate), name: NSNotification.Name(rawValue: "preferencesDidUpdate"), object: nil)
 		
     }
 	
 	
 	// Updates buttons to reflect change in NSUserDefaults without restart
 	func preferencesDidUpdate() {
-		inputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
-		outputSegments.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
+		inputSegments.selectedSegment = UserDefaults.standard.value(forKey: "defaultInputSelection") as! Int
+		outputSegments.selectedSegment = UserDefaults.standard.value(forKey: "defaultOutputSelection") as! Int
 	}
 
 

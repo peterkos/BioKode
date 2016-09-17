@@ -19,32 +19,32 @@ class PreferenceViewController: NSViewController {
 	
 	
 	// Set default input selection
-    @IBAction func defaultInputSelectionSelected(sender: AnyObject) {
-        NSUserDefaults.standardUserDefaults().setObject(defaultInputSelection.selectedSegment, forKey: "defaultInputSelection")
+    @IBAction func defaultInputSelectionSelected(_ sender: AnyObject) {
+        UserDefaults.standard.set(defaultInputSelection.selectedSegment, forKey: "defaultInputSelection")
     }
 	
 	// Set default output selection
-	@IBAction func defaultOutputSelectionSelected(sender: AnyObject) {
-		NSUserDefaults.standardUserDefaults().setObject(defaultOutputSelection.selectedSegment, forKey: "defaultOutputSelection")
+	@IBAction func defaultOutputSelectionSelected(_ sender: AnyObject) {
+		UserDefaults.standard.set(defaultOutputSelection.selectedSegment, forKey: "defaultOutputSelection")
 	}
 	
 	// Set default polygenetic selection
-    @IBAction func polygeneticSelectionSelected(sender: AnyObject) {
+    @IBAction func polygeneticSelectionSelected(_ sender: AnyObject) {
         if (polygeneticSelectionFirst.state == 1) {
-            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "polygeneticSelection")
+            UserDefaults.standard.set(1, forKey: "polygeneticSelection")
         } else {
 			// Possible bug: polygeneticSelection key is set to 0.
-            NSUserDefaults.standardUserDefaults().setInteger(2, forKey: "polygeneticSelection")
+            UserDefaults.standard.set(2, forKey: "polygeneticSelection")
         }
     }
 	
 	// Sets default output spacing
-	@IBAction func outputSpacingSelectionSelected(sender: AnyObject) {
+	@IBAction func outputSpacingSelectionSelected(_ sender: AnyObject) {
 		if (outputSpacingSelectionAsAllOneWord.state == 1) {
-			NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "outputSpacingSelection")
+			UserDefaults.standard.set(1, forKey: "outputSpacingSelection")
 		} else {
 			// Possible bug: polygeneticSelection key is set to 0.
-			NSUserDefaults.standardUserDefaults().setInteger(2, forKey: "outputSpacingSelection")
+			UserDefaults.standard.set(2, forKey: "outputSpacingSelection")
 		}
 	}
 	
@@ -53,16 +53,16 @@ class PreferenceViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        defaultInputSelection.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultInputSelection") as! Int
-        defaultOutputSelection.selectedSegment = NSUserDefaults.standardUserDefaults().valueForKey("defaultOutputSelection") as! Int
+        defaultInputSelection.selectedSegment = UserDefaults.standard.value(forKey: "defaultInputSelection") as! Int
+        defaultOutputSelection.selectedSegment = UserDefaults.standard.value(forKey: "defaultOutputSelection") as! Int
 		
-        if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 1) {
+        if (UserDefaults.standard.value(forKey: "polygeneticSelection") as! Int == 1) {
             polygeneticSelectionFirst.state = 1
-        } else if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 2) {
+        } else if (UserDefaults.standard.value(forKey: "polygeneticSelection") as! Int == 2) {
             polygeneticSelectionRandom.state = 2
 		}
 		
-		if (NSUserDefaults.standardUserDefaults().valueForKey("outputSpacingSelection") as! Int == 1) {
+		if (UserDefaults.standard.value(forKey: "outputSpacingSelection") as! Int == 1) {
 			outputSpacingSelectionAsAllOneWord.state = 1
 		} else {
 			outputSpacingSelectionAsGroupsOfThree.state = 2;
@@ -72,7 +72,7 @@ class PreferenceViewController: NSViewController {
     }
 	
     override func viewDidDisappear() {
-		NSNotificationCenter.defaultCenter().postNotificationName("preferencesDidUpdate", object: nil)
+		NotificationCenter.default.post(name: Notification.Name(rawValue: "preferencesDidUpdate"), object: nil)
     }
 
 }

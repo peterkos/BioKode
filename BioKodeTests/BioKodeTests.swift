@@ -72,40 +72,40 @@ class BioKodeTests: XCTestCase {
 	// FIX test to accomodate for polygenetic selection
 	func testEnglishtomRNA() {
 		let givenInput     = "THEQUICKBROWNFOXJUMPEDOVERTHELAZYDOG"
-		let expectedOutput = ("ACA UGU AAU UUA GCU CAA UAU GGU GCA CCU AAA UGG CUU GAU AAA AUA GAA GCU AUU AUG AAU AGA AAA ACU AAU CCU ACA UGU AAU CAU UUU GUU GUA AGA AAA UAA").stringByReplacingOccurrencesOfString(" ", withString: "")
+		let expectedOutput = ("ACA UGU AAU UUA GCU CAA UAU GGU GCA CCU AAA UGG CUU GAU AAA AUA GAA GCU AUU AUG AAU AGA AAA ACU AAU CCU ACA UGU AAU CAU UUU GUU GUA AGA AAA UAA").replacingOccurrences(of: " ", with: "")
 		let actualOutput   = bioTrans.fromEnglishtomRNA(givenInput)
-		let polyGen = NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection")
+		let polyGen = UserDefaults.standard.value(forKey: "polygeneticSelection")
 		
 		// Explicitly sets polygenetic selection to false
-		NSUserDefaults.standardUserDefaults().setValue(1, forKey: "polygeneticSelection")
+		UserDefaults.standard.setValue(1, forKey: "polygeneticSelection")
 		print(expectedOutput)
 		print(actualOutput)
 		XCTAssertEqual(expectedOutput, actualOutput)
 		
 		// Resets polygenetic selection to user defaults
-		NSUserDefaults.standardUserDefaults().setValue(polyGen, forKey: "polygeneticSelection")
+		UserDefaults.standard.setValue(polyGen, forKey: "polygeneticSelection")
 	}
 	
 	func testEnglishtoDNA() {
 		let givenInput     = "GROUPSELFIEWITHATEACHER"
-		let expectedOutput = ("ATT GGA TTT CGA TAC AGA TTA GTA CTA GTT TTA ACC GTT TGT ACA AAA TGT TTA AAA ATA ACA TTA GGA").stringByReplacingOccurrencesOfString(" ", withString: "")
+		let expectedOutput = ("ATT GGA TTT CGA TAC AGA TTA GTA CTA GTT TTA ACC GTT TGT ACA AAA TGT TTA AAA ATA ACA TTA GGA").replacingOccurrences(of: " ", with: "")
 		let actualOutput   = bioTrans.fromEnglishtoDNA(givenInput)
-		let polyGen = NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection")
+		let polyGen = UserDefaults.standard.value(forKey: "polygeneticSelection")
 		
 		// Explicitly sets polygenetic selection to false
-		NSUserDefaults.standardUserDefaults().setValue(0, forKey: "polygeneticSelection")
+		UserDefaults.standard.setValue(0, forKey: "polygeneticSelection")
 		print(expectedOutput)
 		print(actualOutput)
 		XCTAssertEqual(expectedOutput, actualOutput)
 		
 		// Resets polygenetic selection to user defaults
-		NSUserDefaults.standardUserDefaults().setValue(polyGen, forKey: "polygeneticSelection")
+		UserDefaults.standard.setValue(polyGen, forKey: "polygeneticSelection")
 	}
 	
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

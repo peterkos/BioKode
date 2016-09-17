@@ -12,14 +12,14 @@ import Cocoa
 class ErrorCheck {
     
     // DNA or mRNA length must be a multiple of 3
-    func isValidLength(input: String) -> Bool {
+    func isValidLength(_ input: String) -> Bool {
         return (input.characters.count % 3 != 0) ? false : true
     }
     
     // DNA valid character set
-    func isValidDNA(input: String) -> Bool {
-        func checkIfInputIsDNA(input: String) -> Bool {
-            for char in input.uppercaseString.characters {
+    func isValidDNA(_ input: String) -> Bool {
+        func checkIfInputIsDNA(_ input: String) -> Bool {
+            for char in input.uppercased().characters {
                 if (char != "A" && char != "T" && char != "C" && char != "G") {
                     return false
                 }
@@ -32,9 +32,9 @@ class ErrorCheck {
     
     
     // mRNA valid character set
-    func isValidmRNA(input: String) -> Bool {
-        func checkIfInputIsmRNA(input: String) -> Bool {
-            for char in input.uppercaseString.characters {
+    func isValidmRNA(_ input: String) -> Bool {
+        func checkIfInputIsmRNA(_ input: String) -> Bool {
+            for char in input.uppercased().characters {
                 if (char != "A" && char != "U" && char != "C" && char != "G") {
                     return false
                 }
@@ -47,7 +47,7 @@ class ErrorCheck {
     
     // English is valid by default
 	
-	func stringIsNotEmpty(input: String) -> Bool {
+	func stringIsNotEmpty(_ input: String) -> Bool {
 		return input.characters.count == 0 ? true : false
 	}
     

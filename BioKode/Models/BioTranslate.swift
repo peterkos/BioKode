@@ -40,13 +40,13 @@ class BioTranslate {
 	
 	
     // MARK: - DNA -> mRNA
-    func fromDNAtomRNA(input: String) -> String {
+    func fromDNAtomRNA(_ input: String) -> String {
         
         // Resets output
         var outputString = ""
         
         // Gets input text
-        let textIn = input.uppercaseString
+        let textIn = input.uppercased()
         
         // Converts to mRNA
         for i in textIn.characters {
@@ -64,7 +64,7 @@ class BioTranslate {
 		return outputString
     }
     
-	func fromDNAtoEnglish(input: String) -> String {
+	func fromDNAtoEnglish(_ input: String) -> String {
 		let inputPlaceholderString: String
 		let outputPlaceholderString: String
 			
@@ -76,11 +76,11 @@ class BioTranslate {
     
     
     // MARK: RNA -> DNA, English
-    func frommRNAtoDNA(input: String) -> String {
+    func frommRNAtoDNA(_ input: String) -> String {
         
         // Resets output
         var outputString = ""
-        let inputString = input.uppercaseString
+        let inputString = input.uppercased()
         
         // Converts to mRNA
         for i in inputString.characters {
@@ -98,16 +98,16 @@ class BioTranslate {
 		return outputString
     }
     
-	func frommRNAtoEnglish(input: String) -> String {
+	func frommRNAtoEnglish(_ input: String) -> String {
         
         // Gets input text
 		var outputString = ""
-		let inputString = input.uppercaseString
+		let inputString = input.uppercased()
         var preEnglish = [String]()
         
         // Converts to codons (groups of 3)
-        for i in 0.stride(to: inputString.characters.count, by: 3) {
-            preEnglish.append(inputString.substringWithRange(inputString.startIndex.advancedBy(i)..<inputString.startIndex.advancedBy(i + 3)))
+        for i in stride(from: 0, to: inputString.characters.count, by: 3) {
+            preEnglish.append(inputString.substring(with: inputString.characters.index(inputString.startIndex, offsetBy: i)..<inputString.characters.index(inputString.startIndex, offsetBy: i + 3)))
         }
 		
         // Preconditoin: codon is a valid RNA sequence
@@ -123,14 +123,14 @@ class BioTranslate {
 	
 
 	// MARK: - English -> mRNA, DNA
-	func fromEnglishtomRNA(input: String) -> String {
+	func fromEnglishtomRNA(_ input: String) -> String {
         
 		var outputString = String()
-		let inputString = input.uppercaseString
+		let inputString = input.uppercased()
 		
 		
 			// Random number function to make life slightly easier
-			func rand(lim: Int) -> Int {
+			func rand(_ lim: Int) -> Int {
 				return Int(arc4random_uniform(UInt32(lim)))
 			}
 			
@@ -140,7 +140,7 @@ class BioTranslate {
 		
 					// If the user selects to assign polygenetic codon values randomly, do so.
 					// Otherwise, pick the first.
-					if (NSUserDefaults.standardUserDefaults().valueForKey("polygeneticSelection") as! Int == 2) {
+					if (UserDefaults.standard.value(forKey: "polygeneticSelection") as! Int == 2) {
 						outputString += codonArr[rand(codonArr.count)]
 					} else {
 						outputString += codonArr[0]
@@ -151,7 +151,7 @@ class BioTranslate {
          return outputCodon(outputString)
     }
     
-    func fromEnglishtoDNA(input: String) -> String {
+    func fromEnglishtoDNA(_ input: String) -> String {
 		let inputPlaceholderString: String
 		let outputPlaceholderString: String
 		
@@ -162,20 +162,20 @@ class BioTranslate {
     }
 	
 	
-	func outputCodon(input: String) -> String {
+	func outputCodon(_ input: String) -> String {
 		
 		var outputString = ""
 		
-		if (NSUserDefaults.standardUserDefaults().valueForKey("outputSpacingSelection") as! Int == 2) {
-			for i in 0.stride(to: input.characters.count, by: 3) {
-				outputString += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)) + "-")
+		if (UserDefaults.standard.value(forKey: "outputSpacingSelection") as! Int == 2) {
+			for i in stride(from: 0, to: input.characters.count, by: 3) {
+				outputString += (input.substring(with: input.characters.index(input.startIndex, offsetBy: i)..<input.characters.index(input.startIndex, offsetBy: i + 3)) + "-")
 			}
 			
 			// Exclude trailing dash
 			outputString = String(outputString.characters.dropLast(1))
 		} else {
-			for i in 0.stride(to: input.characters.count, by: 3) {
-				outputString += (input.substringWithRange(input.startIndex.advancedBy(i)..<input.startIndex.advancedBy(i + 3)))
+			for i in stride(from: 0, to: input.characters.count, by: 3) {
+				outputString += (input.substring(with: input.characters.index(input.startIndex, offsetBy: i)..<input.characters.index(input.startIndex, offsetBy: i + 3)))
 			}
 		}
 		

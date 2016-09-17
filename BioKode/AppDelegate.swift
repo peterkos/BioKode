@@ -13,24 +13,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	override init() {
 		// Sets default default preferences (not a typo)
-		let defaults: [String: AnyObject] = ["defaultInputSelection": "0",
-		                                     "defaultOutputSelection": "0",
-		                                     "polygeneticSelection": "1",
-		                                     "outputSpacingSelection": "1"]
+		let defaults: [String: AnyObject] = ["defaultInputSelection": "0" as AnyObject,
+		                                     "defaultOutputSelection": "0" as AnyObject,
+		                                     "polygeneticSelection": "1" as AnyObject,
+		                                     "outputSpacingSelection": "1" as AnyObject]
 		// Initializes default values
-		NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
-		NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultInputSelection")
-		NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "defaultOutputSelection")
-		NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "polygeneticSelection")
-		NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "outputSpacingSelection")
+		UserDefaults.standard.register(defaults: defaults)
+		UserDefaults.standard.set(0, forKey: "defaultInputSelection")
+		UserDefaults.standard.set(0, forKey: "defaultOutputSelection")
+		UserDefaults.standard.set(1, forKey: "polygeneticSelection")
+		UserDefaults.standard.set(1, forKey: "outputSpacingSelection")
 		
 	}
 	
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         
     }    
     
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         
     }
 
